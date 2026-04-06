@@ -1,0 +1,109 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+.header.scrolled {
+  height: 70px;
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: none !important; /* Allow shift to edges */
+  padding-left: 2vw !important; /* Unified 2vw shift with footer */
+  padding-right: 5vw !important;
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-left: auto; /* Push links and CTA to the right */
+  margin-right: 3rem; /* Spacing between links and CTA */
+}
+
+.header-cta {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--secondary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-secondary-nav {
+  padding: 0.7rem 1.4rem;
+  background: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-nav:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Mobile menu needed but typically hidden in simple examples */
+  }
+}

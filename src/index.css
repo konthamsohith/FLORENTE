@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* 60-30-10 Color Rule Tokens */
+  --base-60: #050C1B;       /* Deep Midnight Base (60%) */
+  --secondary-30: #1D3B5A;  /* Supporting Navy / Glass (30%) */
+  --accent-10: #D4AF37;     /* Champagne Gold Accent (10%) */
+  
+  /* Legacy/Support Tokens */
+  --primary: var(--secondary-30); 
+  --secondary: var(--accent-10);
+  --bg-dark: var(--base-60);
+  --bg-darker: #02060f;
+  --text-main: #F8F9FA;
+  --text-muted: #A0AEC0;
+  --gold-glow: rgba(212, 175, 55, 0.2);
+  --glass-bg: rgba(29, 59, 90, 0.6);
+  --glass-border: rgba(212, 175, 55, 0.15);
+  --glass-blur: blur(16px);
+
+  /* Gradients based on 60-30-10 */
+  --grad-primary: linear-gradient(135deg, var(--base-60), var(--secondary-30));
+  --grad-gold: linear-gradient(135deg, var(--accent-10), #F7E7CE);
+  --grad-glass: linear-gradient(135deg, rgba(29, 59, 90, 0.7), rgba(5, 12, 27, 0.7));
+  
+  /* Utilities */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--base-60);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--primary);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.text-accent {
+  background: linear-gradient(135deg, var(--secondary) 0%, #B8860B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 31, 63, 0.05);
+}
+
+.dark-glass {
+  background: rgba(0, 31, 63, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--light);
+  box-shadow: 0 10px 20px rgba(0, 31, 63, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  background: #003366;
+  box-shadow: 0 15px 30px rgba(0, 31, 63, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 4rem;
+  max-width: 700px;
+}
+
+.card-tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(212, 175, 55, 0.15);
+  color: #B8860B;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
