@@ -1,6 +1,6 @@
 .footer-wrapper {
   padding: 6rem 0;
-  background-color: #ffffff;
+  background-color: var(--base-60);
 }
 
 .footer-flex {
@@ -10,9 +10,9 @@
 }
 
 .footer-block-lime {
-  background-color: #C4F123;
-  color: #000000;
-  border-radius: 40px;
+  background-color: var(--accent-10);
+  color: var(--base-60);
+  border-radius: 12px;
   padding: 4rem;
   flex: 0 0 400px;
   display: flex;
@@ -21,18 +21,30 @@
   min-height: 500px;
 }
 
-.brand-mission {
+.brand-logo {
+  font-family: 'Outfit', sans-serif;
   font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #000000;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-logo.dark {
+  color: var(--base-60);
+}
+
+.brand-mission {
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  color: rgb(33, 33, 33);
   max-width: 90%;
 }
 
 .footer-block-black {
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 40px;
+  background-color: var(--secondary-30);
+  color: var(--text-main);
+  border-radius: 12px;
   padding: 4rem;
   flex: 1;
   display: flex;
@@ -49,8 +61,11 @@
 }
 
 .footer-nav-col h4 {
-  color: #666666;
-  font-size: 0.9rem;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(244, 244, 244);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
@@ -66,15 +81,17 @@
 }
 
 .footer-nav-col a {
-  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 20px;
   font-weight: 500;
+  line-height: 24px;
   transition: color 0.3s ease;
 }
 
 .footer-nav-col a:hover {
-  color: #C4F123;
+  color: var(--accent-10);
 }
 
 .footer-black-middle {
@@ -85,15 +102,17 @@
 }
 
 .footer-email {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+  color: rgb(244, 244, 244);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-email:hover {
-  color: #C4F123;
+  color: var(--accent-10);
 }
 
 .footer-contact-grid {
@@ -103,18 +122,23 @@
 }
 
 .contact-label {
+  font-family: 'Manrope', sans-serif;
   display: block;
-  color: #666666;
-  font-size: 0.8rem;
+  color: rgb(244, 244, 244);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
 }
 
 .contact-sub-item p {
-  font-size: 1rem;
-  color: #ffffff;
-  line-height: 1.4;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: rgb(244, 244, 244);
 }
 
 .footer-social-links {
@@ -123,16 +147,19 @@
 }
 
 .footer-social-links a {
-  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(244, 244, 244);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 .footer-social-links a:hover {
-  color: #C4F123;
-  border-bottom-color: #C4F123;
+  color: var(--accent-10);
+  border-bottom-color: var(--accent-10);
 }
 
 .footer-black-bottom {
@@ -149,14 +176,20 @@
 }
 
 .footer-legal-links a {
-  color: #666666;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(244, 244, 244);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 .footer-copyright {
-  color: #666666;
-  font-size: 0.9rem;
+  font-family: 'Manrope', sans-serif;
+  color: rgb(244, 244, 244);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 @media (max-width: 1100px) {

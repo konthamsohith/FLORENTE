@@ -616,155 +616,293 @@ h2 {
   }
 }
 
-/* Global Presence - 5 Bar Layout */
-.grid-presence-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 4rem;
-  gap: 4rem;
+/* Global Presence - Bento Florente Pro Overhaul */
+#branches {
+  background-color: var(--base-60);
+  padding: 180px 0;
+  position: relative;
+  z-index: 1;
 }
 
-.presence-title-area {
-  flex: 1.5;
+.grid-presence-header {
+  margin-bottom: 6rem;
+  border-left: 4px solid var(--accent-10);
+  padding-left: 4rem;
+  max-width: 1000px;
 }
 
 .presence-title-area h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--base-60);
-  max-width: 500px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  letter-spacing: -1px;
 }
 
-.presence-cta-area {
-  flex: 1;
+.accent-tag {
+  display: inline-block;
+  color: var(--accent-10);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 1.5rem;
 }
 
 .presence-cta-area p {
-  font-size: 1.1rem;
-  color: #666666;
-  margin-bottom: 2rem;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 650px;
+  margin-bottom: 4rem;
 }
 
-.btn-book-call {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.6rem 2rem;
-  background-color: #C4F123;
-  color: #000;
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
-}
-
-.btn-book-call:hover {
-  transform: translateY(-3px);
-}
-
-.arrow-circle {
-  width: 32px;
-  height: 32px;
-  background-color: #000;
-  color: #C4F123;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.presence-cards-grid {
+/* Bento Grid System */
+.presence-bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 320px;
+  gap: 2.5rem;
 }
 
-.presence-card {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-}
-
-.presence-card:hover {
-  transform: translateY(-10px);
-}
-
-.presence-card-img {
-  width: 100%;
-  aspect-ratio: 16/10;
-  border-radius: 24px;
+.bento-card {
+  border-radius: 32px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
-  background-color: #f0f0f0;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.25);
 }
 
-.presence-card-img img {
+.bento-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 60px 130px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Variation: Hyderabad (Image-First, Tall) */
+.card-hyderabad-hq {
+  grid-column: span 5;
+  grid-row: span 2;
+  background-color: #000;
+}
+
+.bento-img-full {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  opacity: 0.6;
+  transition: all 1.2s ease;
 }
 
-.presence-card:hover .presence-card-img img {
-  transform: scale(1.05);
+.card-hyderabad-hq:hover .bento-img-full {
+  opacity: 0.8;
+  transform: scale(1.1);
 }
 
-.presence-card-tag {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  background-color: #F7F7F7;
-  color: #666666;
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-  width: fit-content;
+.bento-content-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
+  color: #ffffff;
+  z-index: 2;
 }
 
-.presence-card-title {
-  font-size: 1.5rem;
-  font-weight: 800;
+.card-hyderabad-hq .bento-title,
+.card-hyderabad-hq .bento-subtitle,
+.card-qatar-navy .bento-title,
+.card-qatar-navy .bento-subtitle {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Card Variation: Vijayawada (Solid Gold) */
+.card-vijayawada-gold {
+  grid-column: span 7;
+  grid-row: span 1;
+  background: linear-gradient(135deg, var(--accent-10) 0%, #E5C362 100%);
+  padding: 6rem 4rem 4rem;
   color: var(--base-60);
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: visible;
 }
 
-.presence-card-meta {
-  font-size: 0.9rem;
-  color: #888888;
-  margin-bottom: 1rem;
+.presence-card-desc-signature {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  opacity: 0.8;
+}
+
+.card-vijayawada-gold .presence-card-desc-signature,
+.card-vijayawada-gold .bento-contact-row {
+  color: var(--base-60);
+  opacity: 0.9;
+}
+
+.card-qatar-navy .presence-card-desc-signature {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Card Variation: Qatar (Midnight Navy with Gold Border) */
+.card-qatar-navy {
+  grid-column: span 7;
+  grid-row: span 1;
+  background: linear-gradient(135deg, #0A162B 0%, var(--base-60) 100%);
+  padding: 4rem;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+.card-qatar-navy .bento-text-side {
+  flex: 1;
+}
+
+.card-qatar-navy .bento-title,
+.card-qatar-navy .bento-subtitle {
+  color: #ffffff !important;
+}
+
+.card-qatar-navy .bento-img-side {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent-10);
+  flex-shrink: 0;
+}
+
+/* Shared Typography in Bento */
+.bento-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+  display: block;
+  opacity: 0.8;
+}
+
+.card-vijayawada-gold .bento-title,
+.card-vijayawada-gold .bento-label,
+.card-vijayawada-gold .bento-subtitle {
+  color: var(--base-60);
+}
+
+.bento-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: -1px;
+}
+
+.bento-subtitle {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: block;
+  font-family: 'Manrope', sans-serif;
+}
+
+.bento-pill-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #ffffff;
+  color: var(--base-60);
+  padding: 1.2rem 3rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+  margin-top: 2rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+.bento-pill-cta:hover {
+  background-color: var(--accent-10);
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-vijayawada-gold .bento-pill-cta {
+  background-color: var(--base-60);
+  color: #ffffff;
+}
+
+.card-vijayawada-gold .bento-pill-cta:hover {
+  background-color: #000;
+}
+
+.bento-contact-row {
+  margin-top: 2rem;
+  font-size: 20px;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.2rem;
 }
 
-.presence-card-desc {
-  font-size: 0.95rem;
-  color: #4A5568;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-
-.presence-card-contact {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--base-60);
-}
-
-@media (max-width: 1100px) {
-  .presence-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1200px) {
+  .presence-bento-grid {
+    grid-auto-rows: min-content;
+  }
+  .card-hyderabad-hq, .card-vijayawada-gold, .card-qatar-navy {
+    grid-column: span 12;
+    padding: 3rem;
+  }
+  .card-qatar-navy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .presence-title-area h2 {
+    font-size: 52px;
+    letter-spacing: -2px;
   }
 }
 
+.presence-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 800px;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.07) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(100px);
+  animation: breatheGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes breatheGlow {
+  0% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
 @media (max-width: 768px) {
-  .presence-cards-grid {
-    grid-template-columns: 1fr;
+  .presence-title-area h2 {
+    font-size: 38px;
+  }
+  .grid-presence-header {
+    padding-left: 2rem;
   }
 }
 
@@ -787,91 +925,135 @@ h2 {
   font-size: 1.1rem;
 }
 
-/* Redesigned Contact Hub */
+/* Accurate Mukio-Inspired Contact Hub - Separated Cards */
+#contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff; /* Contrast with dark footer */
+  padding: 4rem 0;
+}
+
 .contact-redesign-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
-  background: #ffffff;
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+  gap: 4rem; /* Increased gap for full-page width */
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  width: 100%;
 }
 
 .contact-info-block {
-  background-color: #f8f9fa;
-  padding: 5rem;
+  background-color: var(--base-60); /* Deep Midnight Card */
+  padding: 4rem 3.5rem;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
 }
 
 .contact-small-tag {
-  color: #666;
-  text-transform: uppercase;
-  font-size: 0.8rem;
+  color: var(--accent-10); /* Gold on Midnight */
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
   display: block;
 }
 
 .contact-block-title {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 52px;
+  font-weight: 700;
   line-height: 1.1;
-  color: #000;
-  margin-bottom: 2rem;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -1px;
 }
 
 .contact-block-desc {
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin-bottom: 4rem;
+  font-family: 'Manrope', sans-serif;
+  max-width: 95%;
 }
 
 .contact-meta-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 3rem 2rem;
   margin-top: auto;
 }
 
 .contact-meta-item h4 {
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   margin-bottom: 1rem;
-  color: #000;
+  color: var(--accent-10); /* Gold highlights */
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .contact-meta-item p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #ffffff;
   margin-bottom: 0.3rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+}
+
+.hours-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hours-col {
+  margin-bottom: 0.5rem;
+}
+
+.hours-label {
+  display: block;
+  font-size: 13px;
+  color: var(--accent-10);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  font-family: 'Manrope', sans-serif;
 }
 
 .contact-form-block {
-  padding: 5rem;
+  padding: 4rem 5rem;
   background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .form-block-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #000;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 3.5rem;
+  color: var(--base-60);
+  font-family: 'Outfit', sans-serif;
 }
 
 .modern-contact-form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .compact-group {
@@ -881,46 +1063,76 @@ h2 {
 }
 
 .compact-group label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Manrope', sans-serif;
 }
 
 .compact-group input,
 .compact-group textarea {
   width: 100%;
-  padding: 1.2rem;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 1rem;
+  padding: 15px 25px;
+  background: #f8f9fa; /* Light clean inputs */
+  border: 1px solid #eee;
+  border-radius: 50px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
   transition: all 0.3s ease;
+  color: var(--base-60);
+  height: 54px;
+}
+
+.compact-group textarea {
+  border-radius: 20px;
+  height: auto;
+  min-height: 180px;
+}
+
+.compact-group input::placeholder,
+.compact-group textarea::placeholder {
+  color: #bbb;
 }
 
 .compact-group input:focus,
 .compact-group textarea:focus {
   outline: none;
-  border-color: #000;
-  background: #fff;
+  background: #ffffff;
+  border-color: var(--accent-10);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .btn-modern-submit {
-  padding: 1.2rem;
-  background: #000;
-  color: #fff;
+  padding: 1rem;
+  background: var(--base-60); /* Deep Midnight button */
+  color: #ffffff;
   border: none;
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 50px;
+  font-size: 16px;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
+  width: 100%;
+  height: 56px;
+  font-family: 'Manrope', sans-serif;
 }
 
 .btn-modern-submit:hover {
-  background: #222;
-  transform: translateY(-2px);
+  background: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-success {
+  margin-top: 1rem;
+  color: #4CAF50;
+  font-size: 0.9rem;
+  font-family: 'Manrope', sans-serif;
 }
 
 @media (max-width: 1200px) {
@@ -949,7 +1161,35 @@ h2 {
 
 /* Success Section Grid */
 #success {
-  background-color: #f8f9fa; /* Light clean background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#success .section-header {
+  max-width: none;
+  margin-bottom: 4rem;
+}
+
+#success .section-header h2 {
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 42px;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+#success .section-header .section-desc {
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 1rem;
 }
 
 .success-grid {
@@ -960,13 +1200,36 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.success-card-light { background: #ffffff; border: 1px solid rgba(0,0,0,0.05); }
-.success-card-lime { background: #C4F123; color: #000; }
-.success-card-dark { background: #000000; color: #fff; }
+.success-card-light { 
+  background: #ffffff; 
+  border: 1px solid rgba(0,0,0,0.03); 
+  box-shadow: 0 15px 40px rgba(0,0,0,0.02);
+}
+
+.success-card-gold { 
+  background: linear-gradient(135deg, var(--accent-10) 0%, #E5C362 100%); 
+  color: var(--base-60); 
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+}
+
+.success-card-dark { 
+  background: linear-gradient(135deg, var(--base-60) 0%, #0A162B 100%); 
+  color: #ffffff; 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.success-card-light, .success-card-gold, .success-card-dark {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.success-card-light:hover, .success-card-gold:hover, .success-card-dark:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
 
 .success-item-vertical {
   grid-row: span 2;
-  border-radius: 32px;
+  border-radius: 12px;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -974,19 +1237,24 @@ h2 {
 }
 
 .case-tag {
-  color: #666666;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: rgba(33, 33, 33, 0.8);
+  font-size: 20px;
+  line-height: 24px;
   margin-bottom: 1.5rem;
+  display: block;
 }
 
 .case-title {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #000;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  color: rgb(33, 33, 33);
+  letter-spacing: -0.01em;
 }
 
 .case-nav {
@@ -999,22 +1267,26 @@ h2 {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
-  background: transparent;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: #f8f8f8;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  color: #111111;
 }
 
-.nav-btn-small.active {
-  background: #E2E2E2;
+.nav-btn-small:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  transform: scale(1.05);
 }
 
 .success-item-image {
   grid-column: span 2;
-  border-radius: 32px;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
 }
@@ -1026,7 +1298,7 @@ h2 {
 }
 
 .success-item-stat {
-  border-radius: 32px;
+  border-radius: 12px;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -1036,31 +1308,54 @@ h2 {
 }
 
 .stat-value {
-  font-size: 5rem;
-  font-weight: 800;
-  letter-spacing: -2px;
-  line-height: 1;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 77px;
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+
+.success-card-gold:hover .stat-value {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .stat-label {
-  font-size: 1rem;
-  font-weight: 500;
-  max-width: 150px;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: rgb(250, 250, 250);
+  margin-top: 0.5rem;
+  max-width: 220px;
 }
 
 .success-item-quote {
-  border-radius: 32px;
+  border-radius: 12px;
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 280px; /* Ensures the card stays stable */
+}
+
+.quote-animate-wrapper {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .quote-text {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  font-weight: 500;
-  font-style: italic;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgb(255, 255, 255);
 }
 
 .quote-author {
@@ -1074,32 +1369,62 @@ h2 {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: #333;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.8rem;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .author-info strong {
   display: block;
-  font-size: 0.9rem;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
 }
 
 .author-info span {
-  font-size: 0.75rem;
-  color: #888;
+  display: block;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgb(250, 250, 250);
+  margin-top: 2px;
 }
 
-/* Row 3 CTA Banner */
 .success-cta-banner {
-  border-radius: 32px;
-  padding: 4rem;
+  border-radius: 40px;
+  padding: 5rem;
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  background-color: var(--accent-10);
+  background: linear-gradient(135deg, var(--accent-10) 0%, #E5C362 100%);
+  color: var(--base-60);
+  position: relative;
+  overflow: hidden;
+}
+
+.success-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent);
+  pointer-events: none;
 }
 
 .cta-left {
@@ -1107,27 +1432,35 @@ h2 {
 }
 
 .cta-subtitle {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgb(33, 33, 33);
   margin-bottom: 1.5rem;
   display: block;
 }
 
 .cta-title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  color: #000;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 41px;
+  color: rgb(33, 33, 33);
+  margin-bottom: 2.5rem;
 }
 
 .cta-desc {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 3rem;
-  max-width: 600px;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: rgba(33, 33, 33, 0.8);
+  margin-bottom: 4rem;
+  max-width: 650px;
 }
 
 .cta-buttons {
@@ -1136,27 +1469,105 @@ h2 {
 }
 
 .btn-success-white {
-  padding: 1rem 2.5rem;
-  background: #fff;
+  height: 46px;
+  width: 100px;
+  padding: 0;
+  background: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 50px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-success-dark {
-  padding: 1rem 2.5rem;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  font-weight: 700;
-  cursor: pointer;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: all 0.3s ease;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.btn-success-white:hover {
+  background-color: #111111;
+  color: #ffffff;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
+
+.btn-success-dark.slide-push-btn {
+  height: 46px;
+  width: 142px;
+  padding: 0;
+  background: #111111;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.btn-slide-wrapper {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transform: translateX(-50%);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-state {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 4px 0 1rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-state-dark {
+  background: #111111;
+  color: #fff;
+}
+
+.btn-state-white {
+  background: #ffffff;
+  color: #111111;
+}
+
+.btn-success-dark.slide-push-btn:hover .btn-slide-wrapper {
+  transform: translateX(0);
+}
+
+.btn-success-dark.slide-push-btn:hover {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.cta-icon-circle {
+  width: 36px;
+  height: 36px;
+  background-color: var(--accent-10);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.btn-state-white .cta-icon-circle {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.btn-success-dark.slide-push-btn:hover .btn-state-white .cta-icon-circle {
+  transform: scale(1.05);
 }
 
 .cta-right-img {
