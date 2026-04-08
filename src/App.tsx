@@ -164,9 +164,9 @@ function App() {
               Trusted by Leading Companies Worldwide
             </div>
             <div className="trusted-logos">
-              <img src="https://www.vectorlogo.zone/logos/tatamotors/tatamotors-ar21.svg" alt="TATA Motors" className="brand-logo-img" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Qatar_Airways_logo.svg/512px-Qatar_Airways_logo.svg.png" alt="Qatar Airways" className="brand-logo-img" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/512px-Infosys_logo.svg.png" alt="Infosys" className="brand-logo-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg" alt="TATA Motors" className="brand-logo-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="brand-logo-img" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="brand-logo-img" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="brand-logo-img" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="brand-logo-img" />
             </div>
@@ -206,31 +206,22 @@ function App() {
                     <p>To build long-term, trust-based relationships while helping our clients achieve their goals with confidence and clarity.</p>
                   </div>
                 </div>
-                <a href="#contact" className="btn-about" style={{ marginTop: '2rem' }}>
-                  More about us <ArrowRight size={18} />
+                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ marginTop: '2rem', display: 'inline-block', width: '165px', textDecoration: 'none' }}>
+                  <div className="btn-slide-wrapper">
+                    <div className="btn-state btn-state-white">
+                      <span className="btn-text">More about us</span>
+                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
+                    </div>
+                    <div className="btn-state btn-state-dark">
+                      <span className="btn-text">More about us</span>
+                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>
 
-            {/* Horizontal Stats Bar */}
-            <div className="about-stats-bar">
-              <div className="stat-item">
-                <span className="stat-num">5+</span>
-                <span className="stat-text">Global Divisions</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num">25+</span>
-                <span className="stat-text">Experts</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num">10+</span>
-                <span className="stat-text">Associated Projects</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num">250+</span>
-                <span className="stat-text">Satisfied Clients</span>
-              </div>
-            </div>
+
           </div>
         </section>
 
@@ -260,8 +251,17 @@ function App() {
                   ))}
                 </div>
                 <div style={{ marginTop: '4rem' }}>
-                  <a href="#contact" className="btn-about">
-                    All services <ArrowRight size={18} />
+                  <a href="#contact" className="btn-success-dark slide-push-btn" style={{ display: 'inline-block', width: '150px', textDecoration: 'none' }}>
+                    <div className="btn-slide-wrapper">
+                      <div className="btn-state btn-state-white">
+                        <span className="btn-text">All services</span>
+                        <span className="cta-icon-circle"><ArrowRight size={16} /></span>
+                      </div>
+                      <div className="btn-state btn-state-dark">
+                        <span className="btn-text">All services</span>
+                        <span className="cta-icon-circle"><ArrowRight size={16} /></span>
+                      </div>
+                    </div>
                   </a>
                 </div>
               </div>
