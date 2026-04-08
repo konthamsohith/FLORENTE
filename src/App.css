@@ -92,6 +92,14 @@
     text-align: center;
     padding: 1rem 0;
   }
+  .trusted-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .brand-logo-img {
+    max-height: 24px;
+  }
 }
 
 /* Divisions Section - Interactive Split Screen */
@@ -466,6 +474,15 @@ h2 {
   .about-4-box-grid {
     grid-template-columns: 1fr;
   }
+  .about-box {
+    min-height: 300px;
+  }
+  .about-text-box {
+    padding: 2.5rem;
+  }
+  .about-box-title {
+    font-size: 2.5rem;
+  }
   
   .about-stats-bar {
     flex-wrap: wrap;
@@ -474,6 +491,11 @@ h2 {
   
   .stat-item {
     min-width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .stat-item {
+    min-width: 100%;
   }
 }
 
@@ -613,6 +635,12 @@ h2 {
 @media (max-width: 600px) {
   .divisions-grid {
     grid-template-columns: 1fr;
+  }
+  .division-floating-card {
+    padding: 1.5rem;
+  }
+  .division-card-title {
+    font-size: 1.5rem;
   }
 }
 
@@ -904,6 +932,23 @@ h2 {
   .grid-presence-header {
     padding-left: 2rem;
   }
+  .card-hyderabad-hq, .card-vijayawada-gold, .card-qatar-navy {
+    padding: 2rem;
+  }
+  .card-qatar-navy {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .bento-img-full {
+    opacity: 0.8;
+  }
+  .bento-title {
+    font-size: 28px;
+  }
+  .bento-pill-cta {
+    padding: 1rem 2rem;
+    font-size: 13px;
+  }
 }
 
 /* Contact Section */
@@ -1157,6 +1202,15 @@ h2 {
   .contact-block-title {
     font-size: 2.2rem;
   }
+  
+  .contact-info-block, .contact-form-block {
+    padding: 2rem 1.5rem;
+  }
+  
+  .contact-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 /* Success Section Grid */
@@ -1177,9 +1231,8 @@ h2 {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
-  font-size: 42px;
-  line-height: 50px;
-  white-space: nowrap;
+  font-size: clamp(28px, 6vw, 42px);
+  line-height: 1.2;
 }
 
 #success .section-header .section-desc {
@@ -1600,6 +1653,31 @@ h2 {
   .cta-right-img {
     width: 100%;
     height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .success-grid {
+    grid-template-columns: 1fr;
+  }
+  .success-item-vertical, .success-item-image, .success-item-stat, .success-item-quote {
+    grid-column: span 1;
+  }
+  .stat-value {
+    font-size: 48px;
+  }
+  .success-cta-banner {
+    padding: 2rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-success-dark.slide-push-btn {
+    width: 100%;
+  }
+  .btn-success-white {
+    width: 100%;
   }
 }
 

@@ -102,8 +102,55 @@
   box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
 }
 
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
 @media (max-width: 768px) {
+  .header-content {
+    padding-right: 2vw !important;
+  }
   .nav-menu {
-    display: none; /* Mobile menu needed but typically hidden in simple examples */
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 12, 27, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+  }
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .btn-secondary-nav {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-secondary-nav {
+    display: none;
   }
 }
