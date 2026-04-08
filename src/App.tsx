@@ -3,115 +3,20 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import { 
-  UserPlus, 
-  TrendingUp, 
-  Home, 
-  Camera,
-  HardHat,
   ArrowRight,
   Phone
 } from 'lucide-react';
 import './App.css';
 
-function App() {
-  const divisions = [
-    {
-      title: 'FISrente Marketing Labs LLP',
-      shortName: 'Marketing Labs',
-      description: 'A leading player in sustainable energy and infrastructure development, providing end-to-end solutions for a greener future.',
-      icon: <HardHat size={32} />,
-      image: '/marketing_labs_solar_energy_1775411828713.png',
-      subServices: ['Solar Energy', 'Infrastructure', 'MEP', 'Interior Design'],
-      caseStudy: {
-        tag: 'Sustainable Energy',
-        title: 'Guided EcoGreen Power in meeting sustainability goals, increasing efficiency by 35%.',
-      },
-      impactStat: { value: '45%', label: 'improvement in sustainability ratings' },
-      testimonial: {
-        quote: "Their commitment to sustainability has helped us align our financial goals with environmental responsibility.",
-        avatar: '/avatar_robert_hayes_1775590403482.png',
-        author: 'Robert Hayes',
-        role: 'COO, EcoGreen Power',
-      }
-    },
-    {
-      title: 'FISrente PROPERTIES LLP',
-      shortName: 'Properties',
-      description: 'Your premier real estate advisory firm bridging the gap between luxury living in Dubai and strategic investments in India.',
-      icon: <Home size={32} />,
-      image: '/properties_dubai_luxury_realestate_1775411853341.png',
-      subServices: ['Dubai Real Estate', 'Advisory', 'Emaar Partner', 'Investment'],
-      caseStudy: {
-        tag: 'Global Real Estate',
-        title: 'Successfully portfolio-diversified top investors with high-yield Dubai properties.',
-      },
-      impactStat: { value: '22%', label: 'average annual portfolio growth' },
-      testimonial: {
-        quote: "Florente's insight into the Dubai market was invaluable for our international expansion.",
-        avatar: '/avatar_mohamed_sultan_1775590419943.png',
-        author: 'Mohamed Sultan',
-        role: 'Director, Sultan Holdings',
-      }
-    },
-    {
-      title: 'FISrente A CONSULTANT LLP',
-      shortName: 'Consultancy',
-      description: 'Connecting top-tier talent with world-class organizations across insurance, banking, and software industries.',
-      icon: <UserPlus size={32} />,
-      image: '/consultant_recruitment_banking_1775411878440.png',
-      subServices: ['Manpower', 'Recruitment', 'Banking', 'Software Personnel'],
-      caseStudy: {
-        tag: 'Talent Acquisition',
-        title: 'Built the foundational leadership team for a Fortune 500 Fintech branch in India.',
-      },
-      impactStat: { value: '500+', label: 'specialist roles placed in last 12 months' },
-      testimonial: {
-        quote: "The quality of talent provided by Florente has transformed our operational efficiency.",
-        avatar: '/avatar_ananya_kapoor_1775590437503.png',
-        author: 'Ananya Kapoor',
-        role: 'HR Head, Global Finance',
-      }
-    },
-    {
-      title: 'FISrente WEALTH SERVICE LLP',
-      shortName: 'Wealth Service',
-      description: 'Dedicated to helping individuals and families grow, protect, and manage their wealth through expert-led fund advisory.',
-      icon: <TrendingUp size={32} />,
-      image: '/wealth_service_financial_planning_1775411901441.png',
-      subServices: ['Mutual Funds', 'SIP', 'Retirement Planning', 'Monitoring'],
-      caseStudy: {
-        tag: 'Asset Management',
-        title: 'Optimized retirement funds for 200+ HNI families with diverse risk-reward profiles.',
-      },
-      impactStat: { value: '₹150Cr+', label: 'assets under expert advisory' },
-      testimonial: {
-        quote: "Our family's financial future is secure thanks to the meticulous planning of Florente's wealth team.",
-        avatar: '/avatar_vikram_reddy_1775590457878.png',
-        author: 'Vikram Reddy',
-        role: 'HNI Client',
-      }
-    },
-    {
-      title: 'FISrente ENTERTAINMENTS LLP',
-      shortName: 'Entertainments',
-      description: 'Transforming creative visions into cinematic masterpieces. Focused on meaningful content that captures the human experience.',
-      icon: <Camera size={32} />,
-      image: '/entertainment_film_production_set_1775411922771.png',
-      subServices: ['Film Production', 'KIRAYI Project', 'Storytelling', 'Cinema'],
-      caseStudy: {
-        tag: 'Media Production',
-        title: 'Launched the KIRAYI Project, a national-level documentary series gaining critical acclaim.',
-      },
-      impactStat: { value: '1M+', label: 'combined viewership for KIRAYI series' },
-      testimonial: {
-        quote: "Florente's dedication to authentic storytelling is a breath of fresh air in the film industry.",
-        avatar: '/avatar_sanjay_kumar_1775590475778.png',
-        author: 'Sanjay Kumar',
-        role: 'Creative Producer',
-      }
-    }
-  ];
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { divisions } from './data/divisions';
+import DivisionPage from './pages/DivisionPage';
 
+interface HomeProps {
+  divisions: any[];
+}
+
+const Home: React.FC<HomeProps> = ({ divisions }) => {
   const [formState, setFormState] = useState({
     firstName: '',
     lastName: '',
@@ -125,7 +30,6 @@ function App() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
@@ -137,38 +41,44 @@ function App() {
   const [activeDivisionIndex, setActiveDivisionIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-rotation effect
   React.useEffect(() => {
     let interval: NodeJS.Timeout;
     if (isAutoPlaying) {
       interval = setInterval(() => {
         setActiveDivisionIndex((prev) => (prev + 1) % divisions.length);
-      }, 7000); // Rotate every 7 seconds
+      }, 7000);
     }
     return () => clearInterval(interval);
   }, [isAutoPlaying, divisions.length]);
 
   return (
-    <div className="app-container">
+    <div className="home-content">
       <Header />
-      
       <main>
         <section id="home">
           <Hero divisions={divisions} />
         </section>
 
-        {/* Trusted By Banner mimicking the image design */}
         <section className="trusted-banner">
           <div className="container trusted-inner">
             <div className="trusted-text">
               Trusted by Leading Companies Worldwide
             </div>
-            <div className="trusted-logos">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg" alt="TATA Motors" className="brand-logo-img" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="brand-logo-img" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="brand-logo-img" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="brand-logo-img" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="brand-logo-img" />
+            <div className="trusted-logos-mask">
+              <div className="trusted-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg" alt="Tata" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg" alt="Tata" className="brand-logo-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" className="brand-logo-img" />
+              </div>
             </div>
           </div>
         </section>
@@ -176,25 +86,18 @@ function App() {
         <section id="about" className="section-padding">
           <div className="about-section-container">
             <div className="about-4-box-grid">
-              {/* Box 1: Intro Text */}
               <div className="about-box about-text-box">
                 <h2 className="about-box-title">Building the Future with Vision & Trust</h2>
                 <p className="about-box-desc">
                   At Florente, we believe that progress is driven by a clear vision and sustained by the trust of our partners.
                 </p>
               </div>
-
-              {/* Box 2: Image Purchase & Investment */}
               <div className="about-box about-img-box">
                 <img src="/buy_sell_cards_consultancy_1775407503392.png" alt="Purchase and Investment Advisory" />
               </div>
-
-              {/* Box 3: Image Expert Collaboration */}
               <div className="about-box about-img-box">
                 <img src="/experts_collaboration_laptop_1775407527405.png" alt="Collaborative Expert Consultation" />
               </div>
-
-              {/* Box 4: Vision & Mission */}
               <div className="about-box about-text-box light-bg">
                 <div className="vm-grid">
                   <div className="vm-box-item">
@@ -206,7 +109,7 @@ function App() {
                     <p>To build long-term, trust-based relationships while helping our clients achieve their goals with confidence and clarity.</p>
                   </div>
                 </div>
-                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ marginTop: '2rem', display: 'inline-block', width: '165px', textDecoration: 'none' }}>
+                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ marginTop: '2rem', display: 'inline-block', width: '180px', textDecoration: 'none' }}>
                   <div className="btn-slide-wrapper">
                     <div className="btn-state btn-state-white">
                       <span className="btn-text">More about us</span>
@@ -220,8 +123,6 @@ function App() {
                 </a>
               </div>
             </div>
-
-
           </div>
         </section>
 
@@ -235,15 +136,15 @@ function App() {
                   <p className="section-desc">Excellence across energy, real estate, wealth, consultancy, and media.</p>
                 </div>
                 <div className="divisions-list">
-                  {divisions.map((div, index) => (
+                  {divisions.map((div: any, index: number) => (
                     <div 
                       key={index} 
                       className={`division-item ${activeDivisionIndex === index ? 'active' : ''}`}
                       onMouseEnter={() => {
                         setActiveDivisionIndex(index);
-                        setIsAutoPlaying(false); // Pause auto-play on manual hover
+                        setIsAutoPlaying(false);
                       }}
-                      onMouseLeave={() => setIsAutoPlaying(true)} // Resume auto-play
+                      onMouseLeave={() => setIsAutoPlaying(true)}
                     >
                       <span className="division-item-number">0{index + 1}</span>
                       <span className="division-item-name">{div.title}</span>
@@ -277,7 +178,7 @@ function App() {
                   <h3 className="division-card-title">{divisions[activeDivisionIndex].title}</h3>
                   <p className="division-card-desc">{divisions[activeDivisionIndex].description}</p>
                   <div className="division-tag-cloud">
-                    {divisions[activeDivisionIndex].subServices.map((tag, idx) => (
+                    {divisions[activeDivisionIndex].subServices.map((tag: string, idx: number) => (
                       <span key={idx} className="division-mini-tag">{tag}</span>
                     ))}
                   </div>
@@ -300,7 +201,6 @@ function App() {
             </div>
 
             <div className="presence-bento-grid">
-              {/* Box 1: Hyderabad HQ (Image-First / Tall) */}
               <div className="bento-card card-hyderabad-hq">
                 <img src="/professional_consultant_banking_recruitment_1775411150948.png" alt="Hyderabad HQ" className="bento-img-full" />
                 <div className="bento-content-overlay">
@@ -313,7 +213,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Box 2: Vijayawada (Solid Gold / High Impact) */}
               <div className="bento-card card-vijayawada-gold">
                 <span className="bento-label">Regional Excellence</span>
                 <h3 className="bento-title">Vijayawada Branch</h3>
@@ -331,7 +230,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Box 3: Qatar (Midnight / International) */}
               <div className="bento-card card-qatar-navy">
                 <div className="bento-text-side">
                   <span className="bento-label">International Support</span>
@@ -361,7 +259,6 @@ function App() {
             </div>
 
             <div className="success-grid">
-              {/* Row 1 & 2 Left: Case Study Highlight */}
               <div className="success-item-vertical success-card-light">
                 <span className="case-tag">{divisions[activeDivisionIndex].caseStudy.tag}</span>
                 <h3 className="case-title">
@@ -383,7 +280,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Row 1 Right: Image */}
               <div className="success-item-image">
                 <img 
                   src={divisions[activeDivisionIndex].image} 
@@ -391,13 +287,11 @@ function App() {
                 />
               </div>
 
-              {/* Row 2 Middle: Impact Stat */}
               <div className="success-item-stat success-card-gold">
                 <div className="stat-value">{divisions[activeDivisionIndex].impactStat.value}</div>
                 <p className="stat-label">{divisions[activeDivisionIndex].impactStat.label}</p>
               </div>
 
-              {/* Row 2 Right: Testimonial Quote */}
               <div className="success-item-quote success-card-dark">
                 <div key={activeDivisionIndex} className="quote-animate-wrapper animate-in">
                   <p className="quote-text">
@@ -416,7 +310,6 @@ function App() {
               </div>
             </div>
 
-            {/* Row 3: Horizontal CTA Banner */}
             <div className="success-cta-banner">
               <div className="cta-left">
                 <span className="cta-subtitle">Empowering Your Financial Future</span>
@@ -450,7 +343,6 @@ function App() {
         <section id="contact" className="section-padding">
           <div className="wide-section-container">
             <div className="contact-redesign-wrapper">
-              {/* Left Side: Contact Info Block */}
               <div className="contact-info-block">
                 <span className="contact-small-tag">Contact us</span>
                 <h2 className="contact-block-title">Get in Touch with Florente</h2>
@@ -496,7 +388,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Right Side: Messaging Form Block */}
               <div className="contact-form-block">
                 <h3 className="form-block-title">Send Us a Message</h3>
                 <form onSubmit={handleSubmit} className="modern-contact-form">
@@ -570,8 +461,18 @@ function App() {
           </div>
         </section>
       </main>
-
       <Footer />
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <div className="app-container">
+      <Routes>
+        <Route path="/" element={<Home divisions={divisions} />} />
+        <Route path="/divisions/:slug" element={<DivisionPage />} />
+      </Routes>
     </div>
   );
 }

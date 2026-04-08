@@ -42,12 +42,10 @@
 .trusted-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 2rem;
   width: 100%;
   max-width: none !important;
-  padding-left: 2vw !important;
-  padding-right: 2vw !important;
+  padding: 0 4vw !important;
 }
 
 .trusted-text {
@@ -62,22 +60,63 @@
 .trusted-logos {
   display: flex;
   align-items: center;
-  gap: 4rem;
-  opacity: 1;
-  flex-wrap: nowrap;
+  gap: 5rem;
+  animation: marquee 40s linear infinite;
+  width: max-content; /* Ensure container expands to fit all logos */
+  padding-left: 5rem;
 }
 
-.brand-logo-img {
-  max-height: 32px;
-  width: auto;
-  filter: grayscale(100%) opacity(0.7); /* Professional gray logos on white */
-  transition: all 0.3s ease;
+.trusted-logos:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.trusted-logos-mask {
+  flex: 1; /* Take up all remaining space */
+  overflow: hidden; /* Mask the marquee */
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Gradient masks for smooth fade in/out - now on the mask container */
+.trusted-logos-mask::before,
+.trusted-logos-mask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
   pointer-events: none;
 }
 
+.trusted-logos-mask::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.trusted-logos-mask::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.brand-logo-img {
+  max-height: 28px;
+  width: auto;
+  filter: grayscale(100%) brightness(0.2) opacity(0.5); /* More subtle monochrome */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* pointer-events: none removed to fix hover */
+}
+
 .brand-logo-img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+  filter: grayscale(0%) brightness(1) opacity(1);
+  transform: scale(1.1);
 }
 
 .brand-logo:hover {
@@ -1560,6 +1599,7 @@ h2 {
   box-shadow: 0 8px 25px rgba(0,0,0,0.05);
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .btn-success-white:hover {
@@ -1582,6 +1622,7 @@ h2 {
   box-shadow: 0 12px 35px rgba(0,0,0,0.2);
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .btn-slide-wrapper {
@@ -1597,8 +1638,9 @@ h2 {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.4rem;
-  padding: 0 4px 0 1rem;
+  padding: 0 6px 0 1.25rem;
   flex-shrink: 0;
   white-space: nowrap;
 }

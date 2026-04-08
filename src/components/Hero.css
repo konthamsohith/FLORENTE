@@ -88,11 +88,12 @@
 .hero-title {
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
-  font-size: 64px;
-  line-height: 77px;
+  font-size: clamp(2.5rem, 5vw, 60px);
+  line-height: 1.1;
   color: #FFFFFF;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+  max-width: 900px;
 }
 
 .hero-subtitle {
@@ -106,8 +107,9 @@
 /* Actions matching the image */
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .btn-solid-dark {
