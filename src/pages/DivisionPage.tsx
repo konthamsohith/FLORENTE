@@ -28,6 +28,29 @@ const DivisionPage: React.FC = () => {
     );
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1] as any
+      }
+    }
+  };
+
   return (
     <div className="division-page">
       <Header />
@@ -36,15 +59,23 @@ const DivisionPage: React.FC = () => {
         {/* Division Hero */}
         <section className="division-hero" style={{ backgroundImage: `url(${division.image})` }}>
           <div className="division-hero-overlay"></div>
+          <div className="container division-hero-nav">
+             <motion.div
+               initial={{ opacity: 0, x: -20 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.8, delay: 0.5 }}
+             >
+               <Link to="/#divisions" className="back-link">
+                 <ArrowLeft size={16} /> <span>Back to Divisions</span>
+               </Link>
+             </motion.div>
+          </div>
           <div className="container division-hero-content">
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link to="/#divisions" className="back-link">
-                <ArrowLeft size={18} /> Back to Divisions
-              </Link>
               <div className="division-badge">
                  {division.shortName}
               </div>
@@ -52,7 +83,10 @@ const DivisionPage: React.FC = () => {
               <p className="division-desc">{division.description}</p>
               <div className="division-hero-actions">
                 <a href="#contact" className="btn-solid-accent">
-                  Start a Project <ArrowRight size={18} />
+                  Start a Project 
+                  <span className="cta-icon-circle">
+                    <ArrowRight size={18} />
+                  </span>
                 </a>
               </div>
             </motion.div>
@@ -60,27 +94,62 @@ const DivisionPage: React.FC = () => {
         </section>
 
         {/* Services & Details */}
-        <section className="division-details section-padding">
+        <section className="division-details">
           <div className="container">
             <div className="details-grid">
-              <div className="details-left">
-                <span className="accent-tag">Expertise</span>
-                <h2>What we deliver at {division.shortName}</h2>
-                <div className="services-list-grid">
+              <motion.div 
+                className="details-left"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <motion.span variants={itemVariants} className="accent-tag">Expertise</motion.span>
+                <motion.h2 variants={itemVariants}>Strategic Solutions for {division.shortName}</motion.h2>
+                
+                <motion.div variants={containerVariants} className="services-list-grid">
                   {division.subServices.map((service, idx) => (
-                    <div key={idx} className="service-item-card">
-                      <CheckCircle2 size={24} className="service-check" />
+                    <motion.div 
+                      key={idx} 
+                      className="service-item-tag"
+                      variants={itemVariants}
+                    >
+                      <CheckCircle2 size={16} />
                       <span>{service}</span>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
-              </div>
-              <div className="details-right">
+                </motion.div>
+              </motion.div>
+              
+              <motion.div 
+                className="details-right"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+              >
                 <div className="impact-box">
-                  <div className="impact-value">{division.impactStat.value}</div>
-                  <div className="impact-label">{division.impactStat.label}</div>
+                  <motion.span 
+                    className="impact-value"
+                    variants={itemVariants}
+                  >
+                    {division.impactStat.value}
+                  </motion.span>
+                  <motion.span 
+                    className="impact-label"
+                    variants={itemVariants}
+                  >
+                    {division.impactStat.label}
+                  </motion.span>
+                  <motion.div 
+                    className="impact-statement"
+                    variants={itemVariants}
+                  >
+                    Leveraging global industry standards to deliver 
+                    <span>measurable business impact</span>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -88,9 +157,15 @@ const DivisionPage: React.FC = () => {
         {/* Case Study Highlight */}
         <section className="case-study-feature section-padding">
           <div className="container">
-            <div className="case-feature-card">
+            <motion.div 
+              className="case-feature-card"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+            >
               <div className="case-content">
-                <span className="case-badge">{division.caseStudy.tag} Case Study</span>
+                <span className="case-badge">{division.caseStudy.tag} Excellence</span>
                 <h3 className="case-heading">{division.caseStudy.title}</h3>
                 <p className="case-text">
                   Our strategic approach ensured that every milestone was met with precision, 
@@ -98,20 +173,21 @@ const DivisionPage: React.FC = () => {
                 </p>
                 <div className="case-divider"></div>
                 <div className="case-testimonial">
-                  <p className="case-quote">"{division.testimonial.quote}"</p>
+                  <p className="case-quote">{division.testimonial.quote}</p>
                   <div className="case-author">
                     <img src={division.testimonial.avatar} alt={division.testimonial.author} />
                     <div className="author-details">
                       <strong>{division.testimonial.author}</strong>
+                      <span className="author-signature">{division.testimonial.author}</span>
                       <span>{division.testimonial.role}</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="case-image">
-                 <img src={division.image} alt="Case Study Visualization" />
+                 <img src={division.image} alt="Process Visualization" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -120,11 +196,19 @@ const DivisionPage: React.FC = () => {
             <div className="container">
                 <h4 className="quick-nav-title">Explore Other Divisions</h4>
                 <div className="quick-nav-grid">
-                    {divisions.filter(d => d.slug !== slug).map((other) => (
-                        <Link to={`/divisions/${other.slug}`} key={other.slug} className="quick-nav-card">
-                            <span className="q-num">/ {other.shortName}</span>
-                            <ArrowRight size={20} className="q-arrow" />
-                        </Link>
+                    {divisions.filter(d => d.slug !== slug).map((other, idx) => (
+                        <motion.div
+                          key={other.slug}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.1 * idx }}
+                        >
+                          <Link to={`/divisions/${other.slug}`} className="quick-nav-card">
+                              <span className="q-num">/ {other.shortName}</span>
+                              <ArrowRight size={24} className="q-arrow" />
+                          </Link>
+                        </motion.div>
                     ))}
                 </div>
             </div>
