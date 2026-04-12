@@ -53,6 +53,20 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
     return () => clearInterval(interval);
   }, [isAutoPlaying, divisions.length]);
 
+  // Scroll to hash on load (e.g., when coming from Division pages)
+  React.useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1); // remove #
+      const element = document.getElementById(id);
+      if (element) {
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  }, []);
+
   return (
     <div className="home-content">
       <Header />
@@ -111,7 +125,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                     <p>To build long-term, trust-based relationships while helping our clients achieve their goals with confidence and clarity.</p>
                   </div>
                 </div>
-                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ marginTop: '2rem', display: 'inline-block', width: '180px', textDecoration: 'none' }}>
+                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ marginTop: '2rem', display: 'inline-block', width: '165px', textDecoration: 'none' }}>
                   <div className="btn-slide-wrapper">
                     <div className="btn-state btn-state-white">
                       <span className="btn-text">More about us</span>

@@ -82,10 +82,11 @@ const DivisionPage: React.FC = () => {
               <h1 className="division-title">{division.title}</h1>
               <p className="division-desc">{division.description}</p>
               <div className="division-hero-actions">
-                <a href="#contact" className="btn-solid-accent">
-                  Start a Project 
-                  <span className="cta-icon-circle">
-                    <ArrowRight size={18} />
+                <a href="/#contact" className="btn-luxury-cta">
+                  <span className="btn-luxury-fill"></span>
+                  <span className="btn-luxury-content">
+                    <span className="btn-luxury-text">Start a Project</span>
+                    <ArrowRight size={20} className="btn-luxury-icon" />
                   </span>
                 </a>
               </div>

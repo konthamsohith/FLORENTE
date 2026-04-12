@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Plus, Minus, ArrowRight } from 'lucide-react';
 import './ServicesPage.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesPage: React.FC = () => {
   useEffect(() => {
