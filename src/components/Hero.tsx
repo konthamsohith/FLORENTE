@@ -70,11 +70,11 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
               className="btn-success-dark slide-push-btn"
             >
               <div className="btn-slide-wrapper">
-                <div className="btn-state btn-state-white">
+                <div className="btn-state btn-state-lime">
                   <span className="btn-text">Contact us</span>
                   <span className="cta-icon-circle"><ArrowRight size={16} /></span>
                 </div>
-                <div className="btn-state btn-state-dark">
+                <div className="btn-state btn-state-white">
                   <span className="btn-text">Contact us</span>
                   <span className="cta-icon-circle"><ArrowRight size={16} /></span>
                 </div>

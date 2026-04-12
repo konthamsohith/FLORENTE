@@ -220,14 +220,14 @@
 .divisions-right {
   position: relative;
   height: 650px;
-  border-radius: 30px;
+  border-radius: 12px;
 }
 
 .division-main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 30px;
+  border-radius: 12px;
   transition: opacity 0.8s ease;
 }
 
@@ -240,7 +240,7 @@
   width: 480px;
   background: #ffffff;
   padding: 3.5rem;
-  border-radius: 24px;
+  border-radius: 12px;
   box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4);
   z-index: 10;
   color: #000000;
@@ -277,7 +277,7 @@
   background: #f4f4f4;
   color: #333333;
   padding: 0.6rem 1.2rem;
-  border-radius: 50px;
+  border-radius: 4px;
   font-family: 'Manrope', sans-serif;
 }
 

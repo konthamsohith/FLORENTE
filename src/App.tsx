@@ -11,6 +11,7 @@ import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { divisions } from './data/divisions';
 import DivisionPage from './pages/DivisionPage';
+import AboutPage from './pages/AboutPage';
 
 interface HomeProps {
   divisions: any[];
@@ -471,6 +472,7 @@ function App() {
     <div className="app-container">
       <Routes>
         <Route path="/" element={<Home divisions={divisions} />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/divisions/:slug" element={<DivisionPage />} />
       </Routes>
     </div>

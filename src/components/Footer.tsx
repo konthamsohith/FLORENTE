@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         {/* Left Lime Block */}
         <div className="footer-block-lime">
           <div className="footer-lime-top">
-            <img src="/Florente_Logos/Florente_logo.png" alt="Florente" style={{ maxHeight: '60px', width: 'auto', display: 'block' }} />
+            <img src="/Florente_Logos/florente.png" alt="Florente" style={{ maxHeight: '60px', width: 'auto', display: 'block' }} />
           </div>
           <div className="footer-lime-bottom">
             <p className="brand-mission">
