@@ -141,30 +141,32 @@
   }
 }
 
-/* Divisions Section - Interactive Split Screen */
+/* Divisions Section - Premium Interactive Design */
 #divisions {
-  background-color: #050C1B;
+  background-color: #111111; /* Deep cinema black */
   color: #ffffff;
-  padding: 100px 0;
+  padding: 120px 0;
+  position: relative;
+  overflow: visible;
 }
 
 .divisions-container {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 5rem;
-  align-items: start;
+  grid-template-columns: 1.2fr 1.8fr; /* Adjusted for better content balance */
+  gap: 8rem;
+  align-items: center;
 }
 
 .divisions-left {
-  position: sticky;
-  top: 150px;
+  position: relative;
+  z-index: 5;
 }
 
 .divisions-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 3rem;
+  gap: 1.2rem;
+  margin-top: 4rem;
 }
 
 .division-item {
@@ -172,86 +174,94 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
 .division-item-number {
-  font-size: 0.8rem;
-  color: #666666;
-  font-weight: 700;
-  font-family: 'Outfit', sans-serif;
+  font-size: 14px; /* Scaled to match 20px name */
+  color: #444444; /* Muted inactive number */
+  font-weight: 500;
+  font-family: 'Manrope', sans-serif;
+  min-width: 30px;
 }
 
 .division-item-name {
-  font-size: 1.25rem;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 500;
-  color: #666666;
-  transition: all 0.3s ease;
+  color: #666666; /* Ghosted inactive text */
+  transition: all 0.4s ease;
 }
 
 .division-item.active .division-item-name {
   color: #ffffff;
-  font-weight: 700;
-  transform: translateX(10px);
+  font-weight: 600;
 }
 
 .division-item.active .division-item-number {
-  color: var(--secondary);
+  color: #ffffff;
 }
 
+/* Lime green dot indicator matching reference */
 .division-item.active::before {
   content: '';
   position: absolute;
-  left: -20px;
-  width: 6px;
-  height: 6px;
-  background-color: #C4F123;
+  left: -25px;
+  width: 8px;
+  height: 8px;
+  background-color: #DCB84A; /* Gold-Yellow */
   border-radius: 50%;
+  box-shadow: 0 0 15px rgba(220, 184, 74, 0.6);
 }
 
 .divisions-right {
   position: relative;
-  height: 600px;
-  border-radius: 20px;
-  overflow: hidden;
+  height: 650px;
+  border-radius: 30px;
 }
 
 .division-main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.5s ease;
+  border-radius: 30px;
+  transition: opacity 0.8s ease;
 }
 
+/* Floating Content Card - White Overlap */
 .division-floating-card {
   position: absolute;
-  bottom: 40px;
-  left: -60px; /* Overlap effect */
-  width: 450px;
+  top: 50%;
+  left: -120px; /* Strong overlap into the dark section */
+  transform: translateY(-50%);
+  width: 480px;
   background: #ffffff;
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  padding: 3.5rem;
+  border-radius: 24px;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4);
   z-index: 10;
   color: #000000;
-  transition: all 0.5s ease;
 }
 
 .division-card-title {
-  font-size: 2rem;
-  font-weight: 800;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 500;
+  color: rgb(33, 33, 33);
   margin-bottom: 1.5rem;
-  line-height: 1.1;
 }
 
 .division-card-desc {
-  font-size: 1.05rem;
-  color: #4A5568;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgb(33, 33, 33);
+  margin-bottom: 2.5rem;
 }
 
 .division-tag-cloud {
@@ -260,32 +270,81 @@
   gap: 0.8rem;
 }
 
+/* Sharp, high-contrast tags */
 .division-mini-tag {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #f4f4f4;
+  color: #333333;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Premium Lime Button */
+.btn-premium-lime {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #DCB84A;
+  color: #000000;
+  padding: 1.2rem 2.5rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 700;
-  background: #f0f0f0;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 5rem;
+}
+
+.btn-premium-lime .cta-icon-circle {
+  background: #000000;
+  color: #DCB84A;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-premium-lime:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(220, 184, 74, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .division-floating-card {
+    width: 400px;
+    left: -80px;
+    padding: 2.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
   .divisions-container {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
   }
   
   .division-floating-card {
     position: relative;
+    top: 0;
     left: 0;
-    bottom: 0;
+    transform: none;
     width: 100%;
-    margin-top: -40px;
+    margin-top: -60px;
+    margin-bottom: 2rem;
   }
 
   .divisions-right {
-    height: 400px;
+    height: 450px;
+  }
+  
+  .btn-premium-lime {
+    margin-top: 3rem;
   }
 }
 
@@ -317,9 +376,20 @@ h2 {
   line-height: 1.2;
 }
 
+.section-header h2 {
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-size: 42px;
+  line-height: 50px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
 .section-desc {
-  font-size: 1.2rem;
-  color: var(--text-muted);
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgb(250, 250, 250);
 }
 
 /* About Section */
@@ -1652,6 +1722,11 @@ h2 {
 
 .btn-state-white {
   background: #ffffff;
+  color: #111111;
+}
+
+.btn-state-lime {
+  background: #DCB84A;
   color: #111111;
 }
 

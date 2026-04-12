@@ -126,7 +126,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
           </div>
         </section>
 
-        <section id="divisions" className="section-padding">
+        <section id="divisions">
           <div className="container">
             <div className="divisions-container">
               <div className="divisions-left">
@@ -135,6 +135,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                   <h2>Divisions of Florente</h2>
                   <p className="section-desc">Excellence across energy, real estate, wealth, consultancy, and media.</p>
                 </div>
+                
                 <div className="divisions-list">
                   {divisions.map((div: any, index: number) => (
                     <div 
@@ -151,20 +152,19 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                     </div>
                   ))}
                 </div>
-                <div style={{ marginTop: '4rem' }}>
-                  <a href="#contact" className="btn-success-dark slide-push-btn" style={{ display: 'inline-block', width: '150px', textDecoration: 'none' }}>
-                    <div className="btn-slide-wrapper">
-                      <div className="btn-state btn-state-white">
-                        <span className="btn-text">All services</span>
-                        <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                      </div>
-                      <div className="btn-state btn-state-dark">
-                        <span className="btn-text">All services</span>
-                        <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                      </div>
+
+                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ display: 'inline-block', width: '150px', textDecoration: 'none', marginTop: '4rem' }}>
+                  <div className="btn-slide-wrapper">
+                    <div className="btn-state btn-state-lime">
+                      <span className="btn-text">All services</span>
+                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
                     </div>
-                  </a>
-                </div>
+                    <div className="btn-state btn-state-white">
+                      <span className="btn-text">All services</span>
+                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
+                    </div>
+                  </div>
+                </a>
               </div>
 
               <div className="divisions-right">
