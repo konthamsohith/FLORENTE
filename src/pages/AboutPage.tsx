@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ArrowRight, Check, Linkedin, Mail } from 'lucide-react';
 import './AboutPage.css';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const AboutPage: React.FC = () => {
@@ -42,10 +43,10 @@ const AboutPage: React.FC = () => {
               <div className="hero-text-right">
                 <p>Helping businesses implement sustainable practices and meet ESG standards for long-term success.</p>
                 <div className="btn-group-hero">
-                   <button className="btn-success-lime-static">
+                   <Link to="/services" className="btn-success-lime-static" style={{ textDecoration: 'none' }}>
                      <span className="btn-text">Our services</span>
                      <span className="cta-icon-circle-static"><ArrowRight size={16} /></span>
-                   </button>
+                   </Link>
                 </div>
               </div>
             </div>

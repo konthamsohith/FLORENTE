@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import './Header.css';
 
@@ -25,9 +26,11 @@ const Header: React.FC = () => {
     
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('touchstart', handleClickOutside); // Added for iOS tap-to-close
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('touchstart', handleClickOutside);
     };
   }, []);
 
@@ -36,12 +39,12 @@ const Header: React.FC = () => {
   };
 
   const services = [
-    { name: "All Services", slug: "divisions" },
-    { name: "Marketing & Infrastructure", slug: "marketing-labs" },
-    { name: "Global Properties", slug: "properties" },
-    { name: "Executive Search", slug: "consultancy" },
-    { name: "Wealth Management", slug: "wealth-service" },
-    { name: "Media & Entertainment", slug: "entertainments" }
+    { name: "All Services", slug: "services" },
+    { name: "FISrente Marketing Labs", slug: "marketing-labs" },
+    { name: "FISrente Properties", slug: "properties" },
+    { name: "FISrente A Consultant", slug: "consultancy" },
+    { name: "FISrente Wealth Service", slug: "wealth-service" },
+    { name: "FISrente Entertainments", slug: "entertainments" }
   ];
 
   const industries = [
@@ -58,7 +61,7 @@ const Header: React.FC = () => {
       <div className="container header-content">
         <div className="logo">
           <Link to="/">
-            <img src="/Florente_Logos/florente.png" alt="Florente" style={{ height: '40px', width: 'auto' }} />
+            <img src="/Florente_Logos/florente.png" alt="FISrente" style={{ height: '40px', width: 'auto' }} />
           </Link>
         </div>
         <nav className={`nav-menu ${mobileMenuOpen ? 'open' : ''}`}>

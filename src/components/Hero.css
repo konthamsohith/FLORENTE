@@ -1,5 +1,5 @@
 .hero-container {
-  height: 92vh;
+  min-height: 92vh;
   position: relative;
   overflow: hidden;
   background-color: var(--base-60);
@@ -50,22 +50,22 @@
   z-index: 4;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Nav bar sits at bottom right */
+  align-items: center; /* Vertical center the content */
   height: 100%;
   width: 100%;
-  max-width: none !important; /* Force full width to allow left shift */
-  padding-left: 5vw !important; /* Base padding from far left */
+  max-width: none !important; 
+  padding-left: 5vw !important; 
   padding-right: 5vw;
-  padding-top: 15vh;
-  padding-bottom: 80px;
+  padding-top: 140px; /* Increased clearing for fixed header and improved balance */
+  padding-bottom: 60px;
 }
 
 .hero-left-content {
-  max-width: 700px;
-  align-self: center; /* Title centered vertically */
-  margin-top: 5vh; 
-  margin-left: 0; /* Clear previous negative margin */
-  transform: translateX(-2vw); /* Subtle nudge left */
+  max-width: 650px;
+  align-self: center;
+  margin-top: 0; 
+  margin-left: 0;
+  transform: translateX(-2vw);
 }
 
 .hero-badge-wrapper {
@@ -74,34 +74,35 @@
 
 .hero-category-badge {
   display: inline-block;
-  padding: 0.5rem 1.2rem;
-  background: rgba(212, 175, 55, 0.15);
+  padding: 0.5rem 1.4rem;
+  background: rgba(212, 175, 55, 0.1);
   color: var(--accent-10);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  border-left: 3px solid var(--accent-10);
+  font-size: 0.7rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
 }
 
 .hero-title {
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
-  font-size: clamp(2.5rem, 5vw, 60px);
+  font-size: clamp(2rem, 4vw, 48px);
   line-height: 1.1;
   color: #FFFFFF;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
-  max-width: 900px;
+  max-width: 1100px; /* Expanded to prevent the three-line slogan from wrapping into 5 lines */
+  white-space: pre-line; /* Support for explicit line breaks */
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 2.5rem;
-  line-height: 1.6;
+  line-height: 1.7;
   font-weight: 400;
+  max-width: 600px;
 }
 
 /* Actions matching the image */
@@ -168,6 +169,7 @@
 .hero-right-nav {
   display: flex;
   align-self: flex-end;
+  transform: translateY(40px); /* Further shift down for specific grounded look */
 }
 
 .nav-slides {
@@ -186,25 +188,26 @@
 .nav-item {
   display: flex;
   flex-direction: column;
-  padding: 1.2rem 1rem; /* Reduced padding slightly */
-  min-width: 120px; /* Reduced min-width to ensure 5 fit */
+  padding: 1rem 0.8rem;
+  min-width: 140px; /* Slightly wider to accommodate FISrente branding */
+  max-width: 180px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   background: transparent;
   border-radius: 8px;
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .nav-item.active {
-  background: rgba(255, 255, 255, 0.05); /* Glowing background as per image */
+  background: rgba(255, 255, 255, 0.08); /* Slightly more prominent */
   backdrop-filter: blur(10px);
 }
 
 .nav-item-num {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0.5rem;
   font-family: 'Outfit', sans-serif;
@@ -219,7 +222,7 @@
 .nav-item-line {
   height: 2px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   margin-bottom: 0.8rem;
   transition: all 0.3s ease;
 }
@@ -229,14 +232,15 @@
 }
 
 .nav-item-title {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
-  white-space: nowrap;
+  font-size: 0.82rem; /* Slighly smaller to fit "FISrente" names perfectly */
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
   transition: color 0.3s ease;
+  font-family: 'Manrope', sans-serif;
 }
 
 .nav-item.active .nav-item-title {
-  color: var(--text-main);
+  color: #ffffff;
   font-weight: 600;
 }
 

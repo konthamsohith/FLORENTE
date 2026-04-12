@@ -8,10 +8,11 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import { divisions } from './data/divisions';
 import DivisionPage from './pages/DivisionPage';
 import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
 
 interface HomeProps {
   divisions: any[];
@@ -154,7 +155,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                   ))}
                 </div>
 
-                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ display: 'inline-block', width: '150px', textDecoration: 'none', marginTop: '4rem' }}>
+                <Link to="/services" className="btn-success-dark slide-push-btn" style={{ display: 'inline-block', width: '150px', textDecoration: 'none', marginTop: '4rem' }}>
                   <div className="btn-slide-wrapper">
                     <div className="btn-state btn-state-lime">
                       <span className="btn-text">All services</span>
@@ -165,7 +166,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                       <span className="cta-icon-circle"><ArrowRight size={16} /></span>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
 
               <div className="divisions-right">
@@ -473,6 +474,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home divisions={divisions} />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/divisions/:slug" element={<DivisionPage />} />
       </Routes>
     </div>

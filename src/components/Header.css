@@ -25,7 +25,7 @@
   align-items: center;
   width: 100%;
   max-width: none !important; /* Allow shift to edges */
-  padding-left: 2vw !important; /* Unified 2vw shift with footer */
+  padding-left: 5vw !important; /* Matched with Hero 5vw */
   padding-right: 5vw !important;
 }
 
@@ -120,6 +120,9 @@
     top: 70px;
     left: 0;
     width: 100%;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
     background: rgba(5, 12, 27, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
@@ -128,7 +131,7 @@
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
   }

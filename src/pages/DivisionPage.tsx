@@ -155,37 +155,52 @@ const DivisionPage: React.FC = () => {
         </section>
 
         {/* Case Study Highlight */}
-        <section className="case-study-feature section-padding">
+        <section className="case-study-feature" style={{ backgroundImage: `url(${division.image})` }}>
+          <div className="case-section-overlay"></div>
           <div className="container">
             <motion.div 
               className="case-feature-card"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="case-content">
-                <span className="case-badge">{division.caseStudy.tag} Excellence</span>
+                <div className="case-badge-container">
+                  <span className="case-badge">{division.caseStudy.tag} Excellence</span>
+                  <div className="case-number-deco">CS-01</div>
+                </div>
                 <h3 className="case-heading">{division.caseStudy.title}</h3>
+                <p className="case-subtitle">Strategic Talent Infrastructure</p>
                 <p className="case-text">
                   Our strategic approach ensured that every milestone was met with precision, 
                   leveraging our deep industry expertise to deliver measurable value and sustainable growth.
                 </p>
-                <div className="case-divider"></div>
-                <div className="case-testimonial">
+                
+                <div className="case-testimonial-premium">
+                  <div className="quote-mark">"</div>
                   <p className="case-quote">{division.testimonial.quote}</p>
-                  <div className="case-author">
-                    <img src={division.testimonial.avatar} alt={division.testimonial.author} />
-                    <div className="author-details">
+                  <div className="case-author-branding">
+                    <div className="author-info-main">
                       <strong>{division.testimonial.author}</strong>
-                      <span className="author-signature">{division.testimonial.author}</span>
                       <span>{division.testimonial.role}</span>
+                    </div>
+                    <div className="author-signature-seal">
+                      {division.testimonial.author}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="case-image">
-                 <img src={division.image} alt="Process Visualization" />
+              
+              <div className="case-visual-box">
+                 <div className="visual-header">
+                    <span>Process Visualization</span>
+                    <div className="visual-dot"></div>
+                 </div>
+                 <div className="visual-image-wrapper">
+                    <img src={division.image} alt="Process Visualization" />
+                    <div className="visual-overlay-glow"></div>
+                 </div>
               </div>
             </motion.div>
           </div>
@@ -204,9 +219,20 @@ const DivisionPage: React.FC = () => {
                           viewport={{ once: true }}
                           transition={{ duration: 0.5, delay: 0.1 * idx }}
                         >
-                          <Link to={`/divisions/${other.slug}`} className="quick-nav-card">
-                              <span className="q-num">/ {other.shortName}</span>
-                              <ArrowRight size={24} className="q-arrow" />
+                          <Link 
+                            to={`/divisions/${other.slug}`} 
+                            className="quick-nav-card"
+                          >
+                              <div 
+                                className="q-image-layer" 
+                                style={{ backgroundImage: `url(${other.image})` }}
+                              ></div>
+                              <div className="q-overlay-layer"></div>
+                              <span className="q-num">0{idx + 1}</span>
+                              <div className="q-label">
+                                <span className="q-name">{other.shortName}</span>
+                                <ArrowRight size={24} className="q-arrow" />
+                              </div>
                           </Link>
                         </motion.div>
                     ))}

@@ -14,6 +14,9 @@ export interface Division {
   description: string;
   icon: React.ReactNode;
   image: string;
+  heroBadge: string;
+  heroTitle: string;
+  heroSubtitle: string;
   subServices: string[];
   caseStudy: {
     tag: string;
@@ -35,10 +38,13 @@ export const divisions: Division[] = [
   {
     slug: 'marketing-labs',
     title: 'FISrente Marketing Labs LLP',
-    shortName: 'Marketing Labs',
+    shortName: 'FISrente Marketing Labs',
     description: 'A leading player in sustainable energy and infrastructure development, providing end-to-end solutions for a greener future.',
     icon: <HardHat size={32} />,
     image: '/marketing_labs_solar_energy_1775411828713.png',
+    heroBadge: 'Cutting-Edge Digital Growth',
+    heroTitle: 'Elevate your brand with data-driven marketing and creative excellence.',
+    heroSubtitle: 'From brand identity to global digital dominance, we engineer marketing labs that deliver explosive business growth.',
     subServices: ['Solar Energy', 'Infrastructure', 'MEP', 'Interior Design'],
     caseStudy: {
       tag: 'Sustainable Energy',
@@ -55,10 +61,13 @@ export const divisions: Division[] = [
   {
     slug: 'properties',
     title: 'FISrente PROPERTIES LLP',
-    shortName: 'Properties',
+    shortName: 'FISrente Properties',
     description: 'Your premier real estate advisory firm bridging the gap between luxury living in Dubai and strategic investments in India.',
     icon: <Home size={32} />,
     image: '/properties_dubai_luxury_realestate_1775411853341.png',
+    heroBadge: 'Elite Real Estate Solutions',
+    heroTitle: "Secure Your Legacy with Elite Global\nProperty Investments.",
+    heroSubtitle: 'Access exclusive real estate markets in Dubai and India. We bridge the gap between luxury living and strategic wealth.',
     subServices: ['Dubai Real Estate', 'Advisory', 'Emaar Partner', 'Investment'],
     caseStudy: {
       tag: 'Global Real Estate',
@@ -66,7 +75,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '22%', label: 'average annual portfolio growth' },
     testimonial: {
-      quote: "Florente's insight into the Dubai market was invaluable for our international expansion.",
+      quote: "FISrente's insight into the Dubai market was invaluable for our international expansion.",
       avatar: '/avatar_mohamed_sultan_1775590419943.png',
       author: 'Mohamed Sultan',
       role: 'Director, Sultan Holdings',
@@ -75,10 +84,13 @@ export const divisions: Division[] = [
   {
     slug: 'consultancy',
     title: 'FISrente A CONSULTANT LLP',
-    shortName: 'Consultancy',
+    shortName: 'FISrente Consultant',
     description: 'Connecting top-tier talent with world-class organizations across insurance, banking, and software industries.',
     icon: <UserPlus size={32} />,
     image: '/consultant_recruitment_banking_1775411878440.png',
+    heroBadge: 'Strategic Business Excellence',
+    heroTitle: "Lead Your Enterprise with Elite\nStrategic Consulting.",
+    heroSubtitle: 'Re-engineering core management practices to drive operational efficiency and secure dominant market positions.',
     subServices: ['Manpower', 'Recruitment', 'Banking', 'Software Personnel'],
     caseStudy: {
       tag: 'Talent Acquisition',
@@ -86,7 +98,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '500+', label: 'specialist roles placed in last 12 months' },
     testimonial: {
-      quote: "The quality of talent provided by Florente has transformed our operational efficiency.",
+      quote: "The quality of talent provided by FISrente has transformed our operational efficiency.",
       avatar: '/avatar_ananya_kapoor_1775590437503.png',
       author: 'Ananya Kapoor',
       role: 'HR Head, Global Finance',
@@ -95,10 +107,13 @@ export const divisions: Division[] = [
   {
     slug: 'wealth-service',
     title: 'FISrente WEALTH SERVICE LLP',
-    shortName: 'Wealth Service',
+    shortName: 'FISrente Wealth Service',
     description: 'Dedicated to helping individuals and families grow, protect, and manage their wealth through expert-led fund advisory.',
     icon: <TrendingUp size={32} />,
     image: '/wealth_service_financial_planning_1775411901441.png',
+    heroBadge: 'Sophisticated Wealth Growth',
+    heroTitle: 'Protect and multiply your assets with elite wealth management.',
+    heroSubtitle: 'Personalized strategies designed for high-net-worth individuals and corporate entities seeking aggressive global growth.',
     subServices: ['Mutual Funds', 'SIP', 'Retirement Planning', 'Monitoring'],
     caseStudy: {
       tag: 'Asset Management',
@@ -106,7 +121,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '₹150Cr+', label: 'assets under expert advisory' },
     testimonial: {
-      quote: "Our family's financial future is secure thanks to the meticulous planning of Florente's wealth team.",
+      quote: "Our family's financial future is secure thanks to the meticulous planning of FISrente's wealth team.",
       avatar: '/avatar_vikram_reddy_1775590457878.png',
       author: 'Vikram Reddy',
       role: 'HNI Client',
@@ -115,10 +130,13 @@ export const divisions: Division[] = [
   {
     slug: 'entertainments',
     title: 'FISrente ENTERTAINMENTS LLP',
-    shortName: 'Entertainments',
+    shortName: 'FISrente Entertainments',
     description: 'Transforming creative visions into cinematic masterpieces. Focused on meaningful content that captures the human experience.',
     icon: <Camera size={32} />,
     image: '/entertainment_film_production_set_1775411922771.png',
+    heroBadge: 'Unrivaled Event Production',
+    heroTitle: 'Crafting extraordinary experiences through cinematic storytelling.',
+    heroSubtitle: 'From national-level documentaries to elite private productions, we transform creative visions into cinematic masterpieces.',
     subServices: ['Film Production', 'KIRAYI Project', 'Storytelling', 'Cinema'],
     caseStudy: {
       tag: 'Media Production',
@@ -126,7 +144,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '1M+', label: 'combined viewership for KIRAYI series' },
     testimonial: {
-      quote: "Florente's dedication to authentic storytelling is a breath of fresh air in the film industry.",
+      quote: "FISrente's dedication to authentic storytelling is a breath of fresh air in the film industry.",
       avatar: '/avatar_sanjay_kumar_1775590475778.png',
       author: 'Sanjay Kumar',
       role: 'Creative Producer',

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Hero.css';
 
 interface HeroProps {
@@ -8,6 +9,9 @@ interface HeroProps {
     slug: string;
     title: string;
     shortName: string;
+    heroBadge: string;
+    heroTitle: string;
+    heroSubtitle: string;
     description: string;
     icon: React.ReactNode;
     image: string;
@@ -28,6 +32,8 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
     return () => clearInterval(timer);
   }, [divisions.length, isHovered]);
 
+  const slideData = divisions[currentSlide];
+
   return (
     <div 
       className="hero-container"
@@ -46,15 +52,25 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
 
       <div className="container hero-content-layout">
         <div className="hero-left-content">
-          <div className="hero-badge-wrapper fade-in-up">
-             <span className="hero-category-badge">Empowering Your Financial Future</span>
-          </div>
-          <h1 className="hero-title fade-in-up delay-1">
-            Unlock your full potential with expert consulting and tailored financial strategies.
-          </h1>
-          <p className="hero-subtitle fade-in-up delay-2">
-            Whether you're growing a business, optimizing investments, or securing long-term wealth, we're here to guide you every step of the way.
-          </p>
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="hero-badge-wrapper">
+                 <span className="hero-category-badge">{slideData.heroBadge}</span>
+              </div>
+              <h1 className="hero-title">
+                {slideData.heroTitle}
+              </h1>
+              <p className="hero-subtitle">
+                {slideData.heroSubtitle}
+              </p>
+            </motion.div>
+          </AnimatePresence>
           <div className="hero-actions fade-in-up delay-3">
             <button 
               onClick={() => navigate(`/divisions/${divisions[currentSlide].slug}`)} 

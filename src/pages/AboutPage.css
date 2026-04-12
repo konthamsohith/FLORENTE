@@ -1,19 +1,27 @@
-.btn-success-lime-static {
+.btn-group-hero {
   display: flex;
+  gap: 1.5rem;
   align-items: center;
-  gap: 1rem;
-  background: #D4AF37; /* Florente Gold */
-  padding: 0.6rem 1.4rem;
+}
+
+.btn-success-lime-static {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: #D4AF37; /* FISrente Gold */
+  padding: 0.6rem 1.6rem;
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: fit-content;
+  text-decoration: none;
 }
 
 .btn-text {
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
   font-weight: 500;
-  color: rgb(33, 33, 33);
+  color: inherit;
   font-size: 14px;
   line-height: 14px;
 }

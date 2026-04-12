@@ -1717,7 +1717,11 @@ h2 {
 
 .btn-state-dark {
   background: #111111;
-  color: #fff;
+  color: #ffffff;
+}
+
+.btn-state-dark .btn-text {
+  color: #ffffff;
 }
 
 .btn-state-white {
