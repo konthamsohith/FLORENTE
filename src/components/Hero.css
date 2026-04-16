@@ -4,7 +4,7 @@
   overflow: hidden;
   background-color: var(--base-60);
   display: flex;
-  align-items: center;
+  align-items: stretch; /* Allow children to fill vertical space */
 }
 
 .hero-slide-bg {
@@ -50,8 +50,9 @@
   z-index: 4;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Vertical center the content */
+  align-items: flex-end; /* Ground the content to the bottom */
   height: 100%;
+  min-height: 92vh; /* Match container height */
   width: 100%;
   max-width: none !important; 
   padding-left: 5vw !important; 
@@ -62,8 +63,7 @@
 
 .hero-left-content {
   max-width: 650px;
-  align-self: center;
-  margin-top: 0; 
+  margin-bottom: 2.5rem; 
   margin-left: 0;
   transform: translateX(-2vw);
 }
@@ -75,9 +75,9 @@
 .hero-category-badge {
   display: inline-block;
   padding: 0.5rem 1.4rem;
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--accent-10);
-  border-left: 3px solid var(--accent-10);
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-left: 3px solid #FFFFFF;
   font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -106,142 +106,42 @@
 }
 
 /* Actions matching the image */
-.hero-actions {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.btn-solid-dark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.15); /* Grey translucent */
-  color: #FFFFFF;
-  padding: 0.9rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-}
-
-.btn-solid-dark:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.btn-solid-accent {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: var(--accent-10); /* The exact Champagne Gold for Florente */
-  color: #050C1B;
-  padding: 0.9rem 2.2rem;
-  border-radius: 50px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-  font-size: 0.95rem;
-}
-
-.btn-solid-accent:hover {
-  background: #E5C362;
-  transform: translateY(-2px);
-}
-
-.btn-solid-accent svg {
-  background: rgba(5, 12, 27, 0.9);
-  color: var(--accent-10);
-  border-radius: 50%;
-  padding: 3px;
-  width: 22px;
-  height: 22px;
-  margin-left: 0.5rem;
-}
+/* Removed hero-actions styles as per user request */
 
 /* Nav slides on the bottom right */
-.hero-right-nav {
+/* Minimalist Pagination Dots */
+.hero-pagination {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  align-self: flex-end;
-  transform: translateY(40px); /* Further shift down for specific grounded look */
+  flex-direction: row;
+  gap: 1.5rem;
+  z-index: 10;
 }
 
-.nav-slides {
-  display: flex;
-  gap: 1rem;
-  max-width: 850px; /* Increased to fit all 5 items */
-  overflow-x: auto; 
-  padding-bottom: 20px;
-  scrollbar-width: none; /* Firefox */
-}
 
-.nav-slides::-webkit-scrollbar {
-  display: none;
-}
 
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0.8rem;
-  min-width: 140px; /* Slightly wider to accommodate FISrente branding */
-  max-width: 180px;
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background: transparent;
-  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav-item:hover {
-  background: rgba(255, 255, 255, 0.03);
+.pagination-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
 }
 
-.nav-item.active {
-  background: rgba(255, 255, 255, 0.08); /* Slightly more prominent */
-  backdrop-filter: blur(10px);
-}
-
-.nav-item-num {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 0.5rem;
-  font-family: 'Outfit', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.nav-item.active .nav-item-num {
-  color: var(--accent-10);
-  font-weight: 700;
-}
-
-.nav-item-line {
-  height: 2px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.15);
-  margin-bottom: 0.8rem;
-  transition: all 0.3s ease;
-}
-
-.nav-item.active .nav-item-line {
-  background: var(--accent-10);
-}
-
-.nav-item-title {
-  font-size: 0.82rem; /* Slighly smaller to fit "FISrente" names perfectly */
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.4;
-  transition: color 0.3s ease;
-  font-family: 'Manrope', sans-serif;
-}
-
-.nav-item.active .nav-item-title {
-  color: #ffffff;
-  font-weight: 600;
+.pagination-dot.active {
+  background: #FFFFFF;
+  transform: scale(1.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 /* Simple CSS Animations */

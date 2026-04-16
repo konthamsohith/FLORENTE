@@ -24,19 +24,19 @@ const ServicesPage: React.FC = () => {
     {
       title: "FISrente Marketing Labs LLP",
       description: "Strategic digital acceleration and high-impact infrastructure labs designed to position global brands for market dominance.",
-      image: "/services_mergers_acquisitions_1775967781211_1775969505686.png",
+      image: "/marketing.jpeg",
       slug: "marketing-labs"
     },
     {
       title: "FISrente PROPERTIES LLP",
       description: "Elite real estate advisory bridging the gap between luxury living in Dubai and strategic institutional investments in India.",
-      image: "/services_portfolio_consulting_1775967682121_1775969488786.png",
+      image: "/properties.jpeg",
       slug: "properties"
     },
     {
       title: "FISrente A CONSULTANT LLP",
       description: "World-class talent acquisition and executive search for global leaders across banking, insurance, and technology sectors.",
-      image: "/buy_sell_cards_consultancy_1775407503392.png",
+      image: "/call.jpeg",
       slug: "consultancy"
     },
     {
@@ -48,7 +48,7 @@ const ServicesPage: React.FC = () => {
     {
       title: "FISrente ENTERTAINMENTS LLP",
       description: "Transforming creative visions into cinematic masterpieces. Cinematic storytelling and production that capture the human experience.",
-      image: "/services_financial_planning_1775967487042_1775969456161.png",
+      image: "/entertainment.jpeg",
       slug: "entertainments"
     }
   ];

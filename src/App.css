@@ -1693,7 +1693,7 @@ h2 {
 
 .btn-success-dark.slide-push-btn {
   height: 46px;
-  width: 142px;
+  width: 155px;
   padding: 0;
   background: #111111;
   border: none;
@@ -1723,7 +1723,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   gap: 0.4rem;
-  padding: 0 6px 0 1.25rem;
+  padding: 0 8px 0 1.4rem;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -1743,7 +1743,7 @@ h2 {
 }
 
 .btn-state-lime {
-  background: #DCB84A;
+  background: #ffffff;
   color: #111111;
 }
 

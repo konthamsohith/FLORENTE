@@ -60,61 +60,36 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="hero-badge-wrapper">
-                 <span className="hero-category-badge">{slideData.heroBadge}</span>
-              </div>
-              <h1 className="hero-title">
-                {slideData.heroTitle}
-              </h1>
-              <p className="hero-subtitle">
-                {slideData.heroSubtitle}
-              </p>
+              {slideData.heroBadge && (
+                <div className="hero-badge-wrapper">
+                   <span className="hero-category-badge">{slideData.heroBadge}</span>
+                </div>
+              )}
+              {slideData.heroTitle && (
+                <h1 className="hero-title">
+                  {slideData.heroTitle}
+                </h1>
+              )}
+              {slideData.heroSubtitle && (
+                <p className="hero-subtitle">
+                  {slideData.heroSubtitle}
+                </p>
+              )}
             </motion.div>
           </AnimatePresence>
-          <div className="hero-actions fade-in-up delay-3">
-            <button 
-              onClick={() => navigate(`/divisions/${divisions[currentSlide].slug}`)} 
-              className="btn-success-white"
-            >
-              Learn more
-            </button>
-            <button 
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="btn-success-dark slide-push-btn"
-            >
-              <div className="btn-slide-wrapper">
-                <div className="btn-state btn-state-lime">
-                  <span className="btn-text">Contact us</span>
-                  <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                </div>
-                <div className="btn-state btn-state-white">
-                  <span className="btn-text">Contact us</span>
-                  <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                </div>
-              </div>
-            </button>
-          </div>
+          {/* Removed hero-actions as per user request */}
         </div>
+      </div>
 
-        <div className="hero-right-nav">
-          <div className="nav-slides">
-            {divisions.map((div, idx) => (
-              <div 
-                key={idx} 
-                className={`nav-item ${idx === currentSlide ? 'active' : ''}`}
-                onClick={() => setCurrentSlide(idx)}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="nav-item-num">{(idx + 1).toString().padStart(2, '0')}.</div>
-                <div className="nav-item-line"></div>
-                <div className="nav-item-title">{div.shortName}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="hero-pagination">
+        {divisions.map((_, idx) => (
+          <div 
+            key={idx} 
+            className={`pagination-dot ${idx === currentSlide ? 'active' : ''}`}
+            onClick={() => setCurrentSlide(idx)}
+            title={divisions[idx].shortName}
+          />
+        ))}
       </div>
     </div>
   );
