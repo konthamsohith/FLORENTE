@@ -50,22 +50,40 @@
   z-index: 4;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Ground the content to the bottom */
+  align-items: flex-end;
   height: 100%;
-  min-height: 92vh; /* Match container height */
+  min-height: 92vh;
   width: 100%;
   max-width: none !important; 
-  padding-left: 5vw !important; 
-  padding-right: 5vw;
-  padding-top: 140px; /* Increased clearing for fixed header and improved balance */
-  padding-bottom: 60px;
+  padding: 140px max(1.5rem, 5vw) 60px; /* Unified padding */
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    min-height: 80vh;
+  }
+  .hero-content-layout {
+    min-height: 80vh;
+    padding-top: 100px;
+    padding-bottom: 80px; /* More space for pagination */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .hero-left-content {
   max-width: 650px;
   margin-bottom: 2.5rem; 
   margin-left: 0;
-  transform: translateX(-2vw);
+  transform: none; /* Removed translateX for better responsiveness */
+}
+
+@media (max-width: 768px) {
+  .hero-left-content {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
 }
 
 .hero-badge-wrapper {

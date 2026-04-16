@@ -9,9 +9,9 @@
   max-width: 1400px !important;
 }
 
-.footer-block-lime {
+.footer-block-accent {
   background-color: var(--accent-10);
-  color: var(--base-60);
+  color: #FFFFFF;
   border-radius: 12px;
   padding: 4rem;
   flex: 0 0 400px;
@@ -19,6 +19,7 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .brand-logo {
@@ -37,7 +38,7 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 29px;
-  color: rgb(33, 33, 33);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 90%;
 }
 
@@ -141,6 +142,12 @@
   color: rgb(244, 244, 244);
 }
 
+@media (max-width: 1024px) {
+  .footer-black-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .footer-social-links {
   display: flex;
   gap: 1rem;
@@ -197,7 +204,7 @@
     flex-direction: column;
   }
   
-  .footer-block-lime {
+  .footer-block-accent {
     flex: none;
     min-height: auto;
     padding: 3rem;
@@ -229,7 +236,7 @@
   .brand-mission {
     font-size: 20px;
   }
-  .footer-block-lime {
+  .footer-block-accent {
     padding: 2rem;
   }
   .footer-block-black {

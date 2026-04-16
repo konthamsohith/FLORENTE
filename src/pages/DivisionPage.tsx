@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { divisions } from '../data/divisions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -15,14 +15,40 @@ const DivisionPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
+  // If user lands on /divisions/services, redirect to /services
+  if (slug === 'services') {
+    return <Navigate to="/services" replace />;
+  }
+
   if (!division) {
     return (
       <div className="error-page">
         <Header />
-        <div className="container" style={{ padding: '200px 0', textAlign: 'center' }}>
-          <h1>Division Not Found</h1>
-          <Link to="/" className="btn-back">Back to Home</Link>
-        </div>
+        <main className="error-content">
+          <div className="container">
+            <motion.div 
+              className="error-inner"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <span className="error-badge">Error 404</span>
+              <h1 className="error-title">Division Not Found</h1>
+              <p className="error-desc">
+                The division you are looking for does not exist or has been moved. 
+                Please return to our main catalog or explore our specialized services.
+              </p>
+              <div className="error-actions">
+                <Link to="/" className="btn-error-primary">
+                  <ArrowLeft size={18} /> <span>Back to Home</span>
+                </Link>
+                <Link to="/services" className="btn-error-secondary">
+                  <span>Explore Services</span> <ArrowRight size={18} />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </main>
         <Footer />
       </div>
     );

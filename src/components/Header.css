@@ -39,12 +39,24 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    z-index: 1001; /* Stay above mobile menu */
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    height: 32px !important;
+  }
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 3rem;
-  margin-left: auto; /* Push links and CTA to the right */
-  margin-right: 3rem; /* Spacing between links and CTA */
+  gap: 2.5rem;
+  margin-left: auto;
+  margin-right: 2rem;
 }
 
 .header-cta {
@@ -98,8 +110,8 @@
 
 .btn-secondary-nav:hover {
   background: var(--secondary);
-  color: var(--primary);
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+  color: var(--base-60);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
 }
 
 .mobile-menu-btn {
@@ -111,44 +123,65 @@
   margin-left: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 1.5rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-content {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  .nav-menu {
+    display: none; /* Hide for mobile menu transition */
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .header-cta .btn-secondary-nav {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .header-content {
-    padding-right: 2vw !important;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
   }
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 0;
     left: 0;
     width: 100%;
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-    background: rgba(5, 12, 27, 0.98);
-    backdrop-filter: blur(20px);
+    height: 100vh;
+    background: var(--base-60);
     flex-direction: column;
-    padding: 2rem 0;
-    gap: 1.5rem;
-    transform: translateY(-100%);
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
     margin: 0;
   }
   .nav-menu.open {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }
   .mobile-menu-btn {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    z-index: 1001; /* Stay above mobile menu */
     color: #fff;
-  }
-  .btn-secondary-nav {
-    padding: 0.5rem 1rem;
-    font-size: 0.7rem;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 3px; /* Precise visual centering with logo */
   }
 }
 
@@ -182,7 +215,7 @@
   left: 50%;
   transform: translateX(-50%);
   margin-top: 1.5rem;
-  width: 700px;
+  width: min(90vw, 800px);
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
@@ -240,7 +273,7 @@
 }
 
 .mega-links a:hover {
-  color: #DCB84A; 
+  color: var(--accent-10); 
   transform: translateX(8px);
 }
 
@@ -255,8 +288,25 @@
   }
 }
 
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-in-fast {
   animation: fadeInSlide 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@media (max-width: 768px) {
+  .animate-in-fast {
+    animation: fadeInMobile 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
 }
 
 @media (max-width: 992px) {
@@ -297,19 +347,46 @@
 
   .mega-links a {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .mega-industry-item {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
   }
 
   .mega-col h4 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-10);
+    font-size: 0.75rem;
+  }
+}
+
+.mobile-only-link {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only-link {
+    display: block !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
   }
 }
 
 @media (max-width: 480px) {
-  .btn-secondary-nav {
-    display: none;
+  .header-content {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 }
 

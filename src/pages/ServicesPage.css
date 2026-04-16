@@ -11,7 +11,7 @@
 .services-badge {
   display: block;
   font-family: 'Manrope', sans-serif;
-  color: #D4AF37; /* Florente Gold */
+  color: var(--accent-10); /* Blue Rebrand */
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 2rem;
@@ -137,11 +137,17 @@
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: flex-start;
-  min-height: 750px; /* Reserves space so expansion doesn't push FAQ below */
+}
+
+@media (max-width: 1024px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 .workflow-badge {
-  color: #D4AF37;
+  color: var(--accent-10);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -174,11 +180,11 @@
 }
 
 .workflow-item.highlighted {
-  background: #D4AF37;
+  background: var(--accent-10);
   padding: 2.5rem;
   border-radius: 12px;
   border-bottom: none;
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
 }
 
 .w-header {
@@ -219,10 +225,10 @@
 
 .highlighted .w-title {
   font-family: 'Manrope', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  color: #000000; /* Dark for maximum contrast on Gold background */
+  color: #FFFFFF; /* White for contrast on Blue background */
   margin-bottom: 0;
 }
 
@@ -231,20 +237,28 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: rgba(0, 0, 0, 0.82); /* Dark for perfect contrast on Gold highlighted box */
+  color: rgba(255, 255, 255, 0.9); /* White for Blue background */
   font-style: normal;
-}
-
-.workflow-right {
-  height: 600px;
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 .workflow-right img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .workflow-right {
+    height: 400px;
+    order: -1; /* Image on top for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-left h2 {
+    font-size: 32px;
+    margin-bottom: 2rem;
+  }
 }
 
 /* FAQ Section */
@@ -254,11 +268,23 @@
 }
 
 .faq-title {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 500;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   font-family: 'Outfit', sans-serif;
   color: #111;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 80px 0;
+  }
+  .faq-item {
+    padding: 0 1.2rem;
+  }
+  .faq-trigger span {
+    font-size: 1.1rem;
+  }
 }
 
 .faq-list {
@@ -331,8 +357,8 @@
 
 .final-cta-left {
   flex: 0.4;
-  background: #D4AF37;
-  color: #000;
+  background: var(--accent-10);
+  color: #FFFFFF;
   padding: 4rem;
   display: flex;
   flex-direction: column;
@@ -344,9 +370,32 @@
 }
 
 .final-cta-left h3 {
-  font-size: 32px;
+  font-size: clamp(24px, 4vw, 32px);
   line-height: 1.2;
   font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .final-cta-box {
+    flex-direction: column;
+  }
+  .final-cta-left {
+    padding: 4rem 2rem;
+  }
+  .f-logo {
+     margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .f-link-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .f-contact-info {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .final-cta-right {
@@ -384,7 +433,7 @@
 
 .f-link-col a:hover {
   opacity: 1;
-  color: #C4F123;
+  color: var(--accent-10);
 }
 
 .f-contact-info {

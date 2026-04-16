@@ -129,15 +129,22 @@
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
+  }
+  .trusted-logos-mask::before,
+  .trusted-logos-mask::after {
+    display: none;
   }
   .trusted-logos {
+    animation: none;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    width: 100%;
+    padding: 0;
   }
   .brand-logo-img {
-    max-height: 24px;
+    max-height: 20px;
   }
 }
 
@@ -201,20 +208,38 @@
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .division-item {
+    gap: 1rem;
+  }
+  .division-item-name {
+    font-size: 16px;
+  }
+  .division-item-number {
+    font-size: 12px;
+    min-width: 25px;
+  }
+  .division-item.active::before {
+    left: -15px;
+    width: 6px;
+    height: 6px;
+  }
+}
+
 .division-item.active .division-item-number {
   color: #ffffff;
 }
 
-/* Lime green dot indicator matching reference */
+/* Blue dot indicator matching branding */
 .division-item.active::before {
   content: '';
   position: absolute;
   left: -25px;
   width: 8px;
   height: 8px;
-  background-color: #DCB84A; /* Gold-Yellow */
+  background-color: var(--accent-10);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(220, 184, 74, 0.6);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
 }
 
 .divisions-right {
@@ -281,13 +306,13 @@
   font-family: 'Manrope', sans-serif;
 }
 
-/* Premium Lime Button */
-.btn-premium-lime {
+/* Premium Blue Button */
+.btn-premium-blue {
   display: inline-flex;
   align-items: center;
   gap: 1.5rem;
-  background-color: #DCB84A;
-  color: #000000;
+  background-color: var(--accent-10);
+  color: #FFFFFF;
   padding: 1.2rem 2.5rem;
   border-radius: 100px;
   text-decoration: none;
@@ -310,9 +335,9 @@
   justify-content: center;
 }
 
-.btn-premium-lime:hover {
+.btn-premium-blue:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(220, 184, 74, 0.3);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
 }
 
 @media (max-width: 1200px) {
@@ -326,7 +351,7 @@
 @media (max-width: 1024px) {
   .divisions-container {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2rem;
   }
   
   .division-floating-card {
@@ -335,16 +360,29 @@
     left: 0;
     transform: none;
     width: 100%;
-    margin-top: -60px;
+    margin-top: -40px;
     margin-bottom: 2rem;
+    padding: 2.5rem 2rem;
   }
 
   .divisions-right {
-    height: 450px;
+    height: 400px;
   }
   
-  .btn-premium-lime {
+  .btn-premium-blue {
     margin-top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #divisions {
+    padding: 80px 0;
+  }
+  .division-card-title {
+    font-size: 20px;
+  }
+  .division-floating-card {
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -478,7 +516,7 @@ h2 {
 
 .about-text-box.light-bg {
   background: linear-gradient(135deg, #ffffff 0%, #f4f6f8 100%);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .about-text-box.light-bg .vm-box-item h4 {
@@ -531,7 +569,7 @@ h2 {
   padding: 3rem;
   background: linear-gradient(135deg, #0A162B 0%, var(--base-60) 100%);
   border-radius: 20px;
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.15);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   margin-top: 4rem;
 }
@@ -651,7 +689,7 @@ h2 {
 .division-card {
   position: relative;
   background: var(--base-60);
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -740,8 +778,8 @@ h2 {
 
 .service-tag {
   font-size: 0.75rem;
-  color: var(--secondary);
-  background: rgba(212, 175, 55, 0.05);
+  color: var(--accent-10);
+  background: rgba(59, 130, 246, 0.05);
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   display: flex;
@@ -885,12 +923,12 @@ h2 {
 }
 
 /* Card Variation: Vijayawada (Solid Gold) */
-.card-vijayawada-gold {
+.card-vijayawada-blue {
   grid-column: span 7;
   grid-row: span 1;
-  background: linear-gradient(135deg, var(--accent-10) 0%, #E5C362 100%);
+  background: var(--grad-accent);
   padding: 6rem 4rem 4rem;
-  color: var(--base-60);
+  color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -905,9 +943,9 @@ h2 {
   opacity: 0.8;
 }
 
-.card-vijayawada-gold .presence-card-desc-signature,
-.card-vijayawada-gold .bento-contact-row {
-  color: var(--base-60);
+.card-vijayawada-blue .presence-card-desc-signature,
+.card-vijayawada-blue .bento-contact-row {
+  color: #FFFFFF;
   opacity: 0.9;
 }
 
@@ -921,7 +959,7 @@ h2 {
   grid-row: span 1;
   background: linear-gradient(135deg, #0A162B 0%, var(--base-60) 100%);
   padding: 4rem;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -959,10 +997,10 @@ h2 {
   opacity: 0.8;
 }
 
-.card-vijayawada-gold .bento-title,
-.card-vijayawada-gold .bento-label,
-.card-vijayawada-gold .bento-subtitle {
-  color: var(--base-60);
+.card-vijayawada-blue .bento-title,
+.card-vijayawada-blue .bento-label,
+.card-vijayawada-blue .bento-subtitle {
+  color: #FFFFFF;
 }
 
 .bento-title {
@@ -1007,12 +1045,12 @@ h2 {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-.card-vijayawada-gold .bento-pill-cta {
+.card-vijayawada-blue .bento-pill-cta {
   background-color: var(--base-60);
   color: #ffffff;
 }
 
-.card-vijayawada-gold .bento-pill-cta:hover {
+.card-vijayawada-blue .bento-pill-cta:hover {
   background-color: #000;
 }
 
@@ -1028,11 +1066,14 @@ h2 {
 
 @media (max-width: 1200px) {
   .presence-bento-grid {
-    grid-auto-rows: min-content;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  .card-hyderabad-hq, .card-vijayawada-gold, .card-qatar-navy {
-    grid-column: span 12;
-    padding: 3rem;
+  .card-hyderabad-hq, .card-vijayawada-blue, .card-qatar-navy {
+    grid-column: span 1;
+    padding: 3rem 2rem;
+    min-height: auto;
   }
   .card-qatar-navy {
     flex-direction: column;
@@ -1040,8 +1081,8 @@ h2 {
     gap: 2rem;
   }
   .presence-title-area h2 {
-    font-size: 52px;
-    letter-spacing: -2px;
+    font-size: clamp(2rem, 5vw, 42px);
+    letter-spacing: -1px;
   }
 }
 
@@ -1052,7 +1093,7 @@ h2 {
   transform: translate(-50%, -50%);
   width: 1200px;
   height: 800px;
-  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.07) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
   filter: blur(100px);
@@ -1066,27 +1107,30 @@ h2 {
 
 @media (max-width: 768px) {
   .presence-title-area h2 {
-    font-size: 38px;
+    font-size: 32px;
+    line-height: 1.2;
   }
   .grid-presence-header {
-    padding-left: 2rem;
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
   }
-  .card-hyderabad-hq, .card-vijayawada-gold, .card-qatar-navy {
+  .bento-content-overlay {
     padding: 2rem;
   }
-  .card-qatar-navy {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .bento-img-full {
-    opacity: 0.8;
-  }
   .bento-title {
-    font-size: 28px;
+    font-size: 24px;
+  }
+  .bento-subtitle {
+    font-size: 15px;
   }
   .bento-pill-cta {
     padding: 1rem 2rem;
-    font-size: 13px;
+    font-size: 12px;
+    width: 100%;
+    justify-content: center;
+  }
+  .bento-contact-row {
+    font-size: 16px;
   }
 }
 
@@ -1325,10 +1369,11 @@ h2 {
 @media (max-width: 1200px) {
   .contact-redesign-wrapper {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .contact-info-block, .contact-form-block {
-    padding: 3rem;
+    padding: 3rem 2rem;
   }
   
   .contact-meta-grid {
@@ -1337,21 +1382,37 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  #contact {
+    padding: 60px 0;
+  }
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .contact-block-title {
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    line-height: 1.1;
   }
   
   .contact-info-block, .contact-form-block {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
   }
   
   .contact-meta-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+  }
+  .contact-meta-item h4 {
+    font-size: 22px;
+  }
+  .modern-contact-form {
+    gap: 1.5rem;
+  }
+  .form-block-title {
+    font-size: 22px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1401,10 +1462,10 @@ h2 {
   box-shadow: 0 15px 40px rgba(0,0,0,0.02);
 }
 
-.success-card-gold { 
-  background: linear-gradient(135deg, var(--accent-10) 0%, #E5C362 100%); 
-  color: var(--base-60); 
-  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+.success-card-blue { 
+  background: var(--grad-accent); 
+  color: #FFFFFF; 
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15);
 }
 
 .success-card-dark { 
@@ -1605,8 +1666,8 @@ h2 {
   align-items: center;
   margin-top: 3rem;
   background-color: var(--accent-10);
-  background: linear-gradient(135deg, var(--accent-10) 0%, #E5C362 100%);
-  color: var(--base-60);
+  background: var(--grad-accent);
+  color: #FFFFFF;
   position: relative;
   overflow: hidden;
 }
@@ -1742,7 +1803,7 @@ h2 {
   color: #111111;
 }
 
-.btn-state-lime {
+.btn-state-blue {
   background: #ffffff;
   color: #111111;
 }
@@ -1794,34 +1855,49 @@ h2 {
   .success-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    gap: 1.5rem;
   }
   
-  .success-item-vertical { grid-row: span 1; grid-column: span 2; height: auto; }
-  .success-item-image { grid-column: span 2; height: 300px; }
+  .success-item-vertical { grid-row: span 1; grid-column: span 2; height: auto; padding: 2.5rem; }
+  .success-item-image { grid-column: span 2; height: 350px; }
+  .success-item-stat, .success-item-quote { padding: 2.5rem; }
   
   .success-cta-banner {
     flex-direction: column;
-    padding: 3rem;
+    padding: 3rem 2rem;
+    gap: 3rem;
   }
   
   .cta-right-img {
     width: 100%;
-    height: 300px;
+    height: 350px;
+  }
+  .cta-title {
+    font-size: 28px;
+    line-height: 1.2;
   }
 }
 
 @media (max-width: 768px) {
   .success-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .success-item-vertical, .success-item-image, .success-item-stat, .success-item-quote {
     grid-column: span 1;
+    padding: 2rem 1.5rem;
+  }
+  .success-item-image {
+    height: 280px;
   }
   .stat-value {
     font-size: 48px;
   }
+  .case-title {
+    font-size: 22px;
+  }
   .success-cta-banner {
-    padding: 2rem;
+    padding: 2.5rem 1.5rem;
   }
   .cta-buttons {
     flex-direction: column;

@@ -5,12 +5,12 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer-wrapper">
       <div className="container footer-flex">
-        {/* Left Lime Block */}
-        <div className="footer-block-lime">
-          <div className="footer-lime-top">
+        {/* Left Accent Block */}
+        <div className="footer-block-accent">
+          <div className="footer-accent-top">
             <img src="/Florente_Logos/florente.png" alt="Florente" style={{ maxHeight: '60px', width: 'auto', display: 'block' }} />
           </div>
-          <div className="footer-lime-bottom">
+          <div className="footer-accent-bottom">
             <p className="brand-mission">
               We're dedicated to helping you build a future driven by vision and sustained by trust.
             </p>

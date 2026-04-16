@@ -171,7 +171,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
 
                 <Link to="/services" className="btn-success-dark slide-push-btn" style={{ display: 'inline-block', width: '150px', textDecoration: 'none', marginTop: '4rem' }}>
                   <div className="btn-slide-wrapper">
-                    <div className="btn-state btn-state-lime">
+                    <div className="btn-state btn-state-blue">
                       <span className="btn-text">All services</span>
                       <span className="cta-icon-circle"><ArrowRight size={16} /></span>
                     </div>
@@ -229,7 +229,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                 </div>
               </div>
 
-              <div className="bento-card card-vijayawada-gold">
+              <div className="bento-card card-vijayawada-blue">
                 <span className="bento-label">Regional Excellence</span>
                 <h3 className="bento-title">Vijayawada Branch</h3>
                 <p className="bento-subtitle">Jayaprakash nagar, Vijayawada - 520008</p>
@@ -303,7 +303,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                 />
               </div>
 
-              <div className="success-item-stat success-card-gold">
+              <div className="success-item-stat success-card-blue">
                 <div className="stat-value">{divisions[activeDivisionIndex].impactStat.value}</div>
                 <p className="stat-label">{divisions[activeDivisionIndex].impactStat.label}</p>
               </div>

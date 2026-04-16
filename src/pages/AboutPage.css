@@ -4,11 +4,11 @@
   align-items: center;
 }
 
-.btn-success-lime-static {
+.btn-success-blue-static {
   display: inline-flex;
   align-items: center;
   gap: 1.2rem;
-  background: #D4AF37; /* FISrente Gold */
+  background: var(--accent-10);
   padding: 0.6rem 1.6rem;
   border-radius: 50px;
   border: none;
@@ -21,19 +21,20 @@
 .btn-text {
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
   font-weight: 500;
-  color: #000000;
+  color: #FFFFFF;
   font-size: 14px;
   line-height: 14px;
 }
 
-.btn-success-lime-static:hover {
-  background: #C5A028; /* Slightly darker gold */
+.btn-success-blue-static:hover {
+  background: var(--secondary-30); /* Darker blue */
   transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
 .cta-icon-circle-static {
-  background: #000;
-  color: #D4AF37;
+  background: #FFFFFF;
+  color: var(--accent-10);
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -43,7 +44,7 @@
 }
 
 .about-badge {
-  color: #DCB84A;
+  color: var(--accent-10);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -80,6 +81,14 @@
   margin-bottom: 5rem;
 }
 
+@media (max-width: 1024px) {
+  .hero-text-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
+
 .hero-text-right p {
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
   font-size: 16px;
@@ -91,9 +100,28 @@
 
 .mosaic-gallery-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2.2fr;
+  grid-template-rows: 1fr 1fr;
   gap: 30px;
   height: 600px;
+}
+
+@media (max-width: 768px) {
+  .about-hero-mosaic {
+    padding: 100px 0 60px;
+  }
+  .mosaic-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+  .mosaic-item.vertical {
+    grid-row: auto;
+    height: 350px;
+  }
+  .mosaic-item.horizontal-top, .mosaic-item.horizontal-bottom {
+    display: none; /* Hide secondary mosaic items to keep mobile clean */
+  }
 }
 
 .mosaic-item {
@@ -146,12 +174,21 @@
 
 .mission-text {
   font-family: 'Outfit', sans-serif;
-  font-size: 42px;
+  font-size: clamp(20px, 5vw, 42px);
   font-weight: 400;
-  line-height: 50px;
+  line-height: 1.2;
   color: #000000;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about-mission {
+    padding: 80px 0;
+  }
+  .mission-tag {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* Composite Dual Grid Section */
@@ -163,7 +200,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  align-items: stretch; /* Ensuring paired items have equal height */
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .composite-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-card {
+    padding: 3rem 2rem;
+  }
+  .feature-image {
+    height: 400px;
+  }
+  .feature-image:nth-of-type(2) {
+    order: 2;
+  }
+  .commitment-card { order: 1; }
+  .feature-image:nth-of-type(4) { order: 4; }
+  .values-card { order: 3; }
 }
 
 .feature-card {
@@ -181,8 +236,8 @@
 }
 
 .values-card {
-  background: #D4AF37; /* Florente Gold */
-  color: #111;
+  background: var(--accent-10);
+  color: #FFFFFF;
 }
 
 .feature-image {
@@ -245,8 +300,8 @@
 }
 
 .check-circle {
-  background: #111;
-  color: #D4AF37; /* Gold checkmark */
+  background: #FFFFFF;
+  color: var(--accent-10); /* Blue checkmark */
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -306,7 +361,7 @@
 }
 
 .team-tag {
-  color: #DCB84A;
+  color: var(--accent-10);
   font-weight: 700;
   letter-spacing: 3px;
   margin-bottom: 1.5rem;
@@ -314,11 +369,17 @@
 }
 
 .team-header h2 {
-  font-size: 52px;
+  font-size: clamp(24px, 5vw, 52px);
   font-weight: 500;
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .team-header {
+    margin-bottom: 3rem;
+  }
 }
 
 .team-grid {
@@ -397,7 +458,7 @@
 }
 
 .team-social a:hover {
-  background: #DCB84A;
+  background: var(--accent-10);
   color: #fff;
 }
 
@@ -411,6 +472,15 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .careers-header {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
 }
 
 .careers-grid {
@@ -476,13 +546,13 @@
 }
 
 .btn-job-apply:hover {
-  background: #DCB84A;
-  box-shadow: 0 10px 20px rgba(220, 184, 74, 0.2);
+  background: var(--accent-10);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
-.btn-success-lime {
-  background: #C4F123;
-  color: #111;
+.btn-success-blue {
+  background: var(--accent-10);
+  color: #FFFFFF;
   padding: 1rem 2rem;
   border-radius: 50px;
   border: none;
@@ -494,36 +564,35 @@
   transition: all 0.3s ease;
 }
 
-.btn-success-lime:hover {
+.btn-success-blue:hover {
   background: #111;
   color: #fff;
 }
 
 @media (max-width: 1200px) {
-  .commitment-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
   .team-grid, .careers-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .mosaic-image-side {
-    grid-template-columns: 1fr;
-    height: auto;
+  .team-card {
+    height: 450px;
   }
-  .mosaic-image-container.vertical {
-    height: 400px;
-  }
-  .value-prop-box {
-    flex-direction: column;
-  }
-  .value-right-img {
-    height: 300px;
+  .team-info-card {
+    opacity: 1;
+    transform: none;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 1rem;
   }
   .team-grid, .careers-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .job-card {
+     padding: 2rem 1.5rem;
   }
 }

@@ -85,7 +85,7 @@ const Header: React.FC = () => {
                       {services.map((item, idx) => (
                         <Link 
                           key={idx} 
-                          to={item.slug === 'divisions' ? getNavLink('divisions') : `/divisions/${item.slug}`} 
+                          to={item.slug === 'services' ? '/services' : (item.slug === 'divisions' ? getNavLink('divisions') : `/divisions/${item.slug}`)} 
                           onClick={() => { setServiceMenuOpen(false); setMobileMenuOpen(false); }}
                         >
                           {item.name}
@@ -109,6 +109,7 @@ const Header: React.FC = () => {
           </div>
 
           <a href={getNavLink('branches')} className="nav-link" onClick={() => setMobileMenuOpen(false)}>Branches</a>
+          <a href={getNavLink('contact')} className="nav-link mobile-only-link" onClick={() => setMobileMenuOpen(false)}>Contact</a>
         </nav>
         <div className="header-cta">
           <a href={getNavLink('contact')} className="btn-secondary-nav" onClick={() => setMobileMenuOpen(false)}>Get In Touch</a>

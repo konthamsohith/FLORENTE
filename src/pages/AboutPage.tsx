@@ -43,7 +43,7 @@ const AboutPage: React.FC = () => {
               <div className="hero-text-right">
                 <p>Helping businesses implement sustainable practices and meet ESG standards for long-term success.</p>
                 <div className="btn-group-hero">
-                   <Link to="/services" className="btn-success-lime-static" style={{ textDecoration: 'none' }}>
+                   <Link to="/services" className="btn-success-blue-static" style={{ textDecoration: 'none' }}>
                      <span className="btn-text">Our services</span>
                      <span className="cta-icon-circle-static"><ArrowRight size={16} /></span>
                    </Link>
@@ -134,8 +134,8 @@ const AboutPage: React.FC = () => {
                 <div className="feature-actions">
                    <button className="btn-pricing">Pricing</button>
                    <button className="btn-success-black-static">
-                     <span className="btn-text" style={{ color: '#D4AF37' }}>Get in touch</span>
-                     <span className="cta-icon-circle-static" style={{ background: '#D4AF37', color: '#000' }}><ArrowRight size={16} /></span>
+                     <span className="btn-text" style={{ color: 'var(--accent-10)' }}>Get in touch</span>
+                     <span className="cta-icon-circle-static" style={{ background: 'var(--accent-10)', color: '#FFFFFF' }}><ArrowRight size={16} /></span>
                    </button>
                 </div>
               </div>
