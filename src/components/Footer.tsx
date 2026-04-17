@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="footer-accent-bottom">
             <p className="brand-mission">
-              We're dedicated to helping you build a future driven by vision and sustained by trust.
+              We're dedicated to helping you build a future driven by <span className="text-highlight">vision</span> and sustained by <span className="text-highlight">trust</span>.
             </p>
           </div>
         </div>

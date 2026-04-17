@@ -1803,8 +1803,16 @@ h2 {
   color: #111111;
 }
 
+.btn-state-white .btn-text {
+  color: #111111;
+}
+
 .btn-state-blue {
   background: #ffffff;
+  color: #111111;
+}
+
+.btn-state-blue .btn-text {
   color: #111111;
 }
 

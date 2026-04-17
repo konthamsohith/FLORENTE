@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { divisions } from '../data/divisions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import TrustedBanner from '../components/TrustedBanner';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './DivisionPage.css';
 import { motion } from 'framer-motion';
@@ -86,39 +87,14 @@ const DivisionPage: React.FC = () => {
         <section className="division-hero" style={{ backgroundImage: `url(${division.image})` }}>
           <div className="division-hero-overlay"></div>
           <div className="container division-hero-nav">
-             <motion.div
-               initial={{ opacity: 0, x: -20 }}
-               animate={{ opacity: 1, x: 0 }}
-               transition={{ duration: 0.8, delay: 0.5 }}
-             >
-               <Link to="/#divisions" className="back-link">
-                 <ArrowLeft size={16} /> <span>Back to Divisions</span>
-               </Link>
-             </motion.div>
+             {/* Back link removed per request */}
           </div>
           <div className="container division-hero-content">
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="division-badge">
-                 {division.shortName}
-              </div>
-              <h1 className="division-title">{division.title}</h1>
-              <p className="division-desc">{division.description}</p>
-              <div className="division-hero-actions">
-                <a href="/#contact" className="btn-luxury-cta">
-                  <span className="btn-luxury-fill"></span>
-                  <span className="btn-luxury-content">
-                    <span className="btn-luxury-text">Start a Project</span>
-                    <ArrowRight size={20} className="btn-luxury-icon" />
-                  </span>
-                </a>
-              </div>
-            </motion.div>
+             {/* Hero content (title, description, CTA) removed per request */}
           </div>
         </section>
+
+        <TrustedBanner />
 
         {/* Services & Details */}
         <section className="division-details">
