@@ -61,7 +61,7 @@ const Header: React.FC = () => {
       <div className="container header-content">
         <div className="logo">
           <Link to="/">
-            <img src="/Florente_Logos/florente.png" alt="FISrente" style={{ height: '40px', width: 'auto' }} />
+            <img src="/Florente_Logos/florente.png" alt="Florente" style={{ height: '40px', width: 'auto' }} />
           </Link>
         </div>
         <nav className={`nav-menu ${mobileMenuOpen ? 'open' : ''}`}>

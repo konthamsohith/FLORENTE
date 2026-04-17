@@ -15,6 +15,7 @@ import { divisions } from './data/divisions';
 import DivisionPage from './pages/DivisionPage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import ScrollToTop from './components/ScrollToTop';
 
 interface HomeProps {
   divisions: any[];
@@ -448,6 +449,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
 function App() {
   return (
     <div className="app-container">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home divisions={divisions} />} />
         <Route path="/about" element={<AboutPage />} />

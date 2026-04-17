@@ -22,31 +22,31 @@ const ServicesPage: React.FC = () => {
 
   const services = [
     {
-      title: "FISrente Marketing Labs LLP",
+      title: "Florente Marketing Labs LLP",
       description: "Strategic digital acceleration and high-impact infrastructure labs designed to position global brands for market dominance.",
       image: "/marketing.jpeg",
       slug: "marketing-labs"
     },
     {
-      title: "FISrente PROPERTIES LLP",
+      title: "Florente PROPERTIES LLP",
       description: "Elite real estate advisory bridging the gap between luxury living in Dubai and strategic institutional investments in India.",
       image: "/properties.jpeg",
       slug: "properties"
     },
     {
-      title: "FISrente A CONSULTANT LLP",
+      title: "Florente A CONSULTANT LLP",
       description: "World-class talent acquisition and executive search for global leaders across banking, insurance, and technology sectors.",
       image: "/call.jpeg",
       slug: "consultancy"
     },
     {
-      title: "FISrente WEALTH SERVICE LLP",
+      title: "Florente WEALTH SERVICE LLP",
       description: "Sophisticated asset management and personalized wealth strategies designed for high-net-worth families and corporate entities.",
       image: "/services_wealth_management_1775967562551_1775969471848.png",
       slug: "wealth-service"
     },
     {
-      title: "FISrente ENTERTAINMENTS LLP",
+      title: "Florente ENTERTAINMENTS LLP",
       description: "Transforming creative visions into cinematic masterpieces. Cinematic storytelling and production that capture the human experience.",
       image: "/entertainment.jpeg",
       slug: "entertainments"
@@ -97,7 +97,7 @@ const ServicesPage: React.FC = () => {
           <div className="container">
             <motion.span initial="hidden" animate="visible" variants={fadeIn} className="services-badge">PRECISION CONSULTING</motion.span>
             <motion.h1 initial="hidden" animate="visible" variants={fadeIn}>
-              FISrente provides elite consulting and strategic financial solutions across five global business units.
+              Florente provides elite consulting and strategic financial solutions across five global business units.
             </motion.h1>
           </div>
         </section>
