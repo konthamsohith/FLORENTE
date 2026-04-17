@@ -37,8 +37,8 @@ export interface Division {
 export const divisions: Division[] = [
   {
     slug: 'marketing-labs',
-    title: 'FISrente Marketing Labs LLP',
-    shortName: 'FISrente Marketing Labs',
+    title: 'Florente Marketing Labs LLP',
+    shortName: 'Florente Marketing Labs',
     description: 'A leading player in sustainable energy and infrastructure development, providing end-to-end solutions for a greener future.',
     icon: <HardHat size={32} />,
     image: '/marketing.jpeg',
@@ -60,8 +60,8 @@ export const divisions: Division[] = [
   },
   {
     slug: 'properties',
-    title: 'FISrente PROPERTIES LLP',
-    shortName: 'FISrente Properties',
+    title: 'Florente PROPERTIES LLP',
+    shortName: 'Florente Properties',
     description: 'Your premier real estate advisory firm bridging the gap between luxury living in Dubai and strategic investments in India.',
     icon: <Home size={32} />,
     image: '/properties.jpeg',
@@ -75,7 +75,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '22%', label: 'average annual portfolio growth' },
     testimonial: {
-      quote: "FISrente's insight into the Dubai market was invaluable for our international expansion.",
+      quote: "Florente's insight into the Dubai market was invaluable for our international expansion.",
       avatar: '/avatar_mohamed_sultan_1775590419943.png',
       author: 'Mohamed Sultan',
       role: 'Director, Sultan Holdings',
@@ -83,8 +83,8 @@ export const divisions: Division[] = [
   },
   {
     slug: 'consultancy',
-    title: 'FISrente A CONSULTANT LLP',
-    shortName: 'FISrente Consultant',
+    title: 'Florente A CONSULTANT LLP',
+    shortName: 'Florente Consultant',
     description: 'Connecting top-tier talent with world-class organizations across insurance, banking, and software industries.',
     icon: <UserPlus size={32} />,
     image: '/call.jpeg',
@@ -98,7 +98,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '500+', label: 'specialist roles placed in last 12 months' },
     testimonial: {
-      quote: "The quality of talent provided by FISrente has transformed our operational efficiency.",
+      quote: "The quality of talent provided by Florente has transformed our operational efficiency.",
       avatar: '/avatar_ananya_kapoor_1775590437503.png',
       author: 'Ananya Kapoor',
       role: 'HR Head, Global Finance',
@@ -106,8 +106,8 @@ export const divisions: Division[] = [
   },
   {
     slug: 'wealth-service',
-    title: 'FISrente WEALTH SERVICE LLP',
-    shortName: 'FISrente Wealth Service',
+    title: 'Florente WEALTH SERVICE LLP',
+    shortName: 'Florente Wealth Service',
     description: 'Dedicated to helping individuals and families grow, protect, and manage their wealth through expert-led fund advisory.',
     icon: <TrendingUp size={32} />,
     image: '/wealth_service_financial_planning_1775411901441.png',
@@ -121,7 +121,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '₹150Cr+', label: 'assets under expert advisory' },
     testimonial: {
-      quote: "Our family's financial future is secure thanks to the meticulous planning of FISrente's wealth team.",
+      quote: "Our family's financial future is secure thanks to the meticulous planning of Florente's wealth team.",
       avatar: '/avatar_vikram_reddy_1775590457878.png',
       author: 'Vikram Reddy',
       role: 'HNI Client',
@@ -129,8 +129,8 @@ export const divisions: Division[] = [
   },
   {
     slug: 'entertainments',
-    title: 'FISrente ENTERTAINMENTS LLP',
-    shortName: 'FISrente Entertainments',
+    title: 'Florente ENTERTAINMENTS LLP',
+    shortName: 'Florente Entertainments',
     description: 'Transforming creative visions into cinematic masterpieces. Focused on meaningful content that captures the human experience.',
     icon: <Camera size={32} />,
     image: '/entertainment.jpeg',
@@ -144,7 +144,7 @@ export const divisions: Division[] = [
     },
     impactStat: { value: '1M+', label: 'combined viewership for KIRAYI series' },
     testimonial: {
-      quote: "FISrente's dedication to authentic storytelling is a breath of fresh air in the film industry.",
+      quote: "Florente's dedication to authentic storytelling is a breath of fresh air in the film industry.",
       avatar: '/avatar_sanjay_kumar_1775590475778.png',
       author: 'Sanjay Kumar',
       role: 'Creative Producer',

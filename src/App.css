@@ -148,162 +148,153 @@
   }
 }
 
-/* Divisions Section - Premium Interactive Design */
+/* Divisions Section - Corporate Bento Grid */
 #divisions {
-  background-color: var(--midnight-deep); /* Deep cinema black */
+  background-color: var(--midnight-deep);
   color: #ffffff;
   padding: 120px 0;
   position: relative;
-  overflow: visible;
 }
 
-.divisions-container {
+.divisions-bento-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1.8fr; /* Adjusted for better content balance */
-  gap: 8rem;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
 }
 
-.divisions-left {
-  position: relative;
-  z-index: 5;
-}
-
-.divisions-list {
+.division-bento-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 4rem;
-}
-
-.division-item {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0.5rem 0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
+  overflow: hidden;
+  min-height: 480px;
 }
 
-.division-item-number {
-  font-size: 14px; /* Scaled to match 20px name */
-  color: #444444; /* Muted inactive number */
-  font-weight: 500;
+.division-bento-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.div-bento-label {
   font-family: 'Manrope', sans-serif;
-  min-width: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-10);
+  margin-bottom: 1rem;
+  display: block;
 }
 
-.division-item-name {
-  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
-  color: #666666; /* Ghosted inactive text */
-  transition: all 0.4s ease;
-}
-
-.division-item.active .division-item-name {
-  color: #ffffff;
+.div-bento-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 26px;
+  line-height: 1.2;
   font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.div-bento-img-frame {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.div-bento-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.division-bento-card:hover .div-bento-img {
+  transform: scale(1.08);
+}
+
+.div-bento-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.div-bento-footer {
+  margin-top: auto;
+}
+
+.div-bento-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.div-bento-cta:hover {
+  gap: 1.2rem;
+  color: var(--accent-10);
+}
+
+@media (max-width: 1024px) {
+  .divisions-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .division-item {
-    gap: 1rem;
+  .divisions-bento-grid {
+    grid-template-columns: 1fr;
   }
-  .division-item-name {
-    font-size: 16px;
+  .division-bento-card {
+    padding: 2.5rem;
+    min-height: auto;
   }
-  .division-item-number {
-    font-size: 12px;
-    min-width: 25px;
-  }
-  .division-item.active::before {
-    left: -15px;
-    width: 6px;
-    height: 6px;
-  }
-}
-
-.division-item.active .division-item-number {
-  color: #ffffff;
-}
-
-/* Blue dot indicator matching branding */
-.division-item.active::before {
-  content: '';
-  position: absolute;
-  left: -25px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--accent-10);
-  border-radius: 50%;
-  box-shadow: var(--base-60)5px rgba(59, 130, 246, 0.6);
 }
 
 .divisions-right {
   position: relative;
-  height: 650px;
-  border-radius: 12px;
+  background: #040812;
 }
 
-.division-main-image {
+.division-details-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: opacity 0.8s ease;
-}
-
-/* Floating Content Card - White Overlap */
-.division-floating-card {
-  position: absolute;
-  top: 50%;
-  left: -120px; /* Strong overlap into the dark section */
-  transform: translateY(-50%);
-  width: 480px;
-  background: #ffffff;
-  padding: 3.5rem;
-  border-radius: 12px;
-  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-  color: var(--midnight-deep);
-}
-
-.division-card-title {
-  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: 500;
-  color: rgb(33, 33, 33);
-  margin-bottom: 1.5rem;
-}
-
-.division-card-desc {
-  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 400;
-  color: rgb(33, 33, 33);
-  margin-bottom: 2.5rem;
 }
 
 .division-tag-cloud {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  margin-top: 1.5rem;
 }
 
-/* Sharp, high-contrast tags */
-.division-mini-tag {
-  font-size: 0.8rem;
-  font-weight: 600;
-  background: #f4f4f4;
-  color: #333333;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  font-family: 'Manrope', sans-serif;
+/* Professional Details Panel - Integrated */
+.division-floating-card {
+  display: none; /* Removed for the new layout */
 }
 
 /* Premium Blue Button */
@@ -340,11 +331,43 @@
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
 }
 
-@media (max-width: 1200px) {
-  .division-floating-card {
-    width: 400px;
-    left: -80px;
-    padding: 2.5rem;
+@media (max-width: 1024px) {
+  .divisions-ui-layer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 100px;
+  }
+  
+  .divisions-nav {
+    flex-direction: row;
+    height: 40px;
+    gap: 1.5rem;
+  }
+  
+  .division-nav-item {
+    height: 40px;
+  }
+  
+  .nav-track {
+    display: none;
+  }
+  
+  #divisions {
+    height: auto;
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .division-title-reveal {
+    font-size: 2.2rem;
+  }
+  .division-desc-reveal {
+    font-size: 1rem;
+  }
+  .metadata-box {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.75rem;
   }
 }
 

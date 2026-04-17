@@ -10,6 +10,7 @@ import {
 import './App.css';
 
 import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { divisions } from './data/divisions';
 import DivisionPage from './pages/DivisionPage';
 import AboutPage from './pages/AboutPage';
@@ -121,62 +122,45 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
           </div>
         </section>
 
+        {/* Divisions Section - Corporate Bento Grid */}
         <section id="divisions">
           <div className="container">
-            <div className="divisions-container">
-              <div className="divisions-left">
-                <div className="section-header">
-                  <span className="accent-text">Our Companies</span>
-                  <h2>Divisions of Florente</h2>
-                  <p className="section-desc">Excellence across energy, real estate, wealth, consultancy, and media.</p>
-                </div>
-                
-                <div className="divisions-list">
-                  {divisions.map((div: any, index: number) => (
-                    <div 
-                      key={index} 
-                      className={`division-item ${activeDivisionIndex === index ? 'active' : ''}`}
-                      onMouseEnter={() => {
-                        setActiveDivisionIndex(index);
-                        setIsAutoPlaying(false);
-                      }}
-                      onMouseLeave={() => setIsAutoPlaying(true)}
-                    >
-                      <span className="division-item-number">0{index + 1}</span>
-                      <span className="division-item-name">{div.title}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <Link to="/services" className="btn-success-dark slide-push-btn" style={{ display: 'inline-block', width: '150px', textDecoration: 'none', marginTop: '4rem' }}>
-                  <div className="btn-slide-wrapper">
-                    <div className="btn-state btn-state-blue">
-                      <span className="btn-text">All services</span>
-                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                    </div>
-                    <div className="btn-state btn-state-white">
-                      <span className="btn-text">All services</span>
-                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                    </div>
+            <div className="section-header" style={{ marginBottom: '4rem' }}>
+              <span className="accent-text">Divisions of Florente</span>
+              <h2 style={{ maxWidth: '800px' }}>Excellence across energy, real estate, wealth, consultancy, and media.</h2>
+            </div>
+            
+            <div className="divisions-bento-grid">
+              {divisions.map((div: any, index: number) => (
+                <div key={index} className="division-bento-card">
+                  <span className="div-bento-label">Section 0{index + 1}</span>
+                  <h3 className="div-bento-title">{div.shortName}</h3>
+                  
+                  <div className="div-bento-img-frame">
+                    <img src={div.image} alt={div.title} className="div-bento-img" />
                   </div>
-                </Link>
-              </div>
-
-              <div className="divisions-right">
-                <img 
-                  key={activeDivisionIndex}
-                  src={divisions[activeDivisionIndex].image} 
-                  alt={divisions[activeDivisionIndex].title} 
-                  className="division-main-image animate-in"
-                />
-                <div className="division-floating-card animate-in">
-                  <h3 className="division-card-title">{divisions[activeDivisionIndex].title}</h3>
-                  <p className="division-card-desc">{divisions[activeDivisionIndex].description}</p>
-                  <div className="division-tag-cloud">
-                    {divisions[activeDivisionIndex].subServices.map((tag: string, idx: number) => (
-                      <span key={idx} className="division-mini-tag">{tag}</span>
-                    ))}
+                  
+                  <p className="div-bento-desc">{div.description}</p>
+                  
+                  <div className="div-bento-footer">
+                    <Link to={`/divisions/${div.slug}`} className="div-bento-cta">
+                      Explore Division <ArrowRight size={18} />
+                    </Link>
                   </div>
+                </div>
+              ))}
+
+              {/* All Services Balance Card */}
+              <div className="division-bento-card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
+                <span className="div-bento-label">Full Portfolio</span>
+                <h3 className="div-bento-title">All Florente Services</h3>
+                <p className="div-bento-desc">
+                  Explore our complete range of specialized solutions and strategic investment opportunities.
+                </p>
+                <div className="div-bento-footer">
+                  <Link to="/services" className="div-bento-cta" style={{ color: 'var(--accent-10)' }}>
+                    View Full Catalog <ArrowRight size={18} />
+                  </Link>
                 </div>
               </div>
             </div>

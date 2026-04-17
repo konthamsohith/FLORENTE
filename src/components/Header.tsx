@@ -40,11 +40,11 @@ const Header: React.FC = () => {
 
   const services = [
     { name: "All Services", slug: "services" },
-    { name: "FISrente Marketing Labs", slug: "marketing-labs" },
-    { name: "FISrente Properties", slug: "properties" },
-    { name: "FISrente A Consultant", slug: "consultancy" },
-    { name: "FISrente Wealth Service", slug: "wealth-service" },
-    { name: "FISrente Entertainments", slug: "entertainments" }
+    { name: "Florente Marketing Labs", slug: "marketing-labs" },
+    { name: "Florente Properties", slug: "properties" },
+    { name: "Florente A Consultant", slug: "consultancy" },
+    { name: "Florente Wealth Service", slug: "wealth-service" },
+    { name: "Florente Entertainments", slug: "entertainments" }
   ];
 
   const industries = [
