@@ -1,7 +1,6 @@
 .footer-wrapper {
-  padding: 8rem 0;
-  background-color: #02060f; /* Even deeper midnight */
-  position: relative;
+  background-color: var(--midnight-deep);
+  padding: 8rem 0 2rem;
   overflow: hidden;
 }
 
@@ -12,7 +11,7 @@
 }
 
 .footer-block-accent {
-  background: linear-gradient(145deg, #0A162B 0%, #050C1B 100%);
+  background: linear-gradient(145deg, var(--base-60) 0%, var(--midnight-deep) 100%);
   color: #FFFFFF;
   border-radius: 24px;
   padding: 4rem;
@@ -24,7 +23,7 @@
   border: 1px solid rgba(59, 130, 246, 0.15); /* Soft Blue Border */
   border-top: 2px solid rgba(59, 130, 246, 0.6); /* Integrated Highlight */
   box-shadow: 
-    0 40px 100px rgba(0, 0, 0, 0.4),
+    0 40px 100px rgba(3, 10, 30, 0.95),
     inset 0 1px 1px rgba(255, 255, 255, 0.1); /* Subtle Glass Glint */
   position: relative;
   overflow: hidden; /* Perfect Geometry */

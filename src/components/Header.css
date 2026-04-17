@@ -16,7 +16,7 @@
   background: rgba(10, 25, 47, 0.85);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(3, 10, 30, 0.2);
 }
 
 .header-content {
@@ -218,7 +218,7 @@
   width: min(90vw, 800px);
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 30px 60px rgba(3, 10, 30, 0.2);
   padding: 3rem;
   z-index: 1001;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -256,7 +256,7 @@
 .mega-links a {
   font-family: 'Manrope', sans-serif;
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--midnight-deep);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -266,7 +266,7 @@
 .mega-industry-item {
   font-family: 'Manrope', sans-serif;
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--midnight-deep);
   font-weight: 500;
   display: block;
   opacity: 0.9;

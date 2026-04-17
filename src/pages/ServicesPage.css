@@ -1,10 +1,10 @@
 .services-page {
   background: #ffffff;
-  color: #111;
+  color: var(--midnight-deep);
 }
 
 .services-hero {
-  background: #050C1B;
+  background: var(--base-60);
   padding: 180px 0 120px;
 }
 
@@ -90,7 +90,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1.2rem;
-  color: #050C1B;
+  color: var(--base-60);
 }
 
 .s-card-content p {
@@ -104,8 +104,8 @@
 
 .btn-details-black {
   background: transparent;
-  color: #050C1B;
-  border: 1px solid #050C1B;
+  color: var(--base-60);
+  border: 1px solid var(--base-60);
   padding: 1rem 2rem;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -119,14 +119,14 @@
 }
 
 .btn-details-black:hover {
-  background: #050C1B;
+  background: var(--base-60);
   color: #fff;
-  border-color: #050C1B;
+  border-color: var(--base-60);
 }
 
 /* How We Work Section */
 .how-we-work {
-  background: #050C1B;
+  background: var(--base-60);
   color: #FFFFFF;
   padding: 120px 0;
   position: relative;
@@ -199,7 +199,7 @@
   font-size: 34px;
   line-height: 41px;
   color: #FFFFFF;
-  background: #111;
+  background: var(--midnight-deep);
   width: 70px;
   height: 70px;
   display: flex;
@@ -272,7 +272,7 @@
   font-weight: 500;
   margin-bottom: 4rem;
   font-family: 'Outfit', sans-serif;
-  color: #111;
+  color: var(--midnight-deep);
 }
 
 @media (max-width: 768px) {
@@ -318,7 +318,7 @@
 .faq-trigger span {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #111;
+  color: var(--midnight-deep);
   font-family: 'Manrope', sans-serif;
 }
 
@@ -331,7 +331,7 @@
   justify-content: center;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  color: #111;
+  color: var(--midnight-deep);
 }
 
 .faq-answer {
@@ -349,7 +349,7 @@
 
 .final-cta-box {
   display: flex;
-  background: #000000;
+  background: var(--midnight-deep);
   border-radius: 20px;
   overflow: hidden;
   color: #fff;
@@ -457,7 +457,7 @@
 .f-copyright {
   font-size: 0.8rem;
   color: #444;
-  border-top: 1px solid #222;
+  border-top: 1px solid var(--midnight-deep);
   padding-top: 2rem;
 }
 

@@ -150,7 +150,7 @@
 
 /* Divisions Section - Premium Interactive Design */
 #divisions {
-  background-color: #111111; /* Deep cinema black */
+  background-color: var(--midnight-deep); /* Deep cinema black */
   color: #ffffff;
   padding: 120px 0;
   position: relative;
@@ -239,7 +239,7 @@
   height: 8px;
   background-color: var(--accent-10);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+  box-shadow: var(--base-60)5px rgba(59, 130, 246, 0.6);
 }
 
 .divisions-right {
@@ -268,7 +268,7 @@
   border-radius: 12px;
   box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4);
   z-index: 10;
-  color: #000000;
+  color: var(--midnight-deep);
 }
 
 .division-card-title {
@@ -325,7 +325,7 @@
 }
 
 .btn-premium-lime .cta-icon-circle {
-  background: #000000;
+  background: var(--midnight-deep);
   color: #DCB84A;
   width: 36px;
   height: 36px;
@@ -623,7 +623,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: #111111; 
+  background: var(--midnight-deep); 
   color: #ffffff;
   padding: 0.8rem 1.8rem;
   border-radius: 4px;
@@ -636,7 +636,7 @@ h2 {
 
 .btn-about svg {
   background: #ffffff;
-  color: #111111;
+  color: var(--midnight-deep);
   border-radius: 50%;
   padding: 4px;
   width: 24px;
@@ -646,7 +646,7 @@ h2 {
 .btn-about:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  background: #000000;
+  background: var(--midnight-deep);
 }
 
 @media (max-width: 992px) {
@@ -1091,7 +1091,8 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: 800px;
   background: radial-gradient(circle at center, rgba(59, 130, 246, 0.07) 0%, transparent 70%);
   z-index: -1;
@@ -1530,13 +1531,13 @@ h2 {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  color: #111111;
+  color: var(--midnight-deep);
 }
 
 .nav-btn-small:hover {
-  background: #111111;
+  background: var(--midnight-deep);
   color: #ffffff;
-  border-color: #111111;
+  border-color: var(--midnight-deep);
   transform: scale(1.05);
 }
 
@@ -1729,7 +1730,7 @@ h2 {
   width: 100px;
   padding: 0;
   background: #ffffff;
-  color: #000000;
+  color: var(--midnight-deep);
   border: none;
   border-radius: 50px;
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
@@ -1747,7 +1748,7 @@ h2 {
 }
 
 .btn-success-white:hover {
-  background-color: #111111;
+  background-color: var(--midnight-deep);
   color: #ffffff;
   box-shadow: 0 12px 35px rgba(0,0,0,0.1);
 }
@@ -1755,8 +1756,9 @@ h2 {
 .btn-success-dark.slide-push-btn {
   height: 46px;
   width: 155px;
+  max-width: 100%;
   padding: 0;
-  background: #111111;
+  background: var(--midnight-deep);
   border: none;
   border-radius: 50px;
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
@@ -1790,7 +1792,7 @@ h2 {
 }
 
 .btn-state-dark {
-  background: #111111;
+  background: var(--midnight-deep);
   color: #ffffff;
 }
 
@@ -1800,20 +1802,20 @@ h2 {
 
 .btn-state-white {
   background: #ffffff;
-  color: #111111;
+  color: var(--midnight-deep);
 }
 
 .btn-state-white .btn-text {
-  color: #111111;
+  color: var(--midnight-deep);
 }
 
 .btn-state-blue {
   background: #ffffff;
-  color: #111111;
+  color: var(--midnight-deep);
 }
 
 .btn-state-blue .btn-text {
-  color: #111111;
+  color: var(--midnight-deep);
 }
 
 .btn-success-dark.slide-push-btn:hover .btn-slide-wrapper {
@@ -1838,7 +1840,7 @@ h2 {
 }
 
 .btn-state-white .cta-icon-circle {
-  background-color: #111111;
+  background-color: var(--midnight-deep);
   color: #ffffff;
 }
 

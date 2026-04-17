@@ -1,8 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  /* White and Blue Rebrand Tokens */
-  --base-60: #050C1B;       /* Deep Midnight Base (60%) */
+  /* High-End Navy and Blue Rebrand Tokens (NO BLACK) */
+  --base-60: #0A162B;       /* Deep Midnight Navy (60%) */
+  --midnight-deep: #060F1F; /* Ultra-Dark Navy (Replaces pure Black) */
   --secondary-30: #1E40AF;  /* Royal Blue (30%) */
   --accent-10: #3B82F6;     /* Electric Blue Accent (10%) */
   
@@ -10,7 +17,7 @@
   --primary: var(--accent-10); 
   --secondary: #FFFFFF;
   --bg-dark: var(--base-60);
-  --bg-darker: #02060f;
+  --bg-darker: var(--midnight-deep);
   --text-main: #FFFFFF;
   --text-muted: #94A3B8;
   --blue-glow: rgba(59, 130, 246, 0.3);

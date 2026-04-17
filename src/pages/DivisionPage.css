@@ -23,9 +23,9 @@
     height: 100%;
     background: linear-gradient(
         90deg,
-        rgba(5, 12, 27, 0.95) 0%,   
-        rgba(5, 12, 27, 0.8) 45%,
-        rgba(5, 12, 27, 0.3) 100%   
+        rgba(10, 22, 43, 0.95) 0%,   
+        rgba(10, 22, 43, 0.8) 45%,
+        rgba(10, 22, 43, 0.3) 100%   
     );
     z-index: 1;
 }
@@ -159,7 +159,7 @@
 }
 
 .btn-luxury-cta:hover .btn-luxury-content {
-    color: #050C1B;
+    color: var(--base-60);
 }
 
 .btn-luxury-text {
@@ -199,7 +199,7 @@
     right: -5%;
     font-size: 15rem;
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.02);
+    color: rgba(3, 10, 30, 0.02);
     font-family: 'Outfit', sans-serif;
     pointer-events: none;
     user-select: none;
@@ -229,7 +229,7 @@
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2.5rem;
-    color: #000000;
+    color: var(--midnight-deep);
     letter-spacing: -1px;
 }
 
@@ -254,7 +254,7 @@
 .service-item-tag {
     font-family: 'Manrope', sans-serif;
     font-size: 0.85rem;
-    color: #050C1B;
+    color: var(--base-60);
     background: rgba(255, 255, 255, 0.8);
     padding: 0.8rem 1.6rem;
     border-radius: 8px; 
@@ -270,9 +270,9 @@
 }
 
 .service-item-tag:hover {
-    background: #050C1B;
+    background: var(--base-60);
     color: var(--accent-10);
-    border-color: #050C1B;
+    border-color: var(--base-60);
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 10px 25px rgba(5, 12, 27, 0.15);
 }
@@ -285,7 +285,7 @@
 /* Premium Executive Insight Card */
 .impact-box {
     padding: 7rem 6rem;
-    background: linear-gradient(135deg, #050C1B 0%, #0a192f 100%);
+    background: linear-gradient(135deg, var(--base-60) 0%, #0a192f 100%);
     border-radius: 40px;
     border: 1px solid rgba(59, 130, 246, 0.2);
     border-left: 6px solid var(--accent-10);
@@ -452,7 +452,7 @@
     background: linear-gradient(
         90deg, 
         rgba(5, 12, 27, 0.98) 0%, 
-        rgba(5, 12, 27, 0.8) 50%,
+        rgba(10, 22, 43, 0.8) 50%,
         rgba(5, 12, 27, 0.4) 100%
     );
     z-index: 1;
@@ -466,7 +466,7 @@
     overflow: hidden;
     position: relative;
     z-index: 5;
-    box-shadow: 0 100px 200px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 100px 200px rgba(3, 10, 30, 0.3);
 }
 
 .case-content {
@@ -483,7 +483,7 @@
 
 .case-badge {
     font-family: 'Manrope', sans-serif;
-    background: #050C1B;
+    background: var(--base-60);
     color: var(--accent-10);
     padding: 0.75rem 1.8rem;
     border-radius: 4px;
@@ -506,7 +506,7 @@
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.1;
-    color: #000000;
+    color: var(--midnight-deep);
     margin-bottom: 1.5rem;
     letter-spacing: -1.5px;
 }
@@ -550,7 +550,7 @@
     font-family: 'Manrope', sans-serif;
     font-size: 1.7rem;
     font-weight: 500;
-    color: #111111;
+    color: var(--midnight-deep);
     line-height: 1.5;
     font-style: italic;
     margin-bottom: 3.5rem;
@@ -567,7 +567,7 @@
 .author-info-main strong {
     display: block;
     font-size: 1.4rem;
-    color: #000000;
+    color: var(--midnight-deep);
     margin-bottom: 0.2rem;
 }
 
@@ -590,7 +590,7 @@
 }
 
 .case-visual-box {
-    background: #050C1B;
+    background: var(--base-60);
     padding: 4rem;
     display: flex;
     flex-direction: column;
@@ -686,7 +686,7 @@
 /* Cinematic Mosaic Quick Nav */
 .quick-nav-section {
     padding: 160px 0;
-    background: #050C1B;
+    background: var(--base-60);
     color: #ffffff;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
@@ -760,7 +760,7 @@
     height: 100%;
     background: linear-gradient(
         to top, 
-        rgba(5, 12, 27, 0.95) 0%, 
+        rgba(10, 22, 43, 0.95) 0%, 
         rgba(5, 12, 27, 0.6) 40%,
         transparent 100%
     );
