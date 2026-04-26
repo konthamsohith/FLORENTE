@@ -80,45 +80,71 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
 
         <TrustedBanner />
 
-        <section id="about" className="section-padding">
-          <div className="about-section-container">
-            <div className="about-4-box-grid">
-              <div className="about-box about-text-box">
-                <h2 className="about-box-title">Building the Future with Vision & Trust</h2>
-                <p className="about-box-desc">
+        <section id="about" className="modern-about-v2" aria-labelledby="about-v2-heading">
+          <div className="container">
+            <div className="modern-about__grid">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="modern-about__content"
+              >
+                <span className="modern-about__kicker">About Florente</span>
+                <h2 id="about-v2-heading" className="modern-about__title">
+                  Building the Future with Vision &amp; Trust
+                </h2>
+                <p className="modern-about__lead">
                   At Florente, we believe that progress is driven by a clear vision and sustained by the trust of our partners.
                 </p>
-              </div>
-              <div className="about-box about-img-box">
-                <img src="/buy_sell_cards_consultancy_1775407503392.png" alt="Purchase and Investment Advisory" />
-              </div>
-              <div className="about-box about-img-box">
-                <img src="/experts_collaboration_laptop_1775407527405.png" alt="Collaborative Expert Consultation" />
-              </div>
-              <div className="about-box about-text-box light-bg">
-                <div className="vm-grid">
-                  <div className="vm-box-item">
-                    <h4>Our Vision</h4>
-                    <p>To lead through innovation and sustainability, providing diverse solutions that empower communities and industries across the globe.</p>
+
+                <div className="precision-points">
+                  <div className="precision-item">
+                    <span className="precision-num">01</span>
+                    <span className="precision-text">Purchase and Investment Advisory</span>
                   </div>
-                  <div className="vm-box-item">
-                    <h4>Our Mission</h4>
-                    <p>To build long-term, trust-based relationships while helping our clients achieve their goals with confidence and clarity.</p>
+                  <div className="precision-item">
+                    <span className="precision-num">02</span>
+                    <span className="precision-text">Collaborative Expert Consultation</span>
                   </div>
                 </div>
-                <a href="#contact" className="btn-success-dark slide-push-btn" style={{ marginTop: '2rem', display: 'inline-block', width: '165px', textDecoration: 'none' }}>
-                  <div className="btn-slide-wrapper">
-                    <div className="btn-state btn-state-white">
-                      <span className="btn-text">More about us</span>
-                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                    </div>
-                    <div className="btn-state btn-state-dark">
-                      <span className="btn-text">More about us</span>
-                      <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                    </div>
+
+                <div className="modern-about__cta-wrap">
+                  <Link to="/about" className="modern-about__cta">
+                    Explore the Florente story <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="modern-about__visual"
+              >
+                <div className="modern-about__image-wrapper">
+                  <img src="/visionary_architecture.png" alt="Florente Visionary Architecture" className="modern-about__image" />
+                </div>
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  className="strategic-intent-minimal"
+                >
+                  <span className="intent-label">Strategic intent</span>
+                  <div className="intent-item">
+                    <h3 className="intent-title">Our Vision</h3>
+                    <p className="intent-text">To lead through innovation and sustainability, providing diverse solutions that empower communities across the globe.</p>
                   </div>
-                </a>
-              </div>
+                  <div className="intent-item">
+                    <h3 className="intent-title">Our Mission</h3>
+                    <p className="intent-text">To build long-term, trust-based relationships while helping our clients achieve their goals with confidence.</p>
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -152,14 +178,14 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
               ))}
 
               {/* All Services Balance Card */}
-              <div className="division-bento-card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
+              <div className="division-bento-card division-bento-card--catalog">
                 <span className="div-bento-label">Full Portfolio</span>
                 <h3 className="div-bento-title">All Florente Services</h3>
                 <p className="div-bento-desc">
                   Explore our complete range of specialized solutions and strategic investment opportunities.
                 </p>
                 <div className="div-bento-footer">
-                  <Link to="/services" className="div-bento-cta" style={{ color: 'var(--accent-10)' }}>
+                  <Link to="/services" className="div-bento-cta">
                     View Full Catalog <ArrowRight size={18} />
                   </Link>
                 </div>

@@ -13,6 +13,8 @@ const Header: React.FC = () => {
   
   const location = useLocation();
   const isHome = location.pathname === '/';
+  /** Non-home pages use light backgrounds; keep header solid so white nav text stays visible */
+  const showSolidHeader = !isHome || isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +59,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${showSolidHeader ? 'scrolled' : ''}`}>
       <div className="container header-content">
         <div className="logo">
           <Link to="/">

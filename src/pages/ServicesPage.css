@@ -4,8 +4,9 @@
 }
 
 .services-hero {
-  background: var(--base-60);
+  background: #ffffff;
   padding: 180px 0 120px;
+  border-bottom: 1px solid rgba(10, 22, 43, 0.06);
 }
 
 .services-badge {
@@ -24,7 +25,7 @@
   line-height: 62px;
   font-weight: 500;
   max-width: none; /* Allows the headline to span one line */
-  color: #FFFFFF;
+  color: var(--base-60);
 }
 
 /* Services Grid */
@@ -126,10 +127,11 @@
 
 /* How We Work Section */
 .how-we-work {
-  background: var(--base-60);
-  color: #FFFFFF;
+  background: #ffffff;
+  color: var(--base-60);
   padding: 120px 0;
   position: relative;
+  border-top: 1px solid rgba(10, 22, 43, 0.06);
 }
 
 .workflow-grid {
@@ -161,7 +163,7 @@
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 4rem;
-  color: #FFFFFF;
+  color: var(--base-60);
 }
 
 .workflow-list {
@@ -175,7 +177,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(10, 22, 43, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -220,7 +222,7 @@
   font-family: 'Manrope', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #FFFFFF; /* High visibility from the start */
+  color: var(--base-60);
 }
 
 .highlighted .w-title {

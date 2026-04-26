@@ -59,7 +59,7 @@
   line-height: 1.05;
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--base-60);
   font-size: 52px;
   line-height: 62px;
   max-width: 900px;
@@ -69,8 +69,9 @@
 /* About Hero Mosaic */
 .about-hero-mosaic {
   padding: 160px 0 120px;
-  background: var(--base-60);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--base-60);
+  border-bottom: 1px solid rgba(10, 22, 43, 0.06);
 }
 
 .hero-text-grid {
@@ -94,7 +95,7 @@
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
-  color: #ffffff;
+  color: #64748b;
   margin-bottom: 3rem;
 }
 
@@ -127,6 +128,8 @@
 .mosaic-item {
   overflow: hidden;
   border-radius: 12px;
+  border: 1px solid rgba(10, 22, 43, 0.08);
+  box-shadow: 0 4px 24px rgba(10, 22, 43, 0.06);
 }
 
 .mosaic-item img {
@@ -349,10 +352,11 @@
 
 
 /* Team Section */
-.about-team {
+section.about-team.section-padding {
   padding: 150px 0;
-  background: var(--base-60);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--base-60);
+  border-top: 1px solid rgba(10, 22, 43, 0.06);
 }
 
 .team-header {
@@ -374,6 +378,7 @@
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.2;
+  color: var(--base-60);
 }
 
 @media (max-width: 768px) {
@@ -393,7 +398,9 @@
   border-radius: 12px;
   overflow: hidden;
   height: 520px;
-  background: var(--base-60);
+  background: #f1f5f9;
+  border: 1px solid rgba(10, 22, 43, 0.08);
+  box-shadow: 0 4px 24px rgba(10, 22, 43, 0.06);
 }
 
 .team-img {
