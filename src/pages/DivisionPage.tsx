@@ -4,9 +4,15 @@ import { divisions } from '../data/divisions';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TrustedBanner from '../components/TrustedBanner';
-import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Droplets, Shield, Leaf, Wind, Tv, Award, Sparkles } from 'lucide-react';
 import './DivisionPage.css';
 import { motion } from 'framer-motion';
+
+import ProductShowcase from '../components/ProductShowcase';
+import PropertiesContent from '../components/PropertiesContent';
+import ConsultancyContent from '../components/ConsultancyContent';
+import WealthContent from '../components/WealthContent';
+import EntertainmentContent from '../components/EntertainmentContent';
 
 const DivisionPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -83,21 +89,85 @@ const DivisionPage: React.FC = () => {
       <Header />
       
       <main>
-        {/* Division Hero */}
-        <section className="division-hero" style={{ backgroundImage: `url(${division.image})` }}>
-          <div className="division-hero-overlay"></div>
-          <div className="container division-hero-nav">
-             {/* Back link removed per request */}
-          </div>
-          <div className="container division-hero-content">
-             {/* Hero content (title, description, CTA) removed per request */}
-          </div>
-        </section>
+        {/* Division Hero removed per request */}
 
-        <TrustedBanner />
+        {slug === 'marketing-labs' ? (
+          <ProductShowcase 
+            title="Our Portfolio"
+            description="Florente Marketing Labs LLP specializes in promoting and selling a diverse range of high-quality products and services. Our portfolio includes insurance, Enagic wellness systems, TML water solutions, Hisense appliances, and hydroponic farming solutions. We focus on delivering strong market presence, reliable customer support, and sustainable growth for every brand we represent."
+            products={[
+              { 
+                name: "Enagic Kangen Water", 
+                image: "/kangen-jriv.png", 
+                category: "Wellness", 
+                description: "Advanced water ionization systems for better health.",
+                icon: <Droplets size={18} />
+              },
+              { 
+                name: "Anespa DX", 
+                image: "/anespa-dx-home-spa-system-removebg-preview.png", 
+                category: "Wellness", 
+                description: "Revitalizing showers for wellness and relaxation.",
+                icon: <Sparkles size={18} />
+              },
+              { 
+                name: "Emguarde Emf Guard", 
+                image: "/enagic-em-guarde.png", 
+                category: "Protection", 
+                description: "Advanced EMF protection for a safer environment.",
+                icon: <Shield size={18} />
+              },
+              { 
+                name: "TML Water Softener", 
+                image: "/3m-fully-automatic-water-softener-removebg-preview.png", 
+                category: "Water Solutions", 
+                description: "Efficient water softening for homes and businesses.",
+                icon: <Droplets size={18} />
+              },
+              { 
+                name: "HydroACE", 
+                image: "/HydroACE.png", 
+                category: "Farming", 
+                description: "Next-gen hydroponic solutions for sustainable agriculture.",
+                icon: <Leaf size={18} />
+              },
+              { 
+                name: "Hisense AC", 
+                image: "/hisense ac.png", 
+                category: "Appliances", 
+                description: "Smart cooling technology with energy-efficient performance.",
+                icon: <Wind size={18} />
+              },
+              { 
+                name: "Hisense TV", 
+                image: "/Q6N-fron2t3tentative.png", 
+                category: "Appliances", 
+                description: "Ultra-high-definition cinematic visual experiences.",
+                icon: <Tv size={18} />
+              },
+              { 
+                name: "Nutrigreen4u", 
+                image: "/nutrigreen4.png", 
+                category: "Hydroponics", 
+                description: "Organic and nutrient-rich growth solutions.",
+                icon: <Award size={18} />
+              },
+            ]}
+          />
+        ) : slug === 'properties' ? (
+          <PropertiesContent />
+        ) : slug === 'consultancy' ? (
+          <ConsultancyContent />
+        ) : slug === 'wealth-service' ? (
+          <WealthContent />
+        ) : slug === 'entertainments' ? (
+          <EntertainmentContent />
+        ) : (slug !== 'properties' && slug !== 'consultancy' && slug !== 'wealth-service' && slug !== 'entertainments') ? (
+          <TrustedBanner />
+        ) : null}
 
         {/* Services & Details */}
-        <section className="division-details">
+        <section className={`division-details ${slug === 'properties' ? 'bg-fcfcfc' : ''}`}>
           <div className="container">
             <div className="details-grid">
               <motion.div 
@@ -158,7 +228,7 @@ const DivisionPage: React.FC = () => {
         </section>
 
         {/* Case Study Highlight */}
-        <section className="case-study-feature" style={{ backgroundImage: `url(${division.image})` }}>
+        <section className="case-study-feature" style={{ backgroundImage: `url("${division.image}")` }}>
           <div className="case-section-overlay"></div>
           <div className="container">
             <motion.div 
@@ -228,7 +298,7 @@ const DivisionPage: React.FC = () => {
                           >
                               <div 
                                 className="q-image-layer" 
-                                style={{ backgroundImage: `url(${other.image})` }}
+                                style={{ backgroundImage: `url("${other.image}")` }}
                               ></div>
                               <div className="q-overlay-layer"></div>
                               <span className="q-num">0{idx + 1}</span>

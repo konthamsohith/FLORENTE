@@ -25,30 +25,27 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isHovered) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % divisions.length);
-    }, 6000);
+    }, 4000);
     return () => clearInterval(timer);
-  }, [divisions.length, isHovered]);
+  }, [divisions.length]);
 
   const slideData = divisions[currentSlide];
 
   return (
     <div 
-      className="hero-container"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="hero-container" 
+      onClick={() => navigate(`/divisions/${slideData.slug}`)}
+      style={{ cursor: 'pointer' }}
     >
       {divisions.map((division, index) => (
         <div 
           key={index}
           className={`hero-slide-bg ${index === currentSlide ? 'active' : ''}`}
-          style={{ backgroundImage: `url(${division.image})` }}
+          style={{ backgroundImage: `url("${division.image}")` }}
         />
       ))}
-
-      <div className="hero-bg-overlay"></div>
 
       <div className="container hero-content-layout">
         <div className="hero-left-content">
@@ -77,7 +74,6 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
               )}
             </motion.div>
           </AnimatePresence>
-          {/* Removed hero-actions as per user request */}
         </div>
       </div>
 
@@ -86,7 +82,10 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
           <div 
             key={idx} 
             className={`pagination-dot ${idx === currentSlide ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(idx)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentSlide(idx);
+            }}
             title={divisions[idx].shortName}
           />
         ))}

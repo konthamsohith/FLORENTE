@@ -1,0 +1,287 @@
+.branches-section-ref {
+  padding: 0 0 160px;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Decor */
+.bg-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.dots-map {
+  background-image: radial-gradient(#2563eb 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: linear-gradient(to right, white, transparent 50%, white);
+}
+
+.skyline-outline {
+  background: url('https://www.transparenttextures.com/patterns/city-skyline.png');
+  background-position: bottom;
+  background-repeat: repeat-x;
+  opacity: 0.05;
+}
+
+.branches-section-ref .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Styles */
+.branches-ref-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.network-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #2563eb;
+}
+
+.ref-header-line {
+  width: 50px;
+  height: 2px;
+  background: #2563eb;
+  margin: 1rem auto;
+}
+
+.branches-ref-header h2 {
+  font-family: 'Manrope', "Manrope Placeholder", sans-serif;
+  font-size: 42px;
+  line-height: 50px;
+  font-weight: 500;
+  color: rgb(10, 22, 43);
+  margin-bottom: 1.5rem;
+}
+
+.blue-text {
+  color: #2563eb;
+}
+
+.branches-ref-header p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Grid & Cards */
+.branches-ref-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.branch-ref-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.branch-ref-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 80px rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.branch-ref-card:hover .map-external-icon {
+  opacity: 1;
+}
+
+.card-maps-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.card-top-flex {
+  display: flex;
+  padding: 2.5rem;
+  gap: 2.5rem;
+  flex: 1;
+}
+
+.branch-ref-image {
+  flex: 0 0 240px;
+}
+
+.branch-ref-image img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.branch-ref-info {
+  flex: 1;
+}
+
+.city-title-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-circle {
+  width: 56px;
+  height: 56px;
+  background: #eff6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.title-text h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #060f1f;
+  margin: 0;
+}
+
+.head-office-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2563eb;
+  display: block;
+}
+
+.blue-divider {
+  width: 40px;
+  height: 2px;
+  background: #2563eb;
+  margin-bottom: 2rem;
+}
+
+.address-flex {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.pin-icon {
+  color: #2563eb;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.address-lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-lines p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.address-map-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin: -0.5rem;
+}
+
+.address-map-link:hover .address-lines p {
+  color: #2563eb;
+}
+
+.map-external-icon {
+  color: #2563eb;
+  opacity: 0;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+.address-map-link:hover .map-external-icon {
+  opacity: 1;
+}
+
+/* Footer Bar */
+.card-footer-bar {
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #444;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.small-icon-circle {
+  width: 32px;
+  height: 32px;
+  background: #eff6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.footer-v-divider {
+  width: 1px;
+  height: 30px;
+  background: #e2e8f0;
+}
+
+@media (max-width: 1200px) {
+  .card-top-flex {
+    flex-direction: column;
+  }
+  .branch-ref-image {
+    flex: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .branches-ref-grid {
+    grid-template-columns: 1fr;
+  }
+  .branches-ref-header h2 {
+    font-size: 42px;
+  }
+}

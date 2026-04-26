@@ -68,7 +68,7 @@
 
 /* About Hero Mosaic */
 .about-hero-mosaic {
-  padding: 160px 0 120px;
+  padding: 100px 0 120px;
   background: #ffffff;
   color: var(--base-60);
   border-bottom: 1px solid rgba(10, 22, 43, 0.06);
@@ -109,7 +109,7 @@
 
 @media (max-width: 768px) {
   .about-hero-mosaic {
-    padding: 100px 0 60px;
+    padding: 60px 0 60px;
   }
   .mosaic-gallery-grid {
     grid-template-columns: 1fr;

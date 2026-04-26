@@ -1,18 +1,24 @@
 .division-page {
-    background-color: var(--base-60);
-    color: var(--text-main);
+    background-color: #ffffff;
+    color: var(--base-60);
     font-family: 'Manrope', sans-serif;
+}
+
+.division-page main > *:first-child {
+    padding-top: 80px !important;
 }
 
 /* Hero Section */
 .division-hero {
-    min-height: 80vh;
+    min-height: 92vh;
     padding: 160px 0 100px;
     background-size: cover;
     background-position: center;
+    background-color: #FFFFFF;
     position: relative;
     display: flex;
     align-items: center;
+    filter: brightness(1.1);
 }
 
 .division-hero-overlay {
@@ -21,12 +27,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(10, 22, 43, 0.95) 0%,   
-        rgba(10, 22, 43, 0.8) 45%,
-        rgba(10, 22, 43, 0.3) 100%   
-    );
+    background: transparent;
     z-index: 1;
 }
 
@@ -187,9 +188,14 @@
 .division-details {
     background-color: #ffffff;
     color: var(--base-60);
-    padding: 160px 0;
+    padding: 40px 0 160px;
     position: relative;
     overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.division-details.bg-fcfcfc {
+    background-color: #fcfcfc;
 }
 
 .division-details::before {

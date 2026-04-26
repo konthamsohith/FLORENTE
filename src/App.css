@@ -43,91 +43,74 @@
 /* Trusted Banner matching the hero image footer */
 .trusted-banner {
   background-color: #ffffff;
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  min-height: 8vh;
+  min-height: 12vh;
 }
 
 .trusted-inner {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 3rem;
   width: 100%;
   max-width: none !important;
   padding: 0 4vw !important;
 }
 
+.trusted-description {
+  flex: 2;
+  min-width: 450px;
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.6;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+}
+
 .trusted-text {
   font-size: 0.85rem;
-  color: #666666;
+  color: #1a1a1a; /* Made it slightly darker for better contrast when bold */
   text-transform: uppercase;
   letter-spacing: 2px;
   white-space: nowrap;
   flex-shrink: 0;
+  font-weight: 800;
 }
 
 .trusted-logos {
   display: flex;
   align-items: center;
-  gap: 5rem;
-  animation: marquee 40s linear infinite;
-  width: max-content; /* Ensure container expands to fit all logos */
-  padding-left: 5rem;
-}
-
-.trusted-logos:hover {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  gap: clamp(1.5rem, 3vw, 4rem);
+  flex: 1;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* Allow wrapping if many products are added */
 }
 
 .trusted-logos-mask {
-  flex: 1; /* Take up all remaining space */
-  overflow: hidden; /* Mask the marquee */
-  position: relative;
-  height: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
 }
 
-/* Gradient masks for smooth fade in/out - now on the mask container */
-.trusted-logos-mask::before,
-.trusted-logos-mask::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 150px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.trusted-logos-mask::before {
-  left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
-}
-
-.trusted-logos-mask::after {
-  right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
-}
-
 .brand-logo-img {
-  max-height: 28px;
+  max-height: 65px; /* Increased size as requested */
   width: auto;
-  filter: grayscale(100%) brightness(0.2) opacity(0.5); /* More subtle monochrome */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  /* pointer-events: none removed to fix hover */
+}
+
+.product-img-small {
+  max-height: 52px; /* Slightly smaller as requested */
+}
+
+.product-img-large {
+  max-height: 100px; /* Further increased as requested */
 }
 
 .brand-logo-img:hover {
-  filter: grayscale(0%) brightness(1) opacity(1);
   transform: scale(1.1);
 }
 
@@ -241,13 +224,19 @@
   overflow: hidden;
   margin-bottom: 2.5rem;
   border: 1px solid rgba(10, 22, 43, 0.08);
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .div-bento-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   transition: transform 0.6s ease;
+  border-radius: 8px;
 }
 
 .division-bento-card:hover .div-bento-img {
@@ -1066,7 +1055,6 @@ h2 {
 }
 
 /* Global Presence - Bento Florente Pro Overhaul */
-#branches {
   background-color: #ffffff;
   padding: 180px 0;
   position: relative;
@@ -1159,9 +1147,7 @@ h2 {
 }
 
 .card-hyderabad-hq .bento-title,
-.card-hyderabad-hq .bento-subtitle,
-.card-qatar-navy .bento-title,
-.card-qatar-navy .bento-subtitle {
+.card-hyderabad-hq .bento-subtitle {
   color: #ffffff !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
@@ -1169,7 +1155,7 @@ h2 {
 /* Card Variation: Vijayawada (Solid Gold) */
 .card-vijayawada-blue {
   grid-column: span 7;
-  grid-row: span 1;
+  grid-row: span 2;
   background: var(--grad-accent);
   padding: 6rem 4rem 4rem;
   color: #FFFFFF;
@@ -1193,27 +1179,7 @@ h2 {
   opacity: 0.9;
 }
 
-.card-qatar-navy .presence-card-desc-signature {
-  color: rgba(255, 255, 255, 0.7);
-}
 
-/* Card Variation: Qatar (Midnight Navy with Gold Border) */
-.card-qatar-navy {
-  grid-column: span 7;
-  grid-row: span 1;
-  background: linear-gradient(135deg, #0A162B 0%, var(--base-60) 100%);
-  padding: 4rem;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 4rem;
-}
-
-.card-qatar-navy .bento-text-side {
-  flex: 1;
-}
 
 .card-qatar-navy .bento-title,
 .card-qatar-navy .bento-subtitle {
@@ -1345,7 +1311,6 @@ h2 {
   animation: breatheGlow 10s ease-in-out infinite alternate;
 }
 
-#branches .presence-bg-glow {
   background: radial-gradient(
     circle at 50% 40%,
     rgba(59, 130, 246, 0.06) 0%,
@@ -1673,7 +1638,6 @@ h2 {
 }
 
 /* Success Section Grid */
-#success {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1683,12 +1647,10 @@ h2 {
   z-index: 1;
 }
 
-#success .section-header {
   max-width: none;
   margin-bottom: 4rem;
 }
 
-#success .section-header h2 {
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -1697,7 +1659,6 @@ h2 {
   line-height: 1.2;
 }
 
-#success .section-header .section-desc {
   font-family: 'Manrope', "Manrope Placeholder", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -1924,6 +1885,7 @@ h2 {
   gap: 5rem;
   align-items: center;
   margin-top: 3rem;
+  margin-bottom: 5rem;
   background-color: #ffffff;
   color: var(--base-60);
   border: 1px solid rgba(10, 22, 43, 0.08);
@@ -2432,4 +2394,63 @@ h2 {
   .modern-about__visual {
     min-height: 350px;
   }
+}
+
+#success { padding-bottom: 20px !important; }
+#branches { position: relative; z-index: 5; }
+
+#divisions .divisions-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+#divisions .header-left {
+  flex: 1;
+}
+
+#divisions .header-right-text {
+  flex: 0 0 380px;
+  padding-bottom: 1rem;
+}
+
+#divisions .header-right-text p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+#divisions .header-left h2 {
+  color: var(--base-60);
+}
+
+#divisions .accent-text {
+  color: var(--accent-10);
+}
+
+@media (max-width: 992px) {
+  #divisions .divisions-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  #divisions .header-right-text {
+    flex: none;
+    max-width: 600px;
+  }
+}
+
+#divisions .header-left h2 {
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: rgb(10, 22, 43);
+  font-size: 48px;
+  line-height: 53px;
 }

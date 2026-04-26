@@ -4,6 +4,8 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import './Header.css';
 
 import { Link, useLocation } from 'react-router-dom';
+import { divisions } from '../data/divisions';
+import { ArrowRight } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,23 +42,11 @@ const Header: React.FC = () => {
     return isHome ? `#${id}` : `/#${id}`;
   };
 
-  const services = [
-    { name: "All Services", slug: "services" },
-    { name: "Florente Marketing Labs", slug: "marketing-labs" },
-    { name: "Florente Properties", slug: "properties" },
-    { name: "Florente A Consultant", slug: "consultancy" },
-    { name: "Florente Wealth Service", slug: "wealth-service" },
-    { name: "Florente Entertainments", slug: "entertainments" }
+  const menuServices = [
+    { name: "All Services", slug: "services", icon: <ArrowRight size={18} /> },
+    ...divisions.map(d => ({ name: d.shortName, slug: d.slug, icon: d.icon }))
   ];
 
-  const industries = [
-    "Renewable Energy",
-    "Real Estate & Construction",
-    "Banking & Financial Services",
-    "Technology & Software",
-    "Healthcare & Life Sciences",
-    "Media & Production"
-  ];
 
   return (
     <header className={`header ${showSolidHeader ? 'scrolled' : ''}`}>
@@ -84,24 +74,17 @@ const Header: React.FC = () => {
                   <div className="mega-col">
                     <h4>Divisions</h4>
                     <div className="mega-links">
-                      {services.map((item, idx) => (
+                      {menuServices.map((item, idx) => (
                         <Link 
                           key={idx} 
-                          to={item.slug === 'services' ? '/services' : (item.slug === 'divisions' ? getNavLink('divisions') : `/divisions/${item.slug}`)} 
+                          to={item.slug === 'services' ? '/services' : `/divisions/${item.slug}`} 
                           onClick={() => { setServiceMenuOpen(false); setMobileMenuOpen(false); }}
+                          className="mega-link-item"
                         >
-                          {item.name}
+                          <span className="mega-link-icon">{item.icon}</span>
+                          <span className="mega-link-name">{item.name}</span>
+                          <ArrowRight className="mega-link-arrow" size={16} />
                         </Link>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mega-col">
-                    <h4>Core Industries</h4>
-                    <div className="mega-links">
-                      {industries.map((item, idx) => (
-                        <span key={idx} className="mega-industry-item">
-                          {item}
-                        </span>
                       ))}
                     </div>
                   </div>

@@ -1,26 +1,54 @@
 import React from 'react';
 
-const TrustedBanner: React.FC = () => {
+interface Logo {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+interface TrustedBannerProps {
+  title?: string;
+  description?: string;
+  logos?: Logo[];
+  hideTitle?: boolean;
+}
+
+const TrustedBanner: React.FC<TrustedBannerProps> = ({ title, description, logos, hideTitle }) => {
+  const displayTitle = title || "our products";
+  const displayLogos = logos || [
+    { src: "/kangen-jriv.png", alt: "Kangen JRIV" },
+    { src: "/anespa-dx-home-spa-system-removebg-preview.png", alt: "Anespa DX" },
+    { src: "/3m-fully-automatic-water-softener-removebg-preview.png", alt: "3M Water Softener" },
+    { src: "/eureka.jpg", alt: "Eureka" },
+    { src: "/enagic-em-guarde.png", alt: "Enagic EM Guarde" },
+    { src: "/nutrigreen4.png", alt: "Nutrigreen4u", className: "product-img-small" },
+    { src: "/Q6N-fron2t3tentative.png", alt: "Q6N", className: "product-img-large" },
+    { src: "/hisense ac.png", alt: "Hisense AC", className: "product-img-large" },
+  ];
+
   return (
     <section className="trusted-banner">
       <div className="container trusted-inner">
-        <div className="trusted-text">
-          Trusted by Leading Companies Worldwide
-        </div>
+        {!hideTitle && (
+          <div className="trusted-text">
+            {displayTitle}
+          </div>
+        )}
+        {description && (
+          <div className="trusted-description">
+            {description}
+          </div>
+        )}
         <div className="trusted-logos-mask">
           <div className="trusted-logos">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg" alt="Tata" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg" alt="Tata" className="brand-logo-img" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" className="brand-logo-img" />
+            {displayLogos.map((logo, index) => (
+              <img 
+                key={index} 
+                src={logo.src} 
+                alt={logo.alt} 
+                className={`brand-logo-img ${logo.className || ''}`} 
+              />
+            ))}
           </div>
         </div>
       </div>

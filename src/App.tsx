@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import TrustedBanner from './components/TrustedBanner';
-import { 
+import {
   ArrowRight,
   Phone
 } from 'lucide-react';
@@ -16,6 +16,7 @@ import DivisionPage from './pages/DivisionPage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ScrollToTop from './components/ScrollToTop';
+import Branches from './components/Branches';
 
 interface HomeProps {
   divisions: any[];
@@ -83,7 +84,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
         <section id="about" className="modern-about-v2" aria-labelledby="about-v2-heading">
           <div className="container">
             <div className="modern-about__grid">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -116,7 +117,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -126,8 +127,8 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                 <div className="modern-about__image-wrapper">
                   <img src="/visionary_architecture.png" alt="Florente Visionary Architecture" className="modern-about__image" />
                 </div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -152,23 +153,28 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
         {/* Divisions Section - Corporate Bento Grid */}
         <section id="divisions">
           <div className="container">
-            <div className="section-header" style={{ marginBottom: '4rem' }}>
-              <span className="accent-text">Divisions of Florente</span>
-              <h2 style={{ maxWidth: '800px' }}>Excellence across energy, real estate, wealth, consultancy, and media.</h2>
+            <div className="divisions-header-flex">
+              <div className="header-left">
+                <span className="accent-text">Divisions of Florente</span>
+                <h2 style={{ maxWidth: '800px', margin: 0, marginTop: '1rem' }}>Excellence across energy, real estate, wealth, consultancy, and media.</h2>
+              </div>
+              <div className="header-right-text">
+                <p>Our specialized divisions work synergistically to drive innovation, optimize investments, and empower global market leadership through deep industry expertise.</p>
+              </div>
             </div>
-            
+
             <div className="divisions-bento-grid">
               {divisions.map((div: any, index: number) => (
                 <div key={index} className="division-bento-card">
                   <span className="div-bento-label">Section 0{index + 1}</span>
                   <h3 className="div-bento-title">{div.shortName}</h3>
-                  
+
                   <div className="div-bento-img-frame">
                     <img src={div.image} alt={div.title} className="div-bento-img" />
                   </div>
-                  
+
                   <p className="div-bento-desc">{div.description}</p>
-                  
+
                   <div className="div-bento-footer">
                     <Link to={`/divisions/${div.slug}`} className="div-bento-cta">
                       Explore Division <ArrowRight size={18} />
@@ -195,155 +201,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
         </section>
 
         <section id="branches">
-          <div className="wide-section-container">
-            <div className="grid-presence-header">
-              <div className="presence-title-area">
-                <span className="accent-tag">Global Presence</span>
-                <h2>We build trust and maintain relations!</h2>
-                <div className="presence-cta-area">
-                  <p>Our specialist team understands the importance of long lasting relationships with our clients to deliver specific investment solutions.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="presence-bento-grid">
-              <div className="bento-card card-hyderabad-hq">
-                <img src="/professional_consultant_banking_recruitment_1775411150948.png" alt="Hyderabad HQ" className="bento-img-full" />
-                <div className="bento-content-overlay">
-                  <span className="bento-label">Global Headquarters</span>
-                  <h3 className="bento-title">Hyderabad (HQ)</h3>
-                  <p className="bento-subtitle">N Square, Hi-Tech City, Hyderabad - 500081</p>
-                  <a href="#contact" className="bento-pill-cta">
-                    Visit HQ <ArrowRight size={20} />
-                  </a>
-                </div>
-              </div>
-
-              <div className="bento-card card-vijayawada-blue">
-                <span className="bento-label">Regional Excellence</span>
-                <h3 className="bento-title">Vijayawada Branch</h3>
-                <p className="bento-subtitle">Jayaprakash nagar, Vijayawada - 520008</p>
-                <p className="presence-card-desc-signature">
-                  Delivering premier wealth management and investment advisory services across the Andhra region.
-                </p>
-                <div className="bento-contact-row">
-                  <Phone size={22} /> +91 988577 2356
-                </div>
-                <div style={{ marginTop: '2rem' }}>
-                  <a href="#contact" className="bento-pill-cta">
-                    Book a call <ArrowRight size={20} />
-                  </a>
-                </div>
-              </div>
-
-              <div className="bento-card card-qatar-navy">
-                <div className="bento-text-side">
-                  <span className="bento-label">International Support</span>
-                  <h3 className="bento-title">Qatar Office</h3>
-                  <span className="bento-subtitle">Qatar (International)</span>
-                  <p className="presence-card-desc-signature">
-                    Specialized property advisory and management for our global clients in the Middle East.
-                  </p>
-                  <div className="bento-contact-row">
-                    <Phone size={22} /> +974 33344369
-                  </div>
-                </div>
-                <div className="bento-img-side">
-                  <img src="/dubai_luxury_real_estate_properties_1775411126789.png" alt="Qatar Office" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="presence-bg-glow"></div>
-        </section>
-
-        <section id="success" className="section-padding">
-          <div className="wide-section-container">
-            <div className="section-header">
-              <h2>Our clients' success is our top priority</h2>
-              <p className="section-desc">What our customers feel about our services!</p>
-            </div>
-
-            <div className="success-grid">
-              <div className="success-item-vertical success-card-light">
-                <span className="case-tag">{divisions[activeDivisionIndex].caseStudy.tag}</span>
-                <h3 className="case-title">
-                  {divisions[activeDivisionIndex].caseStudy.title}
-                </h3>
-                <div className="case-nav">
-                  <button 
-                    className="nav-btn-small"
-                    onClick={() => setActiveDivisionIndex((prev) => (prev - 1 + divisions.length) % divisions.length)}
-                  >
-                    <ArrowRight size={18} style={{ transform: 'rotate(180deg)' }} />
-                  </button>
-                  <button 
-                    className="nav-btn-small"
-                    onClick={() => setActiveDivisionIndex((prev) => (prev + 1) % divisions.length)}
-                  >
-                    <ArrowRight size={18} />
-                  </button>
-                </div>
-              </div>
-
-              <div className="success-item-image">
-                <img 
-                  src={divisions[activeDivisionIndex].image} 
-                  alt={divisions[activeDivisionIndex].title} 
-                />
-              </div>
-
-              <div className="success-item-stat success-card-blue">
-                <div className="stat-value">{divisions[activeDivisionIndex].impactStat.value}</div>
-                <p className="stat-label">{divisions[activeDivisionIndex].impactStat.label}</p>
-              </div>
-
-              <div className="success-item-quote success-card-dark">
-                <div key={activeDivisionIndex} className="quote-animate-wrapper animate-in">
-                  <p className="quote-text">
-                    "{divisions[activeDivisionIndex].testimonial.quote}"
-                  </p>
-                  <div className="quote-author">
-                    <div className="author-avatar">
-                      <img src={divisions[activeDivisionIndex].testimonial.avatar} alt={divisions[activeDivisionIndex].testimonial.author} />
-                    </div>
-                    <div className="author-info">
-                      <strong>{divisions[activeDivisionIndex].testimonial.author}</strong>
-                      <span>{divisions[activeDivisionIndex].testimonial.role}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="success-cta-banner">
-              <div className="cta-left">
-                <span className="cta-subtitle">Empowering Your Financial Future</span>
-                <h2 className="cta-title">Unlock your full potential with expert consulting and tailored financial strategies.</h2>
-                <p className="cta-desc">
-                  Whether you're growing a business, optimizing investments, or securing long-term wealth, we're here to guide you every step of the way.
-                </p>
-                <div className="cta-buttons">
-                  <button className="btn-success-white">Pricing</button>
-                  <button className="btn-success-dark slide-push-btn">
-                    <div className="btn-slide-wrapper">
-                      <div className="btn-state btn-state-white">
-                        <span className="btn-text">Get in touch</span>
-                        <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                      </div>
-                      <div className="btn-state btn-state-dark">
-                        <span className="btn-text">Get in touch</span>
-                        <span className="cta-icon-circle"><ArrowRight size={16} /></span>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-              <div className="cta-right-img">
-                <img src="/buy_sell_cards_consultancy_1775407503392.png" alt="Tailored Financial Strategies" />
-              </div>
-            </div>
-          </div>
+          <Branches />
         </section>
 
         <section id="contact" className="section-padding">
@@ -365,7 +223,6 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                   <div className="contact-meta-item">
                     <h4>Phone</h4>
                     <p>+91 988577 2356</p>
-                    <p>+974 33344369</p>
                   </div>
                   <div className="contact-meta-item">
                     <h4>Address</h4>
@@ -400,22 +257,22 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                   <div className="form-row">
                     <div className="compact-group">
                       <label>First Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         placeholder="Jane"
                         value={formState.firstName}
-                        onChange={(e) => setFormState({...formState, firstName: e.target.value})}
-                        required 
+                        onChange={(e) => setFormState({ ...formState, firstName: e.target.value })}
+                        required
                       />
                     </div>
                     <div className="compact-group">
                       <label>Last Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         placeholder="Smith"
                         value={formState.lastName}
-                        onChange={(e) => setFormState({...formState, lastName: e.target.value})}
-                        required 
+                        onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
+                        required
                       />
                     </div>
                   </div>
@@ -423,32 +280,32 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                   <div className="form-row">
                     <div className="compact-group">
                       <label>Email</label>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         placeholder="jane@framer.com"
                         value={formState.email}
-                        onChange={(e) => setFormState({...formState, email: e.target.value})}
-                        required 
+                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                        required
                       />
                     </div>
                     <div className="compact-group">
                       <label>Phone Number</label>
-                      <input 
-                        type="tel" 
+                      <input
+                        type="tel"
                         placeholder="Phone Number"
                         value={formState.phone}
-                        onChange={(e) => setFormState({...formState, phone: e.target.value})}
-                        required 
+                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                        required
                       />
                     </div>
                   </div>
 
                   <div className="compact-group full-width">
                     <label>Message</label>
-                    <textarea 
+                    <textarea
                       placeholder="Add a cover letter or anything else you want to share"
                       value={formState.message}
-                      onChange={(e) => setFormState({...formState, message: e.target.value})}
+                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       rows={8}
                       required
                     ></textarea>

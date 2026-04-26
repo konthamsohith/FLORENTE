@@ -1,0 +1,388 @@
+.wealth-content {
+  background-color: #ffffff;
+}
+
+/* Hero section */
+.wealth-hero {
+  padding: 60px 0 6rem;
+}
+
+.wealth-hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.wealth-hero-text {
+  flex: 1.2;
+}
+
+.wealth-hero-text h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 51px;
+  line-height: 56px;
+  color: #060f1f;
+  margin: 1.5rem 0 2.5rem;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+.wealth-hero-visual {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.wealth-data-graphic {
+  width: 100%;
+  max-width: 450px;
+  height: 450px;
+  background: #f8fafc;
+  border-radius: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.05);
+}
+
+.graphic-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(59, 130, 246, 0.2);
+}
+
+.graphic-circle.outer { width: 350px; height: 350px; animation: rotate 20s linear infinite; }
+.graphic-circle.middle { width: 250px; height: 250px; animation: rotate 15s linear infinite reverse; }
+.graphic-circle.inner { 
+  width: 150px; 
+  height: 150px; 
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  border-style: solid;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.graphic-bars {
+  position: absolute;
+  bottom: 120px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  height: 100px;
+  z-index: 2;
+}
+
+.g-bar {
+  width: 24px;
+  background: var(--accent-10);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+}
+
+.graphic-center-icon {
+  color: var(--base-60);
+  z-index: 3;
+  position: relative;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+.graphic-float-node {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-10);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  z-index: 4;
+  animation: floatNode 4s ease-in-out infinite;
+}
+
+.n1 { top: 20%; right: 20%; animation-delay: 0s; }
+.n2 { bottom: 25%; left: 15%; animation-delay: 1s; }
+.n3 { top: 15%; left: 25%; animation-delay: 2s; }
+
+@keyframes floatNode {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.wealth-lead {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  max-width: 850px;
+}
+
+.wealth-sublead {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #666;
+  max-width: 750px;
+}
+
+/* Offerings Section */
+.wealth-offerings {
+  padding: 8rem 0;
+  background-color: #f8fafc;
+}
+
+.offerings-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.offerings-header h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 42px;
+  line-height: 48px;
+  color: #060f1f;
+  font-weight: 700;
+  margin: 1.5rem 0 2rem;
+}
+
+.offerings-header p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #666;
+}
+
+.funds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.fund-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.fund-item:hover {
+  transform: translateX(10px);
+  border-color: var(--accent-10);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.fund-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-10);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fund-item span {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--base-60);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Why Choose Section */
+.wealth-why {
+  padding: 100px 0;
+}
+
+.section-header-centered {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-header-centered h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 42px;
+  line-height: 48px;
+  color: #060f1f;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.why-card {
+  padding: 3rem;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.why-card:hover {
+  background: #f8fafc;
+  transform: translateY(-8px);
+  border-color: var(--accent-10);
+}
+
+.why-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--accent-10);
+  margin-bottom: 2rem;
+}
+
+.why-card h4 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  line-height: 34px;
+  color: #060f1f;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.why-card p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Promise Section */
+.wealth-promise {
+  padding: 6rem 0 100px;
+}
+
+.promise-card {
+  background: var(--base-60);
+  border-radius: 40px;
+  padding: 6rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.promise-content {
+  flex: 1.2;
+}
+
+.promise-content h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 42px;
+  line-height: 48px;
+  color: var(--accent-10);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.promise-content p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.promise-visual {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.journey-path-graphic {
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  position: relative;
+}
+
+.path-line {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+}
+
+.journey-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 5;
+}
+
+.journey-node span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.journey-node svg {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background: #ffffff;
+  color: var(--accent-10);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.journey-node:hover svg {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--accent-10);
+  color: #fff;
+}
+
+.node-start {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+.node-mid {
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.node-end {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+@media (max-width: 1024px) {
+  .promise-visual {
+    padding: 4rem 0;
+    width: 80%;
+    margin: 0 auto;
+  }
+}

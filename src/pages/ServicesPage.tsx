@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Plus, Minus, ArrowRight } from 'lucide-react';
+import { Plus, Minus, ArrowRight, Activity, Home, Users, TrendingUp, Film, Target } from 'lucide-react';
 import './ServicesPage.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +24,7 @@ const ServicesPage: React.FC = () => {
     {
       title: "Florente Marketing Labs LLP",
       description: "Strategic digital acceleration and high-impact infrastructure labs designed to position global brands for market dominance.",
-      image: "/marketing.jpeg",
+      image: "/Marketing Labs.png",
       slug: "marketing-labs"
     },
     {
@@ -36,13 +36,13 @@ const ServicesPage: React.FC = () => {
     {
       title: "Florente A CONSULTANT LLP",
       description: "World-class talent acquisition and executive search for global leaders across banking, insurance, and technology sectors.",
-      image: "/call.jpeg",
+      image: "/A Consultant.png",
       slug: "consultancy"
     },
     {
       title: "Florente WEALTH SERVICE LLP",
       description: "Sophisticated asset management and personalized wealth strategies designed for high-net-worth families and corporate entities.",
-      image: "/services_wealth_management_1775967562551_1775969471848.png",
+      image: "/Wealth Service.png",
       slug: "wealth-service"
     },
     {
@@ -95,10 +95,53 @@ const ServicesPage: React.FC = () => {
       <main>
         <section className="services-hero">
           <div className="container">
-            <motion.span initial="hidden" animate="visible" variants={fadeIn} className="services-badge">PRECISION CONSULTING</motion.span>
-            <motion.h1 initial="hidden" animate="visible" variants={fadeIn}>
-              Florente provides elite consulting and strategic financial solutions across five global business units.
-            </motion.h1>
+            <div className="services-hero-flex">
+              <div className="services-hero-text">
+                <motion.span initial="hidden" animate="visible" variants={fadeIn} className="services-badge">PRECISION CONSULTING</motion.span>
+                <motion.h1 initial="hidden" animate="visible" variants={fadeIn}>
+                  Florente provides elite consulting and strategic financial solutions across five global business units.
+                </motion.h1>
+                <motion.p initial="hidden" animate="visible" variants={fadeIn} className="services-hero-desc">
+                  Our integrated ecosystem leverages deep industry expertise to drive innovation, optimize capital, and secure market leadership for our partners worldwide.
+                </motion.p>
+              </div>
+              
+              <motion.div 
+                className="services-hero-infographic"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                <div className="infographic-core">
+                  <div className="core-pulse"></div>
+                  <Target size={40} />
+                  <span className="core-label">PRECISION</span>
+                </div>
+                
+                <div className="infographic-orbit">
+                  <div className="orbit-item item-1" title="Marketing Labs">
+                    <div className="orbit-icon"><Activity size={20} /></div>
+                    <span className="orbit-text">Marketing</span>
+                  </div>
+                  <div className="orbit-item item-2" title="Properties">
+                    <div className="orbit-icon"><Home size={20} /></div>
+                    <span className="orbit-text">Properties</span>
+                  </div>
+                  <div className="orbit-item item-3" title="Consultant">
+                    <div className="orbit-icon"><Users size={20} /></div>
+                    <span className="orbit-text">Consultant</span>
+                  </div>
+                  <div className="orbit-item item-4" title="Wealth Service">
+                    <div className="orbit-icon"><TrendingUp size={20} /></div>
+                    <span className="orbit-text">Wealth</span>
+                  </div>
+                  <div className="orbit-item item-5" title="Entertainments">
+                    <div className="orbit-icon"><Film size={20} /></div>
+                    <span className="orbit-text">Media</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
