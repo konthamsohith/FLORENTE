@@ -6,27 +6,56 @@ import './EntertainmentContent.css';
 const EntertainmentContent: React.FC = () => {
   return (
     <div className="ent-content">
-      <section className="ent-hero">
+      <section className="ent-hero-full">
+        <div className="ent-hero-bg">
+          <img 
+            src="/film_production_creative_cinematic_media_entertainments_1775411201163.png" 
+            alt="Cinematic Storytelling Background" 
+          />
+          <div className="ent-hero-overlay"></div>
+        </div>
+        
         <div className="container">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="ent-intro-flex"
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="ent-hero-content"
           >
-            <div className="ent-intro-text">
-              <span className="accent-tag">Cinema & Storytelling</span>
-              <h1>Crafting Meaningful <br />Cinematic Experiences</h1>
-              <p>Florente Entertainments focuses on high-quality film production and creative storytelling. We are dedicated to producing engaging cinema that combines commercial appeal with meaningful content.</p>
-            </div>
-            <div className="ent-visual-img-frame">
-              <img 
-                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=2071" 
-                alt="Cinematic Storytelling" 
-                className="ent-hero-img" 
-              />
-            </div>
+            <span className="accent-tag-premium">Cinematic Storytelling</span>
+            <h1>Crafting Meaningful <br />Cinematic Experiences</h1>
+            <p>Florente Entertainments focuses on high-quality film production and creative storytelling. We are dedicated to producing engaging cinema that combines commercial appeal with meaningful content.</p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Auto-scrolling Movie Slideshow */}
+      <section className="movie-slideshow-section">
+        <div className="slideshow-container">
+          <div className="slideshow-track">
+            {[
+              { title: "KIRAYI", year: "2024", image: "/movies/kirayi.png" },
+              { title: "SHADOWS", year: "2025", image: "/movies/shadows.png" },
+              { title: "LEGACY", year: "2025", image: "/movies/legacy.png" },
+              { title: "KIRAYI", year: "2024", image: "/movies/kirayi.png" },
+              { title: "SHADOWS", year: "2025", image: "/movies/shadows.png" },
+              { title: "LEGACY", year: "2025", image: "/movies/legacy.png" },
+              { title: "KIRAYI", year: "2024", image: "/movies/kirayi.png" },
+              { title: "SHADOWS", year: "2025", image: "/movies/shadows.png" },
+              { title: "LEGACY", year: "2025", image: "/movies/legacy.png" }
+            ].map((movie, i) => (
+              <div className="movie-poster-card" key={i}>
+                <div className="poster-img-wrap">
+                  <img src={movie.image} alt={movie.title} />
+                  <div className="poster-overlay">
+                    <h4>{movie.title}</h4>
+                    <span>{movie.year}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
