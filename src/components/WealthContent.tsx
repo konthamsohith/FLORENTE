@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, PieChart, Shield, Target, Compass, BarChart3, Clock, Milestone, Sparkles, Key } from 'lucide-react';
+import { TrendingUp, PieChart, Shield, Target, Compass, BarChart3, Clock, Milestone, Sparkles, Key, Coins, Landmark, ShieldCheck } from 'lucide-react';
 import './WealthContent.css';
 
 const WealthContent: React.FC = () => {
@@ -26,58 +26,159 @@ const WealthContent: React.FC = () => {
 
   return (
     <div className="wealth-content">
-      <section className="wealth-hero">
-        <div className="container">
-          <div className="wealth-hero-flex">
+      <section className="wealth-hero-v3">
+        <div className="container wealth-container-v3">
+          <div className="wealth-hero-grid">
+            {/* Left Column: Information */}
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="wealth-hero-text"
+              className="wealth-info-side"
             >
-              <span className="accent-tag">Wealth Management</span>
-              <h1>Smart Investing. <br />Trusted Advice. <br />Long-Term Wealth Creation.</h1>
-              <p className="wealth-lead">
+              <div className="wealth-kicker">
+                <Shield size={18} className="kicker-icon" />
+                <span>Wealth Management</span>
+              </div>
+              
+              <h1 className="wealth-main-title">
+                Smart Investing.<br />
+                Trusted Advice.<br />
+                <span className="blue-text">Long-Term Wealth Creation.</span>
+              </h1>
+
+              <p className="wealth-desc-p1">
                 Florente Wealth Services is dedicated to helping individuals and families grow, protect, and manage their wealth through expert-led mutual fund advisory and distribution services.
               </p>
-              <p className="wealth-sublead">
-                With a customer-centric approach and deep market understanding, we guide investors toward informed financial decisions aligned with their goals.
-              </p>
+
+              <div className="wealth-quote-box">
+                <p>
+                  With a customer-centric approach and deep market understanding, we guide investors toward informed financial decisions aligned with their goals.
+                </p>
+              </div>
+
+              <div className="wealth-cta-group">
+                <button className="btn-wealth-primary">
+                  <span>Explore Solutions</span>
+                  <TrendingUp size={18} />
+                </button>
+                <button className="btn-wealth-secondary">
+                  <Clock size={18} />
+                  <span>Talk to an Advisor</span>
+                </button>
+              </div>
+
+              <div className="wealth-features-footer">
+                <div className="w-feature">
+                  <Shield size={24} className="feature-icon" />
+                  <div className="feature-text">
+                    <strong>Trusted Guidance</strong>
+                    <span>Experienced & Reliable</span>
+                  </div>
+                </div>
+                <div className="w-feature">
+                  <PieChart size={24} className="feature-icon" />
+                  <div className="feature-text">
+                    <strong>Tailored Solutions</strong>
+                    <span>Built Around Your Goals</span>
+                  </div>
+                </div>
+                <div className="w-feature">
+                  <Key size={24} className="feature-icon" />
+                  <div className="feature-text">
+                    <strong>Secure & Transparent</strong>
+                    <span>Your Wealth, Protected</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
+
+            {/* Right Column: Visual Graphic */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="wealth-hero-visual"
+              className="wealth-visual-side"
             >
-              <div className="wealth-data-graphic">
-                <div className="graphic-circle outer"></div>
-                <div className="graphic-circle middle"></div>
-                <div className="graphic-circle inner"></div>
-                <div className="graphic-bars">
-                  <motion.div 
-                    className="g-bar" 
-                    initial={{ height: 0 }} 
-                    whileInView={{ height: '60%' }} 
-                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-                  />
-                  <motion.div 
-                    className="g-bar" 
-                    initial={{ height: 0 }} 
-                    whileInView={{ height: '80%' }} 
-                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
-                  />
-                  <motion.div 
-                    className="g-bar" 
-                    initial={{ height: 0 }} 
-                    whileInView={{ height: '100%' }} 
-                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.6 }}
-                  />
+              <div className="wealth-main-card">
+                {/* Background Dot Pattern */}
+                <div className="bg-dots-pattern"></div>
+                
+                <div className="visual-container">
+                  {/* Connection Lines (SVG) */}
+                  <svg className="connection-lines-svg" viewBox="0 0 500 500">
+                    <line x1="250" y1="250" x2="100" y2="100" className="conn-line" />
+                    <line x1="250" y1="250" x2="400" y2="100" className="conn-line" />
+                    <line x1="250" y1="250" x2="100" y2="400" className="conn-line" />
+                    <line x1="250" y1="250" x2="400" y2="400" className="conn-line" />
+                    
+                    {/* Dots at intersection points */}
+                    <circle cx="175" cy="175" r="4" className="conn-dot" />
+                    <circle cx="325" cy="175" r="4" className="conn-dot" />
+                    <circle cx="175" cy="325" r="4" className="conn-dot" />
+                    <circle cx="325" cy="325" r="4" className="conn-dot" />
+                  </svg>
+
+                  {/* Concentric Rings */}
+                  <div className="concentric-rings">
+                    <div className="ring r-outer"></div>
+                    <div className="ring r-mid"></div>
+                    <div className="ring r-inner"></div>
+                  </div>
+
+                  {/* Corner Asset Cards */}
+                  <div className="asset-nodes-grid">
+                    <div className="asset-card-mini top-left">
+                      <div className="icon-box blue"><TrendingUp size={20} /></div>
+                      <div className="card-info">
+                        <strong>Equity</strong>
+                        <span>Grow wealth with equity investments</span>
+                      </div>
+                    </div>
+                    <div className="asset-card-mini top-right">
+                      <div className="icon-box dark-blue"><Shield size={20} /></div>
+                      <div className="card-info">
+                        <strong>Debt</strong>
+                        <span>Stability and consistent returns</span>
+                      </div>
+                    </div>
+                    <div className="asset-card-mini bottom-left">
+                      <div className="icon-box purple"><PieChart size={20} /></div>
+                      <div className="card-info">
+                        <strong>Mutual Funds</strong>
+                        <span>Diversified portfolios for every goal</span>
+                      </div>
+                    </div>
+                    <div className="asset-card-mini bottom-right">
+                      <div className="icon-box cyan"><BarChart3 size={20} /></div>
+                      <div className="card-info">
+                        <strong>Growth</strong>
+                        <span>Long-term growth for a better future</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Center Institutional Node */}
+                  <div className="center-node">
+                    <div className="node-content">
+                      <Landmark size={40} className="node-icon-main" />
+                      <span className="node-sub-text">Your Financial Future</span>
+                    </div>
+                  </div>
+
+                  {/* 3D Gold Coins at Cardinal Points */}
+                  <div className="cardinal-coins">
+                    <div className="c-coin pos-n">₹</div>
+                    <div className="c-coin pos-e">₹</div>
+                    <div className="c-coin pos-s">₹</div>
+                    <div className="c-coin pos-w">₹</div>
+                  </div>
                 </div>
-                <TrendingUp className="graphic-center-icon" size={48} />
-                <div className="graphic-float-node n1"><PieChart size={20} /></div>
-                <div className="graphic-float-node n2"><Shield size={20} /></div>
-                <div className="graphic-float-node n3"><BarChart3 size={20} /></div>
+
+                <div className="wealth-bottom-banner">
+                  <Shield size={18} className="banner-icon" />
+                  <span>Expertise you can trust. Solutions that create lasting wealth.</span>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -113,89 +214,61 @@ const WealthContent: React.FC = () => {
         </div>
       </section>
 
-      <section className="wealth-why">
-        <div className="container">
-          <div className="section-header-centered">
-            <span className="accent-tag">The Florente Edge</span>
-            <h3>Why Choose Florente Wealth Services</h3>
-          </div>
-
-          <div className="why-grid">
-            <div className="why-card">
-              <Compass className="why-icon" />
-              <h4>Expert Guidance</h4>
-              <p>Experienced financial experts guiding you through every market cycle.</p>
-            </div>
-            <div className="why-card">
-              <Shield className="why-icon" />
-              <h4>Unbiased Selection</h4>
-              <p>Independent fund selection focused solely on your financial success.</p>
-            </div>
-            <div className="why-card">
-              <Target className="why-icon" />
-              <h4>Goal-Based Planning</h4>
-              <p>Strategies built around your specific life milestones and aspirations.</p>
-            </div>
-            <div className="why-card">
-              <BarChart3 className="why-icon" />
-              <h4>Risk-Aligned Strategies</h4>
-              <p>Portfolios optimized to match your personal risk tolerance and time horizon.</p>
-            </div>
-            <div className="why-card">
-              <Milestone className="why-icon" />
-              <h4>Transparent & Ethical</h4>
-              <p>A commitment to clarity and integrity in every piece of advice we offer.</p>
-            </div>
-            <div className="why-card">
-              <Clock className="why-icon" />
-              <h4>Continuous Monitoring</h4>
-              <p>Regular reviews and rebalancing to keep your wealth on the right track.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="wealth-promise">
+      {/* Our Philosophy - Elite Narrative */}
+      <section className="wealth-philosophy-narrative">
         <div className="container">
           <motion.div 
-            className="promise-card"
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            className="philosophy-hero-text"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="promise-content">
-              <h3>Our Promise</h3>
-              <p>At Florente Wealth Services, we believe wealth creation is a journey, not a transaction. Our mission is to build long-term, trust-based relationships while helping our clients achieve financial freedom with confidence and clarity.</p>
-            </div>
-            <div className="promise-visual">
-              <div className="journey-path-graphic">
-                <svg className="path-line" viewBox="0 0 400 200">
-                  <motion.path 
-                    d="M 20 180 Q 100 180 150 100 T 380 20" 
-                    fill="none" 
-                    stroke="var(--accent-10)" 
-                    strokeWidth="2" 
-                    strokeDasharray="8 8"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
-                  />
-                </svg>
-                <div className="journey-node node-start">
-                  <Compass size={24} />
-                  <span>Planning</span>
-                </div>
-                <div className="journey-node node-mid">
-                  <TrendingUp size={24} />
-                  <span>Growth</span>
-                </div>
-                <div className="journey-node node-end">
-                  <Sparkles size={32} />
-                  <span>Freedom</span>
-                </div>
-              </div>
-            </div>
+            <span className="philosophy-label">Our Philosophy</span>
+            <h2 className="philosophy-main-title">Our Promise</h2>
+            <div className="philosophy-divider"></div>
+            <p className="philosophy-mission">
+              At Florente Wealth Services, we believe wealth creation is a journey, not a transaction. Our mission is to build long-term, trust-based relationships while helping our clients achieve financial freedom with confidence and clarity.
+            </p>
           </motion.div>
+
+          <div className="philosophy-roadmap">
+            {[
+              { 
+                title: "Strategic Planning", 
+                desc: "Defining clear roadmaps for your unique financial goals.",
+                icon: <Compass size={24} />
+              },
+              { 
+                title: "Disciplined Growth", 
+                desc: "Nurturing wealth through market cycles with expert analysis.",
+                icon: <TrendingUp size={24} />
+              },
+              { 
+                title: "Financial Freedom", 
+                desc: "The ultimate goal: absolute clarity and confidence in your future.",
+                icon: <Sparkles size={24} />,
+                highlight: true
+              }
+            ].map((step, i) => (
+              <motion.div 
+                key={i}
+                className={`roadmap-block ${step.highlight ? 'active' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+              >
+                <div className="roadmap-header">
+                  <div className="roadmap-icon">{step.icon}</div>
+                  <div className="roadmap-line"></div>
+                </div>
+                <div className="roadmap-body">
+                  <h4>{step.title}</h4>
+                  <p>{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
