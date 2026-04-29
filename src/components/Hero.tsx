@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Hero.css';
@@ -27,9 +27,19 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % divisions.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(timer);
   }, [divisions.length]);
+
+  const nextSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentSlide((prev) => (prev + 1) % divisions.length);
+  };
+
+  const prevSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentSlide((prev) => (prev - 1 + divisions.length) % divisions.length);
+  };
 
   const slideData = divisions[currentSlide];
 
@@ -40,12 +50,14 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
       style={{ cursor: 'pointer' }}
     >
       {divisions.map((division, index) => (
-        <div 
+        <img 
           key={index}
-          className={`hero-slide-bg ${index === currentSlide ? 'active' : ''}`}
-          style={{ backgroundImage: `url("${division.image}")` }}
+          src={division.image}
+          alt={division.heroTitle}
+          className={`hero-slide-img ${index === currentSlide ? 'active' : ''}`}
         />
       ))}
+      <div className="hero-overlay"></div>
 
       <div className="container hero-content-layout">
         <div className="hero-left-content">
@@ -77,18 +89,13 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
         </div>
       </div>
 
-      <div className="hero-pagination">
-        {divisions.map((_, idx) => (
-          <div 
-            key={idx} 
-            className={`pagination-dot ${idx === currentSlide ? 'active' : ''}`}
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrentSlide(idx);
-            }}
-            title={divisions[idx].shortName}
-          />
-        ))}
+      <div className="hero-navigation">
+        <button className="nav-btn prev" onClick={prevSlide} aria-label="Previous slide">
+          <ChevronLeft size={24} />
+        </button>
+        <button className="nav-btn next" onClick={nextSlide} aria-label="Next slide">
+          <ChevronRight size={24} />
+        </button>
       </div>
     </div>
   );

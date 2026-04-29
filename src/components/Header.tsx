@@ -94,10 +94,10 @@ const Header: React.FC = () => {
           </div>
 
           <a href={getNavLink('branches')} className="nav-link" onClick={() => setMobileMenuOpen(false)}>Branches</a>
-          <a href={getNavLink('contact')} className="nav-link mobile-only-link" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+          <Link to="/contact" className="nav-link mobile-only-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
         <div className="header-cta">
-          <a href={getNavLink('contact')} className="btn-secondary-nav" onClick={() => setMobileMenuOpen(false)}>Get In Touch</a>
+          <Link to="/contact" className="btn-secondary-nav" onClick={() => setMobileMenuOpen(false)}>Get In Touch</Link>
           <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

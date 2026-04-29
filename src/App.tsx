@@ -15,6 +15,7 @@ import { divisions } from './data/divisions';
 import DivisionPage from './pages/DivisionPage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/ScrollToTop';
 import Branches from './components/Branches';
 
@@ -44,18 +45,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
     }, 1500);
   };
 
-  const [activeDivisionIndex, setActiveDivisionIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  React.useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isAutoPlaying) {
-      interval = setInterval(() => {
-        setActiveDivisionIndex((prev) => (prev + 1) % divisions.length);
-      }, 7000);
-    }
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, divisions.length]);
+  // Auto-play and hash scroll logic removed here as they are handled in sub-components or common hooks
 
   // Scroll to hash on load (e.g., when coming from Division pages)
   React.useEffect(() => {
@@ -338,6 +328,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/divisions/:slug" element={<DivisionPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </div>
   );

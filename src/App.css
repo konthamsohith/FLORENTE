@@ -137,22 +137,22 @@
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
   }
-  .trusted-logos-mask::before,
-  .trusted-logos-mask::after {
-    display: none;
+  .trusted-logos-mask {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
   .trusted-logos {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    padding: 0;
+    gap: 3rem;
+    animation-duration: 25s; /* Slightly faster for mobile */
   }
   .brand-logo-img {
-    max-height: 20px;
+    max-height: 45px;
+  }
+  .product-img-large {
+    max-height: 60px;
   }
 }
 

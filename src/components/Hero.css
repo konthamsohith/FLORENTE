@@ -1,34 +1,49 @@
 .hero-container {
-  min-height: 92vh;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  min-height: 600px;
   position: relative;
   overflow: hidden;
-  background-color: #FFFFFF;
+  background-color: #000;
   display: flex;
-  align-items: stretch; /* Allow children to fill vertical space */
 }
 
-.hero-slide-bg {
+.hero-slide-img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
   opacity: 0;
   visibility: hidden;
   transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
-  transform: scale(1.05); /* Zoom-out effect */
+  transform: scale(1.08);
   z-index: 1;
 }
 
-.hero-slide-bg.active {
+.hero-slide-img.active {
   opacity: 1 !important;
   visibility: visible;
   transform: scale(1);
-  filter: brightness(1.1);
   z-index: 2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.05) 40%, 
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
 }
 
 .hero-content-layout {
@@ -38,20 +53,19 @@
   justify-content: space-between;
   align-items: flex-end;
   height: 100%;
-  min-height: 92vh;
   width: 100%;
   max-width: none !important; 
-  padding: 140px max(1.5rem, 5vw) 60px; /* Unified padding */
+  padding: 80px max(1.5rem, 5vw) 100px;
 }
 
 @media (max-width: 768px) {
   .hero-container {
-    min-height: 80vh;
+    aspect-ratio: 1 / 1.1;
+    min-height: 500px;
   }
   .hero-content-layout {
-    min-height: 80vh;
-    padding-top: 100px;
-    padding-bottom: 80px; /* More space for pagination */
+    height: 100%;
+    padding: 60px 1.5rem 80px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -62,7 +76,6 @@
   max-width: 650px;
   margin-bottom: 2.5rem; 
   margin-left: 0;
-  transform: none; /* Removed translateX for better responsiveness */
 }
 
 @media (max-width: 768px) {
@@ -96,8 +109,8 @@
   color: #FFFFFF;
   margin-bottom: 2rem;
   letter-spacing: -0.03em;
-  max-width: 1100px; /* Expanded to prevent the three-line slogan from wrapping into 5 lines */
-  white-space: pre-line; /* Support for explicit line breaks */
+  max-width: 1100px;
+  white-space: pre-line;
 }
 
 .hero-subtitle {
@@ -109,46 +122,56 @@
   max-width: 600px;
 }
 
-/* Actions matching the image */
-/* Removed hero-actions styles as per user request */
-
-/* Nav slides on the bottom right */
-/* Minimalist Pagination Dots */
-.hero-pagination {
+.hero-navigation {
   position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
+  justify-content: space-between;
+  padding: 0 40px;
   z-index: 10;
+  pointer-events: none; /* Let clicks pass through except on buttons */
 }
 
-
-
-.pagination-dot {
-  width: 10px;
-  height: 10px;
+.nav-btn {
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: auto;
 }
 
-.pagination-dot:hover {
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(1.2);
-}
-
-.pagination-dot.active {
+.nav-btn:hover {
   background: #FFFFFF;
-  transform: scale(1.4);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  color: #000000;
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Simple CSS Animations */
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .hero-navigation {
+    padding: 0 20px;
+  }
+  .nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -185,31 +208,17 @@
     margin-top: 0;
     margin-bottom: 3rem;
   }
-  
-  .hero-right-nav {
-    align-self: flex-start;
-    width: 100%;
-  }
-  
-  .nav-slides {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: clamp(2rem, 6vw, 2.8rem);
-    line-height: 1.1;
-  }
-  .hero-content-layout {
-    padding-top: 10vh;
-    padding-bottom: 40px;
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    line-height: 1.2;
+    white-space: normal;
   }
   .hero-subtitle {
-    margin-bottom: 1.5rem;
-  }
-  .nav-item {
-    min-width: 100px;
-    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+    margin: 0 auto 1.5rem;
+    max-width: 90%;
   }
 }

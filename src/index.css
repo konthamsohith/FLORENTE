@@ -1,9 +1,19 @@
 html, body {
   width: 100%;
+  min-height: 100%;
   overflow-x: hidden;
   position: relative;
   margin: 0;
   padding: 0;
+  background-color: #ffffff; /* Default background */
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 :root {
