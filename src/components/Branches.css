@@ -107,7 +107,9 @@
 }
 
 .card-maps-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
