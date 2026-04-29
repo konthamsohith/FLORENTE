@@ -41,7 +41,7 @@ const TrustedBanner: React.FC<TrustedBannerProps> = ({ title, description, logos
         )}
         <div className="trusted-logos-mask">
           <div className="trusted-logos">
-            {displayLogos.map((logo, index) => (
+            {[...displayLogos, ...displayLogos].map((logo, index) => (
               <img 
                 key={index} 
                 src={logo.src} 
