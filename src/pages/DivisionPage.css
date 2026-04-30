@@ -257,6 +257,13 @@
     margin-bottom: 3rem;
 }
 
+@media (max-width: 480px) {
+    .services-list-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
 .service-item-tag {
     font-family: 'Manrope', sans-serif;
     font-size: 0.85rem;
@@ -683,10 +690,18 @@
 
 @media (max-width: 768px) {
     .case-heading {
-        font-size: 2.4rem;
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    .case-content {
+        padding: 3rem 1.5rem;
+    }
+    .case-visual-box {
+        height: 350px;
+        padding: 2rem;
     }
     .case-quote {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
     .author-signature-seal {
         display: none;

@@ -223,8 +223,55 @@
 
   .experience-badge,
   .location-badge {
-    position: static;
-    margin: 1rem 0;
+    position: absolute;
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 768px) {
+  .prop-luxury-hero {
+    height: auto;
+    min-height: auto;
+    padding: 60px 0;
+  }
+  .luxury-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .luxury-hero-text h1 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  .hero-lead {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-stats-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .luxury-hero-image-frame img {
+    height: 450px;
+    min-height: auto;
+    border-radius: 24px;
+  }
+  .experience-badge {
+    bottom: 20px;
+    left: -10px;
+    padding: 1rem;
+  }
+  .location-badge {
+    top: 20px;
+    right: -10px;
+    padding: 1rem;
+  }
+  .floating-badge .badge-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .floating-badge .badge-text strong {
+    font-size: 0.9rem;
   }
 }
 
@@ -471,26 +518,47 @@
 }
 
 @media (max-width: 1024px) {
-
-  .luxury-hero-grid,
-  .services-v2-grid,
-  .region-split,
-  .region-split.reverse {
-    grid-template-columns: 1fr;
-    gap: 4rem;
+  .prop-regions-v2 {
+    padding: 60px 0;
   }
-
+  .region-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    min-height: auto;
+    margin-top: 0;
+    padding-bottom: 60px;
+  }
+  .india-split {
+    margin-top: 0;
+  }
   .region-split.reverse .region-split-content,
   .region-split.reverse .region-split-visual {
     order: unset;
   }
-
-  .visual-frame img {
-    height: 400px;
+  .visual-frame {
+    padding: 0;
   }
-
+  .visual-frame img {
+    height: 350px;
+    border-radius: 24px;
+  }
   .region-split-content h3 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .region-description {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .services-v2-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .services-v2-header h2 {
     font-size: 32px;
-    line-height: 38px;
+    line-height: 1.1;
+  }
+  .prop-commitment-v2 p {
+    font-size: 1.2rem;
   }
 }
