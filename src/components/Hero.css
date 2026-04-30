@@ -196,7 +196,7 @@
 
 @media (max-width: 768px) {
   .hero-slide-img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     background-color: #000;
   }

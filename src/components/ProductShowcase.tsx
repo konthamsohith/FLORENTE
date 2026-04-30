@@ -9,6 +9,7 @@ interface Product {
   category: string;
   description: string;
   icon?: React.ReactNode;
+  link?: string;
 }
 
 interface ProductShowcaseProps {
@@ -99,7 +100,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({
                 <span className="m-card-category">{product.category}</span>
                 <h3 className="m-card-title">{product.name}</h3>
                 <p className="m-card-desc">{product.description}</p>
-                <a href="#" className="m-card-link">
+                <a href={product.link || "#"} className="m-card-link" target={product.link ? "_blank" : undefined} rel={product.link ? "noopener noreferrer" : undefined}>
                   Explore <ArrowRight size={14} />
                 </a>
               </div>

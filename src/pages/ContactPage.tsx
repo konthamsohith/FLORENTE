@@ -31,12 +31,12 @@ const ContactPage: React.FC = () => {
   return (
     <div className="contact-page">
       <Header />
-      
+
       <main className="contact-main">
         {/* Hero Section */}
         <section className="contact-hero">
           <div className="container">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -62,7 +62,6 @@ const ContactPage: React.FC = () => {
                 <div className="contact-meta-grid">
                   <div className="contact-meta-item">
                     <h4>Email</h4>
-                    <p>contact@florente.com</p>
                     <p>info@florente.com</p>
                   </div>
                   <div className="contact-meta-item">
@@ -78,8 +77,8 @@ const ContactPage: React.FC = () => {
                     <h4>Business Hours</h4>
                     <div className="hours-row">
                       <div className="hours-col">
-                        <span className="hours-label">Monday to Friday</span>
-                        <p>9:00 AM - 6:00 PM</p>
+                        <span className="hours-label">Wednesday to Monday</span>
+                        <p>9:30 AM - 5:30 PM</p>
                       </div>
                       <div className="hours-col">
                         <span className="hours-label">Saturday</span>
@@ -88,7 +87,7 @@ const ContactPage: React.FC = () => {
                     </div>
                     <div className="hours-row" style={{ marginTop: '0.5rem' }}>
                       <div className="hours-col">
-                        <span className="hours-label">Sunday</span>
+                        <span className="hours-label">Tuesday</span>
                         <p>Closed</p>
                       </div>
                     </div>

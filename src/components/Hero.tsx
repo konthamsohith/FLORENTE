@@ -21,8 +21,16 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ divisions }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,6 +49,20 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
     setCurrentSlide((prev) => (prev - 1 + divisions.length) % divisions.length);
   };
 
+  const getHeroImage = (division: typeof divisions[0]) => {
+    if (isMobile) {
+      const smallImages: Record<string, string> = {
+        'marketing-labs': '/marketinglabssmall.png',
+        'properties': '/propertiessmall.png',
+        'consultancy': '/a consultantsmall.png',
+        'wealth-service': '/wealthsmall.png',
+        'entertainments': '/entertainmentsmall.png'
+      };
+      return smallImages[division.slug] || division.image;
+    }
+    return division.image;
+  };
+
   const slideData = divisions[currentSlide];
 
   return (
@@ -52,7 +74,7 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
       {divisions.map((division, index) => (
         <img 
           key={index}
-          src={division.image}
+          src={getHeroImage(division)}
           alt={division.heroTitle}
           className={`hero-slide-img ${index === currentSlide ? 'active' : ''}`}
         />

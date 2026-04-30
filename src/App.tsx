@@ -207,7 +207,6 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                 <div className="contact-meta-grid">
                   <div className="contact-meta-item">
                     <h4>Email</h4>
-                    <p>contact@florente.com</p>
                     <p>info@florente.com</p>
                   </div>
                   <div className="contact-meta-item">
@@ -223,17 +222,13 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
                     <h4>Business Hours</h4>
                     <div className="hours-row">
                       <div className="hours-col">
-                        <span className="hours-label">Monday to Friday</span>
-                        <p>9:00 AM - 6:00 PM</p>
-                      </div>
-                      <div className="hours-col">
-                        <span className="hours-label">Saturday</span>
-                        <p>10:00 AM - 4:00 PM</p>
+                        <span className="hours-label">Wednesday to Saturday</span>
+                        <p>9:30 AM - 5:30 PM</p>
                       </div>
                     </div>
                     <div className="hours-row" style={{ marginTop: '0.5rem' }}>
                       <div className="hours-col">
-                        <span className="hours-label">Sunday</span>
+                        <span className="hours-label">Tuesday</span>
                         <p>Closed</p>
                       </div>
                     </div>

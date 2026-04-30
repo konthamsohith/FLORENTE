@@ -1399,11 +1399,11 @@ h2 {
 
 /* Accurate Mukio-Inspired Contact Hub - Separated Cards */
 #contact {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background-color: #ffffff; /* Contrast with dark footer */
-  padding: 4rem 0;
+  padding: 80px 0 120px;
 }
 
 .contact-redesign-wrapper {
