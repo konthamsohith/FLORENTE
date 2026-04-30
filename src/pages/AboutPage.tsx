@@ -105,28 +105,24 @@ const AboutPage: React.FC = () => {
                 <h2 className="feature-title">Why Choose Florente?</h2>
                 <div className="feature-blocks-grid">
                   <div className="feature-item-block">
-                    <div className="feature-icon-wrapper"><Shield size={24} /></div>
                     <div className="feature-text-content">
                       <strong>Expertise You Can Trust</strong>
                       <span>Our team brings years of industry experience to deliver high-quality consulting and innovative solutions.</span>
                     </div>
                   </div>
                   <div className="feature-item-block">
-                    <div className="feature-icon-wrapper"><Target size={24} /></div>
                     <div className="feature-text-content">
                       <strong>Tailored Approach</strong>
                       <span>We craft customized strategies that align with your unique business needs and financial objectives.</span>
                     </div>
                   </div>
                   <div className="feature-item-block">
-                    <div className="feature-icon-wrapper"><BarChart3 size={24} /></div>
                     <div className="feature-text-content">
                       <strong>Data-Driven Insights</strong>
                       <span>Our cutting-edge analytics and financial modeling ensure informed decision-making for long-term success.</span>
                     </div>
                   </div>
                   <div className="feature-item-block">
-                    <div className="feature-icon-wrapper"><Award size={24} /></div>
                     <div className="feature-text-content">
                       <strong>Proven Results</strong>
                       <span>We have a track record of helping businesses enhance financial efficiency, manage risks, and achieve their goals.</span>

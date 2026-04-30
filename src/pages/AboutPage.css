@@ -201,21 +201,30 @@
   align-items: stretch;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
   .composite-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 0;
+    gap: 3.5rem; /* Significant gap for mobile breathing room */
+    padding: 0 0.5rem;
   }
   .feature-card {
-    padding: 3.5rem 2rem;
-    border-radius: 20px;
+    padding: 3rem 1rem; /* Reduced horizontal padding */
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   }
   .feature-image {
-    height: 400px;
-    border-radius: 20px;
+    height: 380px;
+    border-radius: 24px;
   }
-  /* Stacking order for small screens */
+  .feature-title {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+  .feature-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  /* Perfect alternation for mobile */
   .commitment-card { order: 1; }
   .feature-image:nth-of-type(2) { order: 2; }
   .values-card { order: 4; } 
@@ -227,7 +236,7 @@
     gap: 3rem;
   }
   .feature-card {
-    padding: 2.5rem 1.25rem;
+    padding: 2.5rem 0.75rem;
   }
   .feature-title {
     font-size: 26px;
@@ -385,19 +394,13 @@
 
 @media (max-width: 768px) {
   .feature-item-block {
-    padding: 1.25rem;
+    padding: 1rem 0.75rem; /* Reduced padding for more horizontal space */
     gap: 1rem;
   }
   
-  .feature-icon-wrapper {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-  }
-  
-  .feature-icon-wrapper svg {
-    width: 20px;
-    height: 20px;
+  .feature-text-content span {
+    font-size: 0.9rem; /* Slightly smaller for more words per line */
+    line-height: 1.5;
   }
 
   .feature-item-block:hover {
