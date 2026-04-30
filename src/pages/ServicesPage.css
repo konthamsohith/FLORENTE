@@ -54,31 +54,31 @@
 
 @media (max-width: 480px) {
   .services-hero-infographic {
-    flex: 0 0 280px;
-    height: 280px;
-    margin: 0 auto;
+    flex: 0 0 320px;
+    height: 320px;
+    margin: 20px auto 0;
   }
   .infographic-core {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   .core-label {
-    font-size: 8px;
+    font-size: 7px;
+  }
+  .orbit-item {
+    --radius: 110px; /* Tighter radius for mobile */
+    margin-top: -18px; /* Offset half of mobile orbit-icon height */
+    margin-left: -18px;
   }
   .orbit-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
   .orbit-text {
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 0.5px;
+    white-space: nowrap;
   }
-  /* Push items further out on mobile to avoid overlap */
-  .item-1 { top: -10px; }
-  .item-2 { top: 20%; right: -10px; }
-  .item-3 { bottom: 0; right: 10%; }
-  .item-4 { bottom: 0; left: 10%; }
-  .item-5 { top: 20%; left: -10px; }
 }
 
 .infographic-core {
@@ -101,7 +101,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 2px solid var(--accent-10);
+  border: 2px solid #095F8A;
   animation: pulseCore 3s infinite;
 }
 
@@ -129,20 +129,6 @@
   to { transform: rotate(360deg); }
 }
 
-.orbit-item {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  animation: counterSpin 40s linear infinite;
-}
-
-@keyframes counterSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-
 .orbit-icon {
   width: 50px;
   height: 50px;
@@ -152,7 +138,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-10);
+  color: #095F8A;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
@@ -160,22 +146,41 @@
 .orbit-text {
   font-size: 11px;
   font-weight: 700;
-  color: var(--base-60);
+  color: #095F8A;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Position items in a circle */
-.item-1 { top: 0; left: 50%; transform: translateX(-50%); }
-.item-2 { top: 25%; right: 5%; }
-.item-3 { bottom: 5%; right: 20%; }
-.item-4 { bottom: 5%; left: 20%; }
-.item-5 { top: 25%; left: 5%; }
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  --radius: 180px;
+  animation: counterSpin 40s linear infinite;
+  margin-top: -25px; /* Offset half of orbit-icon height */
+  margin-left: -25px; /* Offset half of orbit-icon width */
+}
+
+@keyframes counterSpin {
+  from { transform: translate(-50%, -50%) rotate(var(--rotation)) translate(var(--radius)) rotate(calc(-1 * var(--rotation) + 0deg)); }
+  to { transform: translate(-50%, -50%) rotate(var(--rotation)) translate(var(--radius)) rotate(calc(-1 * var(--rotation) - 360deg)); }
+}
+
+/* Perfect Circular Distribution */
+.item-1 { --rotation: 0deg; transform: translate(-50%, -50%) rotate(0deg) translate(var(--radius)) rotate(0deg); }
+.item-2 { --rotation: 72deg; transform: translate(-50%, -50%) rotate(72deg) translate(var(--radius)) rotate(-72deg); }
+.item-3 { --rotation: 144deg; transform: translate(-50%, -50%) rotate(144deg) translate(var(--radius)) rotate(-144deg); }
+.item-4 { --rotation: 216deg; transform: translate(-50%, -50%) rotate(216deg) translate(var(--radius)) rotate(-216deg); }
+.item-5 { --rotation: 288deg; transform: translate(-50%, -50%) rotate(288deg) translate(var(--radius)) rotate(-288deg); }
 
 .services-badge {
   display: block;
   font-family: 'Manrope', sans-serif;
-  color: var(--accent-10); /* Blue Rebrand */
+  color: #095F8A; /* Blue Rebrand */
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 2rem;
