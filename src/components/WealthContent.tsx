@@ -102,149 +102,21 @@ const WealthContent: React.FC = () => {
             >
               <div className="wealth-main-card">
                 {/* Background Dot Pattern */}
-                <div className="bg-dots-pattern"></div>
+            
                 
                 <div className="visual-container">
-                  {/* Connection Lines (SVG) */}
-                  <svg className="connection-lines-svg" viewBox="0 0 500 500">
-                    <line x1="250" y1="250" x2="100" y2="100" className="conn-line" />
-                    <line x1="250" y1="250" x2="400" y2="100" className="conn-line" />
-                    <line x1="250" y1="250" x2="100" y2="400" className="conn-line" />
-                    <line x1="250" y1="250" x2="400" y2="400" className="conn-line" />
-                    
-                    {/* Dots at intersection points */}
-                    <circle cx="175" cy="175" r="4" className="conn-dot" />
-                    <circle cx="325" cy="175" r="4" className="conn-dot" />
-                    <circle cx="175" cy="325" r="4" className="conn-dot" />
-                    <circle cx="325" cy="325" r="4" className="conn-dot" />
-                  </svg>
+                  
 
-                  {/* Timeline of Growth Visual */}
-                  <div className="wealth-timeline-container">
-                    {/* SVG Growth Line */}
-                    <svg className="growth-line-svg" viewBox="0 0 500 200">
-                      <motion.path
-                        d="M 50,150 L 150,130 L 250,100 L 350,70 L 450,40"
-                        fill="none"
-                        stroke="#8b7355"
-                        strokeWidth="2.5"
-                        initial={{ pathLength: 0 }}
-                        whileInView={{ pathLength: 1 }}
-                        transition={{ duration: 2, ease: "easeInOut" }}
-                      />
-                      {[
-                        { x: 50, y: 150, label: 'START', color: '#2563eb', dir: 'left' },
-                        { x: 150, y: 130 },
-                        { x: 250, y: 100 },
-                        { x: 350, y: 70 },
-                        { x: 450, y: 40, label: 'SUCCESS', color: '#ef4444', dir: 'right' }
-                      ].map((point, idx) => (
-                        <g key={idx}>
-                          <motion.circle
-                            cx={point.x}
-                            cy={point.y}
-                            r="6"
-                            fill="#fff"
-                            stroke="#8b7355"
-                            strokeWidth="2"
-                            initial={{ scale: 0 }}
-                            whileInView={{ scale: 1 }}
-                            transition={{ delay: idx * 0.4 }}
-                          />
-                          {point.label && (
-                            <motion.foreignObject
-                              x={point.dir === 'left' ? point.x - 60 : point.x - 0}
-                              y={point.y - 50}
-                              width="80"
-                              height="60"
-                              initial={{ opacity: 0, y: 10 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ delay: idx * 0.4 + 0.5 }}
-                            >
-                              <div className={`milestone-marker ${point.dir}`}>
-                                {point.label === 'START' ? (
-                                  <div className="normal-label" style={{ color: point.color }}>
-                                    {point.label}
-                                  </div>
-                                ) : (
-                                  <>
-                                    <div className="flag-pole" style={{ backgroundColor: point.color }}></div>
-                                    <div className="point-flag" style={{ color: point.color }}>
-                                      {point.label}
-                                    </div>
-                                  </>
-                                )}
-                              </div>
-                            </motion.foreignObject>
-                          )}
-                        </g>
-                      ))}
-                    </svg>
-
-                    {/* Central Narrative */}
-                    <motion.div 
-                      className="timeline-narrative"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 1 }}
-                    >
-                      "Long-term Investment"
-                    </motion.div>
-
-                    {/* Horizontal Stacks */}
-                    <div className="timeline-stacks">
-                      {[2, 5, 10, 18, 28].map((count, sIdx) => (
-                        <div key={sIdx} className="timeline-stack-item">
-                          <div className="t-stack">
-                            {[...Array(count)].map((_, i) => (
-                              <motion.div 
-                                key={i}
-                                className="t-coin"
-                                style={{ bottom: i * 3, zIndex: 10 + i }}
-                                initial={{ opacity: 0, y: 5 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: sIdx * 0.4 + (i * 0.03) }}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                      
-                      {/* Professional Sandtimer SVG */}
-                      <motion.div 
-                        className="hourglass-container"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 2.5 }}
-                      >
-                        <motion.div
-                          className="sandtimer-wrapper"
-                          animate={{ rotate: [0, 180, 180, 360, 360] }}
-                          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                          <svg width="60" height="80" viewBox="0 0 60 80">
-                            {/* Wooden Frame - Top */}
-                            <rect x="5" y="0" width="50" height="6" rx="2" fill="#5d4037" />
-                            {/* Glass Body */}
-                            <path d="M10,6 Q10,40 30,40 Q50,40 50,6 Z" fill="rgba(255,255,255,0.1)" stroke="#5d4037" strokeWidth="1" />
-                            <path d="M10,74 Q10,40 30,40 Q50,40 50,74 Z" fill="rgba(255,255,255,0.1)" stroke="#5d4037" strokeWidth="1" />
-                            {/* Blue Sand - Bottom */}
-                            <path d="M12,72 Q12,50 30,40 Q48,50 48,72 Z" fill="#2563eb" opacity="0.8">
-                              <animate attributeName="d" values="M12,72 Q12,50 30,40 Q48,50 48,72 Z; M12,72 Q12,70 30,70 Q48,70 48,72 Z; M12,72 Q12,50 30,40 Q48,50 48,72 Z" dur="10s" repeatCount="indefinite" />
-                            </path>
-                            {/* Sand Stream */}
-                            <line x1="30" y1="35" x2="30" y2="70" stroke="#2563eb" strokeWidth="1" strokeDasharray="2,2">
-                              <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite" />
-                            </line>
-                            {/* Wooden Frame - Bottom */}
-                            <rect x="5" y="74" width="50" height="6" rx="2" fill="#5d4037" />
-                            {/* Support Pillars */}
-                            <rect x="8" y="6" width="3" height="68" fill="#5d4037" opacity="0.6" />
-                            <rect x="49" y="6" width="3" height="68" fill="#5d4037" opacity="0.6" />
-                          </svg>
-                        </motion.div>
-                      </motion.div>
-                    </div>
+                  {/* Static Wealth Image */}
+                  <div className="wealth-image-wrapper">
+                    <motion.img 
+                      src="/wealth.png" 
+                      alt="Wealth Management Growth" 
+                      className="wealth-static-image"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 1 }}
+                    />
                   </div>
                 </div>
 
