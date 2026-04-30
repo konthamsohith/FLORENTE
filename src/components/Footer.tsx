@@ -68,12 +68,6 @@ const Footer: React.FC = () => {
                 <li>
                   <a href={sectionHref('contact')}>Contact</a>
                 </li>
-                <li>
-                  <a href="#">News &amp; media</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
               </ul>
             </div>
 
@@ -98,21 +92,11 @@ const Footer: React.FC = () => {
                 Industries
               </h3>
               <ul className="site-footer__list" aria-labelledby="footer-nav-industries">
-                <li>
-                  <a href="#">Real estate</a>
-                </li>
-                <li>
-                  <a href="#">Infrastructure</a>
-                </li>
-                <li>
-                  <a href="#">Human resources</a>
-                </li>
-                <li>
-                  <a href="#">Media &amp; film</a>
-                </li>
-                <li>
-                  <a href="#">Fund advisory</a>
-                </li>
+                <li>Real estate</li>
+                <li>Infrastructure</li>
+                <li>Human resources</li>
+                <li>Media &amp; film</li>
+                <li>Fund advisory</li>
               </ul>
             </div>
 
