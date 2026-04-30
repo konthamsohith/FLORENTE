@@ -54,9 +54,31 @@
 
 @media (max-width: 480px) {
   .services-hero-infographic {
-    flex: 0 0 320px;
-    height: 320px;
+    flex: 0 0 280px;
+    height: 280px;
+    margin: 0 auto;
   }
+  .infographic-core {
+    width: 90px;
+    height: 90px;
+  }
+  .core-label {
+    font-size: 8px;
+  }
+  .orbit-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .orbit-text {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+  /* Push items further out on mobile to avoid overlap */
+  .item-1 { top: -10px; }
+  .item-2 { top: 20%; right: -10px; }
+  .item-3 { bottom: 0; right: 10%; }
+  .item-4 { bottom: 0; left: 10%; }
+  .item-5 { top: 20%; left: -10px; }
 }
 
 .infographic-core {
@@ -282,7 +304,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -293,7 +315,7 @@
 }
 
 .workflow-badge {
-  color: var(--accent-10);
+  color: #095F8A;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -326,11 +348,11 @@
 }
 
 .workflow-item.highlighted {
-  background: var(--accent-10);
+  background: #095F8A;
   padding: 2.5rem;
   border-radius: 12px;
   border-bottom: none;
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px rgba(9, 95, 138, 0.3);
 }
 
 .w-header {
@@ -387,10 +409,24 @@
   font-style: normal;
 }
 
+.workflow-right {
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(10, 22, 43, 0.05);
+}
+
 .workflow-right img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.workflow-grid:hover .workflow-right img {
+  transform: scale(1.03);
 }
 
 @media (max-width: 1024px) {

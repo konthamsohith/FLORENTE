@@ -57,27 +57,32 @@ const ServicesPage: React.FC = () => {
     { 
       id: "01", 
       title: "Discovery & Enterprise Audit",
-      description: "A comprehensive deep-dive into your organizational DNA, market trajectory, and long-term capital objectives."
+      description: "A comprehensive deep-dive into your organizational DNA, market trajectory, and long-term capital objectives.",
+      image: "/Discovery & Enterprise Audit.png"
     },
     { 
       id: "02", 
       title: "Strategic Architecture",
-      description: "Engineering bespoke solutions and data-driven frameworks tailored to secure measurable business scale."
+      description: "Engineering bespoke solutions and data-driven frameworks tailored to secure measurable business scale.",
+      image: "/experts_collaboration_laptop_1775407527405.png"
     },
     { 
       id: "03", 
       title: "Precision Execution",
-      description: "Deploying high-impact strategies with surgical precision, ensuring seamless integration across all business units."
+      description: "Deploying high-impact strategies with surgical precision, ensuring seamless integration across all business units.",
+      image: "/Precision Execution.png"
     },
     { 
       id: "04", 
       title: "Adaptive Optimization",
-      description: "Continuous monitoring and high-frequency refinement to capitalize on emerging market opportunities."
+      description: "Continuous monitoring and high-frequency refinement to capitalize on emerging market opportunities.",
+      image: "/Adaptive Optimization.png"
     },
     { 
       id: "05", 
       title: "Legacy Growth Advisory",
-      description: "Persistent strategic partnership focused on sustainable value creation and generational wealth protection."
+      description: "Persistent strategic partnership focused on sustainable value creation and generational wealth protection.",
+      image: "/Legacy Growth Advisory.png"
     }
   ];
 
@@ -215,7 +220,17 @@ const ServicesPage: React.FC = () => {
                 </div>
               </div>
               <div className="workflow-right">
-                <img src="/experts_collaboration_laptop_1775407527405.png" alt="Team Collaboration" />
+                <AnimatePresence mode="wait">
+                  <motion.img 
+                    key={activeStep}
+                    src={workflow[activeStep].image} 
+                    alt={workflow[activeStep].title}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </AnimatePresence>
               </div>
             </div>
           </div>
