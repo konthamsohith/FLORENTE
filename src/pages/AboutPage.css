@@ -201,40 +201,62 @@
   align-items: stretch;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .composite-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 3rem;
+    padding: 0;
   }
   .feature-card {
     padding: 3.5rem 2rem;
     border-radius: 20px;
   }
   .feature-image {
-    height: 350px;
+    height: 400px;
     border-radius: 20px;
   }
-  /* Stacking order */
+  /* Stacking order for small screens */
   .commitment-card { order: 1; }
   .feature-image:nth-of-type(2) { order: 2; }
-  .values-card { order: 3; }
-  .feature-image:nth-of-type(4) { order: 4; }
+  .values-card { order: 4; } 
+  .feature-image:nth-of-type(4) { order: 3; } 
 }
 
 @media (max-width: 480px) {
+  .composite-grid {
+    gap: 3rem;
+  }
   .feature-card {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1.25rem;
+  }
+  .feature-title {
+    font-size: 26px;
   }
   .feature-actions {
     flex-direction: column;
     width: 100%;
+    gap: 1rem;
   }
-  .feature-actions button {
+  .btn-pricing, .btn-success-black-static {
     width: 100%;
     justify-content: center;
   }
   .feature-image {
-    height: 280px;
+    height: 300px;
+  }
+  
+  /* Mobile Feature List Polish */
+  .feature-list {
+    gap: 1.25rem;
+  }
+  .feature-list li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.25rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .commitment-card .feature-desc {
+    color: #475569;
   }
 }
 
@@ -257,10 +279,20 @@
   color: #FFFFFF;
 }
 
+.commitment-card .feature-desc {
+  color: #64748b;
+  margin-top: 1rem;
+}
+
+.values-card .feature-title {
+  color: #fff;
+}
+
 .feature-image {
   border-radius: 12px;
   overflow: hidden;
-  height: var(--base-60)
+  min-height: 500px;
+  height: 100%;
 }
 
 .btn-success-black-static {
@@ -288,57 +320,89 @@
 
 .feature-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 42px;
+  font-size: clamp(28px, 4vw, 42px);
   font-weight: 600;
   margin-bottom: 2rem;
   color: inherit;
 }
 
 .feature-desc {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   line-height: 1.7;
-  color: #555;
+  color: #64748b;
 }
 
-/* Feature List Inside Card */
-.feature-list {
-  list-style: none;
-  padding: 0;
+/* Feature Blocks Grid */
+.feature-blocks-grid {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
-.feature-list li {
+.feature-item-block {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: flex-start;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.check-circle {
+.feature-item-block:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.feature-icon-wrapper {
   background: #FFFFFF;
-  color: var(--accent-10); /* Blue checkmark */
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+  color: #095F8A;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 4px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-.feature-list li div strong {
+.feature-text-content strong {
   display: block;
-  font-size: 1.1rem;
-  margin-bottom: 0.2rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Outfit', sans-serif;
 }
 
-.feature-list li div span {
+.feature-text-content span {
   font-size: 0.95rem;
-  opacity: 0.8;
-  line-height: 1.5;
+  line-height: 1.6;
+  opacity: 0.9;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .feature-item-block {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  
+  .feature-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  
+  .feature-icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .feature-item-block:hover {
+    transform: none;
+  }
 }
 
 /* Feature Actions */
