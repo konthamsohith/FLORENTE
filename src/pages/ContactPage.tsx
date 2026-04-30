@@ -80,10 +80,6 @@ const ContactPage: React.FC = () => {
                         <span className="hours-label">Wednesday to Monday</span>
                         <p>9:30 AM - 5:30 PM</p>
                       </div>
-                      <div className="hours-col">
-                        <span className="hours-label">Saturday</span>
-                        <p>10:00 AM - 4:00 PM</p>
-                      </div>
                     </div>
                     <div className="hours-row" style={{ marginTop: '0.5rem' }}>
                       <div className="hours-col">
