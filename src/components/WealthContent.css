@@ -357,6 +357,37 @@
 .pos-e { top: 50%; right: 40px; transform: translateY(-50%); }
 .pos-w { top: 50%; left: 40px; transform: translateY(-50%); }
 
+.wealth-bottom-banner {
+  margin-top: 2rem;
+  background: #eef2ff;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1e293b;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #dbeafe;
+}
+
+.banner-icon {
+  color: #2563eb;
+}
+
+/* Offerings Section */
+.wealth-offerings {
+  padding: 4rem 0 8rem;
+  background-color: #f8fafc;
+}
+
+.offerings-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .wealth-main-card {
     padding: 1.5rem 1rem;
@@ -401,7 +432,17 @@
   }
   .funds-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+  .fund-item {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .fund-item:hover {
+    transform: none;
+  }
+  .fund-item span {
+    font-size: 0.85rem;
   }
 }
 
