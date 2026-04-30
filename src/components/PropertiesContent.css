@@ -518,22 +518,24 @@
 }
 
 @media (max-width: 1024px) {
-  .prop-regions-v2 {
-    padding: 60px 0;
-  }
-  .region-split {
+  .region-split,
+  .region-split.reverse,
+  .india-split {
     grid-template-columns: 1fr;
     gap: 3rem;
     min-height: auto;
-    margin-top: 0;
-    padding-bottom: 60px;
-  }
-  .india-split {
-    margin-top: 0;
+    margin-top: 0 !important;
+    padding-bottom: 80px;
   }
   .region-split.reverse .region-split-content,
   .region-split.reverse .region-split-visual {
-    order: unset;
+    order: unset !important;
+  }
+  .region-split-content {
+    order: 1 !important;
+  }
+  .region-split-visual {
+    order: 2 !important;
   }
   .visual-frame {
     padding: 0;
