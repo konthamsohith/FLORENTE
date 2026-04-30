@@ -320,6 +320,7 @@
 
   .site-footer__contact-card {
     max-width: 420px;
+    margin-bottom: 1.5rem;
   }
 
   .site-footer__divider {
