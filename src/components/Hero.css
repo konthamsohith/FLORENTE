@@ -59,9 +59,10 @@
 
 @media (max-width: 768px) {
   .hero-container {
-    aspect-ratio: 16 / 9;
-    min-height: auto;
+    aspect-ratio: 4 / 5;
+    min-height: 500px;
     height: auto;
+    background-color: #060f1f; /* Matching dark blue to avoid harsh bars */
   }
   .hero-content-layout {
     height: 100%;

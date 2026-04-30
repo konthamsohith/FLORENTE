@@ -671,7 +671,10 @@
         grid-template-columns: 1fr;
     }
     .case-study-feature {
-        padding: 100px 0;
+        padding: 80px 0;
+        min-height: 500px;
+        background-color: #060f1f;
+        background-attachment: scroll;
     }
     .case-visual-box {
         height: 600px;
