@@ -61,6 +61,7 @@
   .hero-container {
     aspect-ratio: 16 / 9;
     min-height: auto;
+    height: auto;
   }
   .hero-content-layout {
     height: 100%;
@@ -163,11 +164,18 @@
 
 @media (max-width: 768px) {
   .hero-navigation {
-    padding: 0 20px;
+    top: auto;
+    bottom: 30px;
+    transform: translateY(0);
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    width: 100%;
   }
   .nav-btn {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -188,7 +196,9 @@
 
 @media (max-width: 768px) {
   .hero-slide-img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    background-color: #000;
   }
 }
 
