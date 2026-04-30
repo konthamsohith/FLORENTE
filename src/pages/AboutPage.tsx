@@ -11,6 +11,7 @@ const AboutPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  /*
   const team = [
     { name: "Emily Carter", role: "Chief Executive Officer", image: "/team_member_1_1775964073984.png" },
     { name: "Andrew Brown", role: "Financial Strategy Director", image: "/team_member_2_1775964093346.png" },
@@ -19,6 +20,7 @@ const AboutPage: React.FC = () => {
     { name: "Michael Chen", role: "Head of Infrastructure", image: "/team_member_michael_chen_infrastructure_1775966262612.png" },
     { name: "Olivia Thompson", role: "Global HR Director", image: "/team_member_olivia_thompson_hr_1775966285122.png" }
   ];
+  */
 
   const fadeIn = {
     hidden: { opacity: 0, y: 30 },
@@ -146,7 +148,7 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Team Section 
         <section className="about-team section-padding">
           <div className="container">
             <div className="team-header">
@@ -174,6 +176,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
+        */}
       </main>
 
       <Footer />
