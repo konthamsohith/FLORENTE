@@ -158,7 +158,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: var(--base-60);
+    background: #ffffff;
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
@@ -175,6 +175,10 @@
     opacity: 1;
     visibility: visible;
   }
+  
+  .nav-menu.open .nav-link {
+    color: #095F8A !important;
+  }
   .mobile-menu-btn {
     display: flex;
     position: relative;
@@ -185,7 +189,7 @@
   }
 
   .mobile-menu-btn.is-open {
-    color: #fff;
+    color: #095F8A;
   }
 }
 
@@ -398,7 +402,7 @@
   }
 
   .mega-links a {
-    color: #ffffff;
+    color: #095F8A;
     font-size: 0.95rem;
     text-align: center;
     text-transform: uppercase;
@@ -407,12 +411,16 @@
   }
 
   .mega-industry-item {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: #095F8A !important;
     text-align: center;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
+  }
+
+  .mobile-only-link {
+    color: #095F8A !important;
   }
 
   .mega-col h4 {
