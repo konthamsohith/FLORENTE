@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % divisions.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [divisions.length]);
 
