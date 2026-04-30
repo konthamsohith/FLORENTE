@@ -357,35 +357,52 @@
 .pos-e { top: 50%; right: 40px; transform: translateY(-50%); }
 .pos-w { top: 50%; left: 40px; transform: translateY(-50%); }
 
-.wealth-bottom-banner {
-  margin-top: 2rem;
-  background: #eef2ff;
-  padding: 1rem 1.5rem;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #1e293b;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid #dbeafe;
-}
-
-.banner-icon {
-  color: #2563eb;
-}
-
-/* Offerings Section */
-.wealth-offerings {
-  padding: 4rem 0;
-  background-color: #f8fafc;
-}
-
-.offerings-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
+@media (max-width: 768px) {
+  .wealth-main-card {
+    padding: 1.5rem 1rem;
+    border-radius: 24px;
+    margin: 0 auto;
+  }
+  .visual-container {
+    height: 320px;
+    transform: scale(0.85);
+  }
+  .asset-card-mini {
+    width: 160px;
+    padding: 0.5rem;
+  }
+  .asset-card-mini strong {
+    font-size: 0.75rem;
+  }
+  .asset-card-mini span {
+    display: none; /* Hide descriptions on small mobile visuals */
+  }
+  .top-left { left: -10px; }
+  .top-right { right: -10px; }
+  .bottom-left { left: -10px; }
+  .bottom-right { right: -10px; }
+  
+  .wealth-bottom-banner {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+  
+  .wealth-offerings {
+    padding: 60px 0;
+  }
+  .offerings-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .offerings-header h3 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .funds-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .offerings-header h3 {
@@ -632,10 +649,58 @@
   margin-bottom: 0.75rem;
 }
 
-.roadmap-body p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.6);
+@media (max-width: 1024px) {
+  .wealth-hero-v3 {
+    height: auto;
+    min-height: auto;
+    padding: 60px 0;
+  }
+  .wealth-container-v3 {
+    padding: 0 1.5rem;
+  }
+  .wealth-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .wealth-info-side {
+    margin-top: 0;
+    text-align: center;
+  }
+  .wealth-kicker {
+    margin: 0 auto 1.5rem;
+  }
+  .wealth-main-title {
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .wealth-desc-p1 {
+    font-size: 1rem;
+    margin: 0 auto 1.5rem;
+    max-width: 100%;
+  }
+  .wealth-quote-box {
+    margin: 0 auto 2rem;
+    max-width: 100%;
+    border-left: none;
+    border-top: 2px solid #2563eb;
+    padding: 1.5rem 0 0;
+  }
+  .wealth-cta-group {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-wealth-primary, .btn-wealth-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  .wealth-features-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
 }
 
 /* Responsive */
