@@ -179,10 +179,13 @@
     display: flex;
     position: relative;
     z-index: 1001; /* Stay above mobile menu */
-    color: #fff;
     align-items: center;
     height: 100%;
     margin-bottom: 3px; /* Precise visual centering with logo */
+  }
+
+  .mobile-menu-btn.is-open {
+    color: #fff;
   }
 }
 

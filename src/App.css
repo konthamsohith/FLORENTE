@@ -1398,8 +1398,9 @@ h2 {
 
 .contact-redesign-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 4rem; /* Increased gap for full-page width */
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem; 
+  align-items: stretch;
   background: transparent;
   border-radius: 0;
   overflow: visible;
@@ -1558,7 +1559,7 @@ h2 {
 
 .compact-group input::placeholder,
 .compact-group textarea::placeholder {
-  color: #bbb;
+  color: #94a3b8;
 }
 
 .compact-group input:focus,

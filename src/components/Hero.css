@@ -19,7 +19,6 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
-  transform: scale(1.08);
   z-index: 1;
 }
 
@@ -60,12 +59,12 @@
 
 @media (max-width: 768px) {
   .hero-container {
-    aspect-ratio: 1 / 1.1;
-    min-height: 500px;
+    aspect-ratio: 16 / 9;
+    min-height: auto;
   }
   .hero-content-layout {
     height: 100%;
-    padding: 60px 1.5rem 80px;
+    padding: 30px 1.5rem 40px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -185,6 +184,12 @@
 
 .fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@media (max-width: 768px) {
+  .hero-slide-img {
+    object-fit: cover;
+  }
 }
 
 .delay-1 {

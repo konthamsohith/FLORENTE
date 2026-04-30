@@ -98,7 +98,7 @@ const Header: React.FC = () => {
         </nav>
         <div className="header-cta">
           <Link to="/contact" className="btn-secondary-nav" onClick={() => setMobileMenuOpen(false)}>Get In Touch</Link>
-          <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className={`mobile-menu-btn ${mobileMenuOpen ? 'is-open' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

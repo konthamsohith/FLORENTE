@@ -195,7 +195,7 @@ const Home: React.FC<HomeProps> = ({ divisions }) => {
         </section>
 
         <section id="contact" className="section-padding">
-          <div className="wide-section-container">
+          <div className="container">
             <div className="contact-redesign-wrapper">
               <div className="contact-info-block">
                 <span className="contact-small-tag">Contact us</span>
