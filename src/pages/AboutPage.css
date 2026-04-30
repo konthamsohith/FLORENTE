@@ -204,19 +204,38 @@
 @media (max-width: 1024px) {
   .composite-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
   }
   .feature-card {
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 2rem;
+    border-radius: 20px;
   }
   .feature-image {
-    height: 320px;
+    height: 350px;
+    border-radius: 20px;
   }
-  /* Ensure a logical mobile order: Text -> Image -> Text -> Image */
+  /* Stacking order */
   .commitment-card { order: 1; }
   .feature-image:nth-of-type(2) { order: 2; }
   .values-card { order: 3; }
   .feature-image:nth-of-type(4) { order: 4; }
+}
+
+@media (max-width: 480px) {
+  .feature-card {
+    padding: 2.5rem 1.5rem;
+  }
+  .feature-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .feature-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .feature-image {
+    height: 280px;
+  }
 }
 
 .feature-card {
