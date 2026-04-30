@@ -135,10 +135,12 @@ const AboutPage: React.FC = () => {
                 </div>
                 <div className="feature-actions">
                    <button className="btn-pricing">Pricing</button>
-                    <button className="btn-success-black-static">
-                      <span className="btn-text" style={{ color: '#095F8A' }}>Get in touch</span>
-                      <span className="cta-icon-circle-static" style={{ background: '#095F8A', color: '#FFFFFF' }}><ArrowRight size={16} /></span>
-                    </button>
+                    <Link to="/contact" style={{ textDecoration: 'none' }}>
+                      <button className="btn-success-black-static">
+                        <span className="btn-text" style={{ color: '#095F8A' }}>Get in touch</span>
+                        <span className="cta-icon-circle-static" style={{ background: '#095F8A', color: '#FFFFFF' }}><ArrowRight size={16} /></span>
+                      </button>
+                    </Link>
                 </div>
               </div>
               <div className="feature-image">
