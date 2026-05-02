@@ -20,9 +20,11 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ divisions }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [[page, direction], setPage] = useState([0, 0]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
+
+  const currentSlide = page;
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,21 +34,33 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Preload images with prioritization
+  useEffect(() => {
+    divisions.forEach((division) => {
+      const img = new Image();
+      img.src = getHeroImage(division);
+    });
+  }, [divisions, isMobile]);
+
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % divisions.length);
-    }, 2000);
+      paginate(1);
+    }, 5000);
     return () => clearInterval(timer);
-  }, [divisions.length]);
+  }, [page]);
 
-  const nextSlide = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentSlide((prev) => (prev + 1) % divisions.length);
+  const paginate = (newDirection: number) => {
+    setPage([ (page + newDirection + divisions.length) % divisions.length, newDirection ]);
   };
 
-  const prevSlide = (e: React.MouseEvent) => {
+  const onNextClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentSlide((prev) => (prev - 1 + divisions.length) % divisions.length);
+    paginate(1);
+  };
+
+  const onPrevClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    paginate(-1);
   };
 
   const getHeroImage = (division: typeof divisions[0]) => {
@@ -65,20 +79,58 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
 
   const slideData = divisions[currentSlide];
 
+  const variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0,
+      scale: 1.1
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 35 },
+        opacity: { duration: 0.4 },
+        scale: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+      }
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? '100%' : '-100%',
+      opacity: 0,
+      scale: 0.95,
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 35 },
+        opacity: { duration: 0.4 },
+        scale: { duration: 0.8 }
+      }
+    })
+  };
+
   return (
     <div 
       className="hero-container" 
       onClick={() => navigate(`/divisions/${slideData.slug}`)}
       style={{ cursor: 'pointer' }}
     >
-      {divisions.map((division, index) => (
-        <img 
-          key={index}
-          src={getHeroImage(division)}
-          alt={division.heroTitle}
-          className={`hero-slide-img ${index === currentSlide ? 'active' : ''}`}
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.img
+          key={page}
+          src={getHeroImage(divisions[currentSlide])}
+          alt={slideData.heroTitle}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          className="hero-slide-img active"
+          loading={page === 0 ? "eager" : "lazy"}
+          {...(page === 0 ? { fetchPriority: "high" } as any : {})}
         />
-      ))}
+      </AnimatePresence>
+      
       <div className="hero-overlay"></div>
 
       <div className="container hero-content-layout">
@@ -112,10 +164,10 @@ const Hero: React.FC<HeroProps> = ({ divisions }) => {
       </div>
 
       <div className="hero-navigation">
-        <button className="nav-btn prev" onClick={prevSlide} aria-label="Previous slide">
+        <button className="nav-btn prev" onClick={onPrevClick} aria-label="Previous slide">
           <ChevronLeft size={24} />
         </button>
-        <button className="nav-btn next" onClick={nextSlide} aria-label="Next slide">
+        <button className="nav-btn next" onClick={onNextClick} aria-label="Next slide">
           <ChevronRight size={24} />
         </button>
       </div>
